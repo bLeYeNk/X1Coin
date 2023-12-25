@@ -1,7 +1,7 @@
 # Bitcoin Classic
 
 
-Parameters of Bitcoin V25.0:
+Parameters of Bitcoin Classic:
 
 Target Spacing: 16 minutes
 Target Timespan: Approximately 22,160 minutes (1,385 blocks at 16 minutes each)
