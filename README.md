@@ -1,5 +1,33 @@
 # Bitcoin Classic
 
+### Blockchain Specifications
+
+- **Source Branch:** 25.0
+- **Algorithm:** SHA-256 Proof of Work
+- **Coin Name:** Bitcoins
+- **Coin Abbreviation:** BC
+- **Public Address Letter:** C
+- **Coin Unit:** Satoshi
+- **RPC Port:** 15257
+- **P2P Port:** 15258
+- **Block Reward:** 50 coins
+- **Block Halving:** Every 210,000 blocks
+- **Coin Supply:** 21,000,000 coins
+- **Coinbase Maturity:** 100 (+ 1 default confirmation) blocks
+- **Target Spacing:** 8 minutes
+- **Target Timespan:** 16 minutes
+- **Transaction Confirmations:** 6 blocks
+- **Timestamp:** Merry Christmas 2023 Wishes quotes and images Mint
+- **Node :** 
+- **Last Block with Reward:** 6,930,000
+- **Time Until Last Block:** 105 years, 4 months, 29 days, 0 hours
+
+### Project URLs
+
+- **Website:** [Bitcoins](https://bitcoins.earth)
+- **GitHub Repository:** [GitHub - bLeYeNk/Bitcoins](https://github.com/bLeYeNk/Bitcoins)
+
+
 ## Parameters of Bitcoin Classic
 
 ### Faster Block Confirmations
