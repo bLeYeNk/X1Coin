@@ -66,3 +66,4 @@ Forks and changes to established blockchains often face challenges in gaining co
 **FIXES:**
 ```plaintext
 Fixed the Code for phrase words that would unlock and open wallets with 12 seed word phrases.
+Fixed List Updates Coming soon
