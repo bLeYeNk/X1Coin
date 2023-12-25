@@ -12,7 +12,7 @@ Bitcoin Classic is an experimental project created solely for speculative and en
 
 ### Important:
 
-- ⚠️ **Legal and Ethical Considerations:** Creating actual cryptocurrencies requires careful consideration of legal, ethical, and technical aspects. This project does not endorse the creation of real-world cryptocurrencies without due diligence.
+- ⚠️ **Legal and Ethical Considerations:** Creating actual cryptocurrencies requires careful consideration of legal, ethical, and technical aspects. This project does not endorse the creation of real-world cryptocurrencies.
 
 ### Blockchain Specifications
 
