@@ -1,4 +1,4 @@
-# Bitcoin
+# Bitcoin Classic
 
 
 Parameters of Bitcoin V25.0:
