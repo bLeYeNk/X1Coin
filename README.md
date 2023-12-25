@@ -1,5 +1,19 @@
 # Bitcoin Classic
 
+⚠️ **Disclaimer: Purely Speculative and for Entertainment Purposes Only**
+
+Bitcoin Classic is an experimental project created solely for speculative and entertainment purposes. It does not intend to function as a legitimate cryptocurrency and should not be considered as a financial investment.
+
+### Key Points:
+
+- ⚠️ **Not for Real-world Use:** Bitcoin Classic is not designed for any practical use or financial transactions.
+- 🚫 **No Financial Advice:** Users are strongly discouraged from making any financial decisions based on this project's outcomes.
+- 🎓 **Educational Experiment:** This project explores hypothetical scenarios and alternative parameters, aiming to spark educational discussions.
+
+### Important:
+
+- ⚠️ **Legal and Ethical Considerations:** Creating actual cryptocurrencies requires careful consideration of legal, ethical, and technical aspects. This project does not endorse the creation of real-world cryptocurrencies without due diligence.
+
 ### Blockchain Specifications
 
 - **Source Branch:** 25.0
