@@ -1,4 +1,4 @@
-# BitCoins
+# Bitcoins
 
 
 Parameters of Bitcoins V25.0:
