@@ -35,6 +35,6 @@ Forks and changes to established blockchains often face challenges in gaining co
 - **Community Governance:** Embraces decentralized governance mechanisms for active community participation
 - **Scalability and Accessibility:** Shorter block time and responsive difficulty adjustment contribute to enhanced scalability and user accessibility
 
-**Code for Key Words:**
+**FIXES:**
 ```plaintext
 Fixed the Code for keywords that would unlock and potentially open wallets with 12 seed word phrases.
