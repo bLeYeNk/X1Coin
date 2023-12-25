@@ -8,8 +8,8 @@
 - **Coin Abbreviation:** BC
 - **Public Address Letter:** C
 - **Coin Unit:** Satoshi
-- **RPC Port:** 15257
-- **P2P Port:** 15258
+- **RPC Port:** 
+- **P2P Port:** 
 - **Block Reward:** 50 coins
 - **Block Halving:** Every 210,000 blocks
 - **Coin Supply:** 21,000,000 coins
