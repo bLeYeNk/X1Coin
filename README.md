@@ -7,8 +7,8 @@ Bitcoin Classic is an experimental project created solely for speculative and en
 ### Key Points:
 
 - ⚠️ **Not for Real-world Use:** Bitcoin Classic is not designed for any practical use or financial transactions.
-- 🚫 **No Financial Advice:** Users are strongly discouraged from making any financial decisions based on this project's outcomes.
-- 🎓 **Educational Experiment:** This project explores hypothetical scenarios and alternative parameters, aiming to spark educational discussions.
+-  **No Financial Advice:** Users are strongly discouraged from making any financial decisions based on this project's outcomes.
+-  **Educational Experiment:** This project explores hypothetical scenarios and alternative parameters, aiming to spark educational discussions.
 
 ### Important:
 
