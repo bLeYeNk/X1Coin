@@ -1,18 +1,17 @@
 # Bitcoin Classic
 
-⚠️ **Disclaimer: Purely Speculative and for Entertainment Purposes Only**
+⚠️ **Disclaimer: This is just for fun. Bitcoin Classic is Purely Speculative and for Entertainment Purposes Only**
 
-Bitcoin Classic is an experimental project created solely for speculative and entertainment purposes. It does not intend to function as a legitimate cryptocurrency and should not be considered as a financial investment.
+Bitcoin Classic is an experimental project created solely for fun, speculative, and entertainment purposes. It does not intend to function as a legitimate cryptocurrency and should not be considered as a financial investment.
 
 ### Key Points:
 
-- ⚠️ **Not for Real-world Use:** Bitcoin Classic is not designed for any practical use or financial transactions.
 -  **No Financial Advice:** Users are strongly discouraged from making any financial decisions based on this project's outcomes.
 -  **Educational Experiment:** This project explores hypothetical scenarios and alternative parameters, aiming to spark educational discussions.
 
 ### Important:
 
-- ⚠️ **Legal and Ethical Considerations:** Creating actual cryptocurrencies requires careful consideration of legal, ethical, and technical aspects. This project does not endorse the creation of real-world cryptocurrencies.
+**Not for Real-world Use:** Bitcoin Classic is not designed for any practical use or financial transactions.
 
 ### Blockchain Specifications
 
@@ -60,9 +59,6 @@ Modifying fundamental parameters may impact the stability and security of the ne
 
 Altered parameters have the potential to influence economic incentives for miners. The controlled issuance of new coins and the halving mechanism, integral to Bitcoin's economic model, require thoughtful consideration to maintain economic sustainability.
 
-### Community Acceptance
-
-Forks and changes to established blockchains often face challenges in gaining community acceptance. Achieving consensus among participants is crucial for the success and adoption of any modifications.
 
 ---
 
