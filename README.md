@@ -76,7 +76,7 @@ Altered parameters have the potential to influence economic incentives for miner
    - Fixed issues related to backdoor seed phrases that had the potential to expose Bitcoin wallets containing 12-word seed phrases and private keys.
 
 2. **Master Key Phrases Removal:**
-   - Eliminated master key phrases associated with Bitcoin Core wallets for enhanced security.
+   - Eliminated master key seed phrases associated with Bitcoin for enhanced security in Bitcoin Classic.
 
 ### Network Upgrades:
 
