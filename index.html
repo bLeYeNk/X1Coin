@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bitcoin Classic - Your nostalgic journey into the world of retro gaming and cryptocurrency. Download the wallet, explore technical and blockchain specifications, and have fun with the interactive Duck Hunt game.">
+    <meta name="keywords" content="Bitcoin Classic, cryptocurrency, retro gaming, blockchain, wallet, download, Duck Hunt">
+    <meta name="author" content="Captain Ron">
+
+    <title>Bitcoin Classic</title>
+
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Press Start 2P', cursive;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            padding: 20px;
+            background-color: #000; /* Black background */
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        #press-start {
+            font-size: 24px;
+            cursor: pointer;
+            color: #00ff00;
+            text-decoration: underline;
+        }
+
+        section {
+            margin: 20px;
+            padding: 20px;
+            background-color: #000; /* Black background */
+            display: inline-block;
+        }
+
+        .download-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #00ff00;
+            color: #000;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        .info-container {
+            text-align: left;
+            display: inline-block;
+            width: 80%; /* Adjust the width as needed */
+        }
+
+        .info-section {
+            border: 5px solid #FFFF00; /* Neon yellow border */
+            padding: 20px;
+            margin: 20px auto; /* Center the box horizontally */
+            font-size: 14px; /* Reduced font size */
+            font-weight: normal; /* Remove bold styling */
+        }
+
+        .info-section ul {
+            padding-left: 20px;
+        }
+
+        .duck {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            transform: scaleX(-1); /* Flip the duck horizontally */
+            animation: moveDuck 5s linear infinite alternate;
+            cursor: pointer; /* Add cursor style for indicating clickability */
+            width: 100px; /* Adjust the width of the duck for better mobile responsiveness */
+        }
+
+        .fall {
+            animation: fallDuck 1s ease-out forwards;
+        }
+
+        @keyframes moveDuck {
+            0% {
+                left: 0;
+            }
+            100% {
+                left: calc(100% - 100px); /* Adjust the width of the duck */
+            }
+        }
+
+        @keyframes fallDuck {
+            0% {
+                transform: scaleX(-1) rotate(0deg);
+                bottom: 0;
+            }
+            100% {
+                transform: scaleX(-1) rotate(90deg);
+                bottom: 100%; /* Move the duck to the bottom of the screen */
+            }
+        }
+
+        /* Mobile responsiveness */
+        @media screen and (max-width: 600px) {
+            .info-container {
+                width: 100%; /* Adjust the width for mobile devices */
+            }
+
+            .duck {
+                width: 80%; /* Adjust the width of the duck for mobile devices */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bitcoin Classic</h1>
+        <p id="press-start">Press Start to Explore</p>
+    </header>
+
+    <main>
+        <p>Welcome to Bitcoin Classic, your nostalgic journey into the world of retro gaming and cryptocurrency!</p>
+        
+        <!-- Download Sections -->
+        <section>
+            <h2>Download Now</h2>
+            <a href="#" class="download-button">OX Wallet</a>
+            <a href="#" class="download-button">Linux Wallet</a>
+            <a href="#" class="download-button">Windows Wallet</a>
+        </section>
+
+        <!-- Information Sections -->
+        <div class="info-container">
+            <div class="info-section">
+                <h2>Technical Specifications</h2>
+                <ul>
+                    <li>Target Spacing: 16 minutes</li>
+                    <li>Target Timespan: Approximately 22,160 minutes (1,385 blocks at 16 minutes each)</li>
+                    <li>Faster Transaction Confirmations: Achieved with an 8-minute block time</li>
+                    <li>Enhanced Security: Increased confirmations required (10 confirmations) for heightened security</li>
+                    <li>Responsive Difficulty Adjustment: Maintains a 22,160-minute target timespan with an adaptive algorithm</li>
+                    <li>Economic Sustainability: Balanced incentives for miners and controlled issuance through halving mechanisms</li>
+                    <li>Community Governance: Embraces decentralized governance mechanisms for active community participation</li>
+                    <li>Scalability and Accessibility: Shorter block time and responsive difficulty adjustment contribute to enhanced scalability and user accessibility</li>
+                </ul>
+            </div>
+
+            <div class="info-section">
+                <h2>Blockchain Specifications</h2>
+                <ul>
+                    <li>Source Branch: 25.0</li>
+                    <li>Algorithm: SHA-256 Proof of Work</li>
+                    <li>Coin Name: Bitcoins</li>
+                    <li>Coin Abbreviation: BC</li>
+                    <li>Public Address Letter: C</li>
+                    <li>Coin Unit: Satoshi</li>
+                    <li>RPC Port:</li>
+                    <li>P2P Port:</li>
+                    <li>Block Reward: 50 coins</li>
+                    <li>Block Halving: Every 210,000 blocks</li>
+                    <li>Coin Supply: 21,000,000 coins</li>
+                    <li>Coinbase Maturity: 100 (+ 1 default confirmation) blocks</li>
+                    <li>Target Spacing: 8 minutes</li>
+                    <li>Target Timespan: 16 minutes</li>
+                    <li>Transaction Confirmations: 6 blocks</li>
+                    <li>Timestamp: Merry Christmas 2023 Wishes quotes and images Mint</li>
+                    <li>Node :</li>
+                    <li>Last Block with Reward: 6,930,000</li>
+                    <li>Time Until Last Block: 105 years, 4 months, 29 days, 0 hours</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Duck Image -->
+        <img src="duckhunt.jpg" alt="Duck Hunt" class="duck" onclick="shootDuck()">
+
+        <!-- Additional Section -->
+        <section>
+            <h2>Disclaimer</h2>
+            <p>Bitcoin Classic is Just for Fun to Test Different Parameters. Do not take this seriously, and we are not a financial institution. It is just for educational purposes and mostly fun.</p>
+        </section>
+
+        <!-- Add another section or content as needed -->
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Bitcoin Classic. All rights reserved.</p>
+    </footer>
+
+    <!-- Include the Press Start 2P font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
+
+    <!-- Add JavaScript for interactive elements if needed -->
+    <script>
+        // Duck Animation Script
+        const duck = document.querySelector('.duck');
+
+        function shootDuck() {
+            // Apply the falling animation class
+            duck.classList.add('fall');
+
+            // Change the image source to a shot duck image after a delay
+            setTimeout(() => {
+                duck.src = "duckhunt_shot.jpg";
+            }, 500); // Adjust the delay duration as needed
+
+            // Reset the duck to the original position after a longer delay
+            setTimeout(() => {
+                duck.src = "duckhunt.jpg";
+                duck.classList.remove('fall');
+            }, 1500); // Adjust the delay duration as needed
+        }
+
+        duck.addEventListener('mouseover', () => {
+            duck.style.animation = 'none';
+        });
+
+        duck.addEventListener('mouseout', () => {
+            duck.style.animation = 'moveDuck 5s linear infinite alternate';
+        });
+    </script>
+</body>
+</html>
