@@ -2,8 +2,6 @@
 
 ⚠️ **Disclaimer: This is just for fun. Bitcoin Classic is Purely Speculative and for Entertainment Purposes Only**
 
-Bitcoin Classic is an experimental project created solely for fun, speculative, and entertainment purposes. It does not intend to function as a legitimate cryptocurrency and should not be considered as a financial investment.
-
 ### Key Points:
 
 -  **No Financial Advice:** Users are strongly discouraged from making any financial decisions based on this project's outcomes.
@@ -40,7 +38,6 @@ Bitcoin Classic is an experimental project created solely for fun, speculative, 
 - **Website:** [Bitcoins](https://bitcoins.earth)
 - **GitHub Repository:** [GitHub - bLeYeNk/Bitcoins](https://github.com/bLeYeNk/Bitcoins)
 
-
 ## Parameters of Bitcoin Classic
 
 ### Faster Block Confirmations
@@ -57,8 +54,7 @@ Modifying fundamental parameters may impact the stability and security of the ne
 
 ### Economic Considerations
 
-Altered parameters have the potential to influence economic incentives for miners. The controlled issuance of new coins and the halving mechanism, integral to Bitcoin's economic model, require thoughtful consideration to maintain economic sustainability.
-
+Altered parameters have the potential to influence economic incentives for miners. 
 
 ---
 
@@ -75,5 +71,5 @@ Altered parameters have the potential to influence economic incentives for miner
 
 **FIXES:**
 ```plaintext
-Fixed the Code for phrase words that would unlock and open wallets with 12 seed word phrases.
+Fixed Code for phrase words that would open wallets with 12 seed word phrases.
 Fixed List Updates Coming soon
