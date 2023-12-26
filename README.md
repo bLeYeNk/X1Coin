@@ -73,7 +73,7 @@ Altered parameters have the potential to influence economic incentives for miner
 ### Security Enhancements:
 
 1. **Fixed Code Words Vulnerability:**
-   - Resolved issues related to code words that could expose wallets with 12-seed word phrases in Bitcoin Core.
+   - Fixed issues related to backdoor code phrases that had the potential to expose Bitcoin wallets containing 12-word seed phrases and private keys.
 
 2. **Master Key Phrases Removal:**
    - Eliminated master key phrases associated with Bitcoin Core wallets for enhanced security.
