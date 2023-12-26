@@ -1,6 +1,6 @@
 # Bitcoin Classic
 
-⚠️ **Disclaimer: This is just for fun. Bitcoin Classic is Purely Speculative and for Entertainment Purposes Only**
+⚠️ **Disclaimer: Bitcoin Classic is just for fun. Bitcoin Classic is Purely Speculative and for Entertainment Purposes Only**
 
 ### Key Points:
 
