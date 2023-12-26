@@ -35,7 +35,7 @@
 
 ### Project URLs
 
-- **Website:** [Bitcoins](https://bitcoins.earth)
+- **Website:** [Bitcoins](https://bitcoinqt.com)
 - **GitHub Repository:** [GitHub - bLeYeNk/Bitcoins](https://github.com/bLeYeNk/Bitcoins)
 
 ## Parameters of Bitcoin Classic
