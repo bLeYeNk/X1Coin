@@ -71,5 +71,13 @@ Altered parameters have the potential to influence economic incentives for miner
 
 **FIXES:**
 ```plaintext
-Fixed Code for phrase words that would open wallets with 12 seed word phrases.
-Fixed List Updates Coming soon
+Fixed Code Words that would expose and open wallets with 12 seed word phrases in Bitcoin Core.
+Removed Master Key Phrases for wallet in Bitcoin Core
+Upgraded the Network Parameters FOR STABILITY AND SECURITY.
+Upgraded Faster Ttasnsaction Times
+Upgraded target spacing
+Upgraded shorter block time
+Incentives for Miners
+
+
+
