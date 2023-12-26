@@ -35,7 +35,7 @@
 
 ### Project URLs
 
-- **Website:** [Bitcoins](https://bitcoinqt.com)
+- **Website:** [Bitcoins](https://bleyenk.github.io/Bitcoins/)
 - **GitHub Repository:** [GitHub - bLeYeNk/Bitcoins](https://github.com/bLeYeNk/Bitcoins)
 
 ## Parameters of Bitcoin Classic
