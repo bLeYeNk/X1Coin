@@ -69,7 +69,6 @@ Altered parameters have the potential to influence economic incentives for miner
 - **Community Governance:** Embraces decentralized governance mechanisms for active community participation
 - **Scalability and Accessibility:** Shorter block time and responsive difficulty adjustment contribute to enhanced scalability and user accessibility
 
-**FIXES:**
 
 ### Security Enhancements:
 
