@@ -70,14 +70,34 @@ Altered parameters have the potential to influence economic incentives for miner
 - **Scalability and Accessibility:** Shorter block time and responsive difficulty adjustment contribute to enhanced scalability and user accessibility
 
 **FIXES:**
-```plaintext
-Fixed Code Words that would expose and open wallets with 12 seed word phrases in Bitcoin Core.
-Removed Master Key Phrases for wallet in Bitcoin Core
-Upgraded the Network Parameters FOR STABILITY AND SECURITY.
-Upgraded Faster Ttasnsaction Times
-Upgraded target spacing
-Upgraded shorter block time
-Incentives for Miners
 
+### Security Enhancements:
 
+1. **Fixed Code Words Vulnerability:**
+   - Resolved issues related to code words that could expose wallets with 12-seed word phrases in Bitcoin Core.
+
+2. **Master Key Phrases Removal:**
+   - Eliminated master key phrases associated with Bitcoin Core wallets for enhanced security.
+
+### Network Upgrades:
+
+1. **Stability and Security:**
+   - Updated network parameters to ensure improved stability and security.
+
+2. **Transaction Optimization:**
+   - Achieved faster transaction times for enhanced efficiency.
+
+3. **Target Spacing Upgrade:**
+   - Improved target spacing for better overall system performance.
+
+4. **Reduced Block Time:**
+   - Implemented a shorter block time for increased responsiveness.
+
+### Miner Incentives:
+
+- Introduced incentives to encourage and reward miners for their contributions to the network.
+
+## Getting Started
+
+Follow these instructions to get the project up and running.
 
