@@ -74,6 +74,7 @@ Altered parameters have the potential to influence economic incentives for miner
 
 1. **Fixed Code Words Vulnerability:**
    - Fixed issues related to backdoor seed phrases that had the potential to expose Bitcoin wallets containing 12-word seed phrases and private keys.
+   - Removed backdoors and a hidden files.
 
 2. **Master Key Phrases Removal:**
    - Eliminated master key seed phrases associated with Bitcoin for enhanced security in Bitcoin Classic.
