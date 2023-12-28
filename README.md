@@ -101,3 +101,5 @@ Altered parameters have the potential to influence economic incentives for miner
 
 Follow these instructions to get the project up and running.
 
+# Download wallet and Start Mining! Get to Work and have some fun!
+
