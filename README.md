@@ -1,17 +1,17 @@
-# Bitcoin Classic
+# ⚠️ Disclaimer
 
-⚠️ **Disclaimer: Bitcoin Classic is just for fun. Bitcoin Classic is Purely Speculative and for Entertainment Purposes Only**
+**Bitcoins is just for fun. Bitcoins is Purely Speculative and for Entertainment Purposes Only. Please do not take this project seriously.**
 
-### Key Points:
+## Key Points
 
--  **No Financial Advice:** Users are strongly discouraged from making any financial decisions based on this project's outcomes.
--  **Educational Experiment:** This project explores hypothetical scenarios and alternative parameters, aiming to spark educational discussions.
+- **No Financial Advice:** Users are strongly discouraged from making any financial decisions based on this project's outcomes.
+- **Educational Experiment:** This project explores hypothetical scenarios and alternative parameters, aiming to spark educational discussions.
 
-### Important:
+## Important
 
-**Not for Real-world Use:** Bitcoin Classic is not designed for any practical use or financial transactions.
+- **Not for Real-world Use:** Bitcoins is not designed for any practical use or financial transactions.
 
-### Blockchain Specifications
+## Blockchain Specifications
 
 - **Source Branch:** 25.0
 - **Algorithm:** SHA-256 Proof of Work
@@ -19,8 +19,8 @@
 - **Coin Abbreviation:** BC
 - **Public Address Letter:** C
 - **Coin Unit:** Satoshi
-- **RPC Port:** 
-- **P2P Port:** 
+- **RPC Port:** Coming soon
+- **P2P Port:** Coming soon
 - **Block Reward:** 50 coins
 - **Block Halving:** Every 210,000 blocks
 - **Coin Supply:** 21,000,000 coins
@@ -29,36 +29,34 @@
 - **Target Timespan:** 16 minutes
 - **Transaction Confirmations:** 6 blocks
 - **Timestamp:** Merry Christmas 2023 Wishes quotes and images Mint
-- **Node :** 
+- **Node:** Coming soon
 - **Last Block with Reward:** 6,930,000
 - **Time Until Last Block:** 105 years, 4 months, 29 days, 0 hours
 
-### Project URLs
+## Project URLs
 
-- **Website:** [Bitcoins](https://bleyenk.github.io/Bitcoins/)
+- **Website:** [Bitcoins](#)
 - **GitHub Repository:** [GitHub - bLeYeNk/Bitcoins](https://github.com/bLeYeNk/Bitcoins)
 
-## Parameters of Bitcoin Classic
+## Parameters of Bitcoins
 
 ### Faster Block Confirmations
 
-With a target spacing reduced to 8 minutes from Bitcoin's current 10-minute target spacing, blocks will be mined more frequently. This adjustment could significantly expedite transaction confirmations.
+- With a target spacing reduced to 8 minutes from Bitcoin's current 10-minute target spacing, blocks will be mined more frequently. This adjustment could significantly expedite transaction confirmations.
 
 ### Shorter Target Timespan
 
-A target timespan of 16 minutes ensures a quicker completion of a set number of blocks. This change enhances the blockchain's responsiveness to network changes and enables faster adaptation to variations in hash rate.
+- A target timespan of 16 minutes ensures a quicker completion of a set number of blocks. This change enhances the blockchain's responsiveness to network changes and enables faster adaptation to variations in hash rate.
 
 ### Network Stability and Security
 
-Modifying fundamental parameters may impact the stability and security of the network. Rapid changes could introduce vulnerabilities or affect the network's resilience against potential attacks.
+- Modifying fundamental parameters may impact the stability and security of the network. Rapid changes could introduce vulnerabilities or affect the network's resilience against potential attacks.
 
 ### Economic Considerations
 
-Altered parameters have the potential to influence economic incentives for miners. 
+- Altered parameters have the potential to influence economic incentives for miners.
 
----
-
-**Technical Specifications**
+## Technical Specifications
 
 - **Target Spacing:** 16 minutes
 - **Target Timespan:** Approximately 22,160 minutes (1,385 blocks at 16 minutes each)
@@ -69,31 +67,36 @@ Altered parameters have the potential to influence economic incentives for miner
 - **Community Governance:** Embraces decentralized governance mechanisms for active community participation
 - **Scalability and Accessibility:** Shorter block time and responsive difficulty adjustment contribute to enhanced scalability and user accessibility
 
+## Security Enhancements
 
-### Security Enhancements:
+### Fixed Code Words Vulnerability
 
-1. **Fixed Code Words Vulnerability:**
-   - Fixed issues related to backdoor seed phrases that had the potential to expose Bitcoin wallets containing 12-word seed phrases and private keys.
-   - Removed issue with recovery phrase words in recent Bitcoin Core updates 2014-2023.
+- Fixed issues related to backdoor seed phrases that had the potential to expose Bitcoin wallets containing 12-word seed phrases and private keys.
+- Removed issue with recovery phrase words in recent Bitcoin Core updates 2014-2023.
 
-2. **Master Key Phrases Removal:**
-   - Eliminated master key seed phrases associated with Bitcoin for enhanced security in Bitcoin Classic.
+### Master Key Phrases Removal
 
-### Network Upgrades:
+- Eliminated master key seed phrases associated with Bitcoin for enhanced security in Bitcoins.
 
-1. **Stability and Security:**
-   - Updated network parameters to ensure improved stability and security.
+### Network Upgrades
 
-2. **Transaction Optimization:**
-   - Achieved faster transaction times for enhanced efficiency.
+#### Stability and Security
 
-3. **Target Spacing Upgrade:**
-   - Improved target spacing for better overall system performance.
+- Updated network parameters to ensure improved stability and security.
 
-4. **Reduced Block Time:**
-   - Implemented a shorter block time for increased responsiveness.
+#### Transaction Optimization
 
-### Miner Incentives:
+- Achieved faster transaction times for enhanced efficiency.
+
+#### Target Spacing Upgrade
+
+- Improved target spacing for better overall system performance.
+
+#### Reduced Block Time
+
+- Implemented a shorter block time for increased responsiveness.
+
+#### Miner Incentives
 
 - Introduced incentives to encourage and reward miners for their contributions to the network.
 
@@ -101,5 +104,8 @@ Altered parameters have the potential to influence economic incentives for miner
 
 Follow these instructions to get the project up and running.
 
-# Download wallet and Start Mining! Get to Work and have some fun!
+- Download wallet for Windows: [Bitcoins-qt-Windows](https://www.dropbox.com/scl/fi/f41sl4ikqodpr2p2j4t9m/bitcoins-qt-windows.zip?rlkey=1k1jtblsbt86p73p34f45sbxn&dl=0)
+- Download wallet for Mac: [Bitcoins-qt.dmg](https://www.dropbox.com/scl/fi/xgufgjfgdze4pzarnjtvk/bitcoins-qt.dmg?rlkey=hu0juddvan3sz7euw239zu9wv&dl=0)
+
+
 
