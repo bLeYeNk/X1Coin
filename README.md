@@ -1,6 +1,6 @@
-# ⚠️ Disclaimer
+# Disclaimer
 
-**Bitcoins is just for fun. Bitcoins is Purely Speculative and for Entertainment Purposes Only. Please do not take this project seriously.**
+**Bitcoins 
 
 ## Key Points
 
