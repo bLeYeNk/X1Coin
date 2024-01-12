@@ -1,6 +1,4 @@
-# Disclaimer
-
-**Bitcoins 
+# Bitcoins
 
 ## Key Points
 
