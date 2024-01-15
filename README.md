@@ -1,4 +1,4 @@
-# Bitcoins
+# BTC Tribute Coin to Satoshi.
 
 ## Key Points
 
@@ -33,26 +33,26 @@
 
 ## Project URLs
 
-- **Website:** [Bitcoins](#)
-- **GitHub Repository:** [GitHub - bLeYeNk/Bitcoins](https://github.com/bLeYeNk/Bitcoins)
+- **Website:** [Bitcoins](Website URL)
+- **GitHub Repository:** [GitHub - bLeYeNk/Bitcoins](GitHub Repository URL)
 
 ## Parameters of Bitcoins
 
 ### Faster Block Confirmations
 
-- With a target spacing reduced to 8 minutes from Bitcoin's current 10-minute target spacing, blocks will be mined more frequently. This adjustment could significantly expedite transaction confirmations.
+With a target spacing reduced to 8 minutes from Bitcoin's current 10-minute target spacing, blocks will be mined more frequently. This adjustment could significantly expedite transaction confirmations.
 
 ### Shorter Target Timespan
 
-- A target timespan of 16 minutes ensures a quicker completion of a set number of blocks. This change enhances the blockchain's responsiveness to network changes and enables faster adaptation to variations in hash rate.
+A target timespan of 16 minutes ensures a quicker completion of a set number of blocks. This change enhances the blockchain's responsiveness to network changes and enables faster adaptation to variations in hash rate.
 
 ### Network Stability and Security
 
-- Modifying fundamental parameters may impact the stability and security of the network. Rapid changes could introduce vulnerabilities or affect the network's resilience against potential attacks.
+Modifying fundamental parameters may impact the stability and security of the network. Rapid changes could introduce vulnerabilities or affect the network's resilience against potential attacks.
 
-### Economic Considerations
+## Economic Considerations
 
-- Altered parameters have the potential to influence economic incentives for miners.
+Altered parameters have the potential to influence economic incentives for miners.
 
 ## Technical Specifications
 
@@ -65,45 +65,31 @@
 - **Community Governance:** Embraces decentralized governance mechanisms for active community participation
 - **Scalability and Accessibility:** Shorter block time and responsive difficulty adjustment contribute to enhanced scalability and user accessibility
 
-## Security Enhancements
+## Network Upgrades
 
-### Fixed Code Words Vulnerability
-
-- Fixed issues related to backdoor seed phrases that had the potential to expose Bitcoin wallets containing 12-word seed phrases and private keys.
-- Removed issue with recovery phrase words in recent Bitcoin Core updates 2014-2023.
-
-### Master Key Phrases Removal
-
-- Eliminated master key seed phrases associated with Bitcoin for enhanced security in Bitcoins.
-
-### Network Upgrades
-
-#### Stability and Security
+### Stability and Security
 
 - Updated network parameters to ensure improved stability and security.
 
-#### Transaction Optimization
+### Transaction Optimization
 
 - Achieved faster transaction times for enhanced efficiency.
 
-#### Target Spacing Upgrade
+### Target Spacing Upgrade
 
 - Improved target spacing for better overall system performance.
 
-#### Reduced Block Time
+### Reduced Block Time
 
 - Implemented a shorter block time for increased responsiveness.
 
-#### Miner Incentives
+### Miner Incentives
 
 - Introduced incentives to encourage and reward miners for their contributions to the network.
 
 ## Getting Started
 
-Follow these instructions to get the project up and running.
-
-- Download wallet for Windows: [Bitcoins-qt-Windows](https://www.dropbox.com/scl/fi/f41sl4ikqodpr2p2j4t9m/bitcoins-qt-windows.zip?rlkey=1k1jtblsbt86p73p34f45sbxn&dl=0)
-- Download wallet for Mac: [Bitcoins-qt.dmg](https://www.dropbox.com/scl/fi/xgufgjfgdze4pzarnjtvk/bitcoins-qt.dmg?rlkey=hu0juddvan3sz7euw239zu9wv&dl=0)
+Discord: https://discord.gg/rFs5aB2Y
 
 
 
