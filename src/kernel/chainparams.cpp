@@ -82,6 +82,7 @@ public:
         consensus.BIP66Height = 0; 
         consensus.CSVHeight = 0; 
         consensus.SegwitHeight = 0; 
+	consensus.lwmaAveragingWindow = 65;
         consensus.MinBIP9WarningHeight = 0; // segwit activation height + miner confirmation window
         consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.nPowTargetTimespan =  16 * 60;
