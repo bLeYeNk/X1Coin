@@ -86,3 +86,21 @@ The content and intellectual property of ATS Coin are protected under copyright 
 
 ATS Coin is committed to offering a reliable, secure, and efficient blockchain solution for international transactions. With country-specific tokens, a capped global maximum supply, and enhanced technical specifications, ATS Coin aims to foster global financial inclusion and streamline cross-border payments. The project embraces community governance and actively seeks input from participants to shape the future of international transactions.
 
+
+Example:
+
+Ukraine                | UKR  |
+United Arab Emirates   | ARE  |
+United Kingdom         | GBR  |
+United States          | USA  |
+Uruguay                | URY  |
+Uzbekistan             | UZB  |
+Vanuatu                | VUT  |
+Vatican City           | VAT  |
+Venezuela              | VEN  |
+Vietnam                | VNM  |
+Yemen                  | YEM  |
+Zambia                 | ZMB  |
+Zimbabwe               | ZWE  |
+
+
