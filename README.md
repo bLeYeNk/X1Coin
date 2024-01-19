@@ -1,4 +1,4 @@
-# ATS Coin - Decentralized Blockchain for International Transactions
+# ATS Coin (Concept Phase) - Decentralized Blockchain for International Transactions 
 
 ## Executive Summary
 
