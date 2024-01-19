@@ -77,7 +77,7 @@ public:
         consensus.signet_challenge.clear();
         consensus.nSubsidyHalvingInterval = 210000;
         consensus.BIP34Height = 0;
-        consensus.BIP34Hash = uint256();
+        consensus.BIP34Hash = uint256S("0x00000d5f9d5a9c7eb3bb89e7f8f6881dc083df29c344fba93f9b77297898eb51");
         consensus.BIP65Height = 0; 
         consensus.BIP66Height = 0; 
         consensus.CSVHeight = 0; 
@@ -101,8 +101,8 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_TAPROOT].nTimeout = Consensus::BIP9Deployment::NO_TIMEOUT;
         consensus.vDeployments[Consensus::DEPLOYMENT_TAPROOT].min_activation_height = 0; 
 
-        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000000100010");
-        consensus.defaultAssumeValid = uint256S("0x00000d5f9d5a9c7eb3bb89e7f8f6881dc083df29c344fba93f9b77297898eb51"); 
+        consensus.nMinimumChainWork = uint256S("0x000000000000000000000000000000000000000000000007ecb071a17049b2b6");
+        consensus.defaultAssumeValid = uint256S("0x000000000000000ae8770584d9b3beac4743afd6685fc051bb79517a93a38f7a"); // 307
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -168,6 +168,12 @@ public:
         checkpointData = {
             {
                 { 0, uint256S("0x00000d5f9d5a9c7eb3bb89e7f8f6881dc083df29c344fba93f9b77297898eb51")},
+                { 1, uint256S("0x00000ac75d0ee1f75a9e2ec670d8a96cc99b2c8f60e8602064b63e0b50799c2a")},
+                { 16, uint256S("0x000000014609ed3f95cdb8cf632479d30da2ce4b623a6387141561712a4e1955")},
+                { 101, uint256S("0x00000001613c63a2bc2022b12b2d6aad57d41d5135fd5f6d69a7866d9d2f3b86")},
+                { 217, uint256S("0x000000000000001be7901f034d7326a9e3300200463672853f4054ebbfdeeeb7")},
+                { 303, uint256S("0x000000000000000045071b4afe5e35f8e09cad939a4633f0ffce74fc50a23a0a")},
+                { 307, uint256S("0x000000000000000ae8770584d9b3beac4743afd6685fc051bb79517a93a38f7a")},
             }
         };
 
@@ -176,10 +182,10 @@ public:
         };
 
         chainTxData = ChainTxData{
-            // Data from RPC: getchaintxstats 4096 00000d5f9d5a9c7eb3bb89e7f8f6881dc083df29c344fba93f9b77297898eb51
-            .nTime    = 1703525294,
-            .nTxCount = 0,
-            .dTxRate  = 0,
+            // Data from RPC: getchaintxstats 307
+            .nTime    = 1705608700,
+            .nTxCount = 373,
+            .dTxRate  = 0.000237,
         };
     }
 };
