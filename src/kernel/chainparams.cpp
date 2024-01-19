@@ -268,9 +268,9 @@ public:
         vFixedSeeds.clear();
         vSeeds.clear();
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,29);
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,28);
-        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,156);
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,39);
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,38);
+        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,167);
         base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x35, 0x87, 0xCF};
         base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x35, 0x83, 0x94};
 
@@ -410,9 +410,9 @@ public:
 
         vFixedSeeds.clear();
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,29);
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,28);
-        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,156);
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,49);
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,48);
+        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,177);
         base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x35, 0x87, 0xCF};
         base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x35, 0x83, 0x94};
 
@@ -550,9 +550,9 @@ public:
             0
         };
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,29);
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,28);
-        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,156);
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,59);
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,58);
+        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,187);
         base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x35, 0x87, 0xCF};
         base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x35, 0x83, 0x94};
 
