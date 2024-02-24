@@ -12,15 +12,15 @@ SOURCE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'src'
 DEFAULT_PLATFORM_TOOLSET = R'v143'
 
 libs = [
-    'libbitcoins_cli',
-    'libbitcoins_common',
-    'libbitcoins_crypto',
-    'libbitcoins_node',
-    'libbitcoins_util',
-    'libbitcoins_wallet_tool',
-    'libbitcoins_wallet',
-    'libbitcoins_zmq',
-    'bench_bitcoins',
+    'libx1coin_cli',
+    'libx1coin_common',
+    'libx1coin_crypto',
+    'libx1coin_node',
+    'libx1coin_util',
+    'libx1coin_wallet_tool',
+    'libx1coin_wallet',
+    'libx1coin_zmq',
+    'bench_x1coin',
     'libtest_util',
 ]
 
@@ -70,9 +70,9 @@ def parse_config_into_bc_config():
     config_dict = dict(item.split(", ") for item in config_info)
     config_dict["PACKAGE_VERSION"] = f"\"{config_dict['CLIENT_VERSION_MAJOR']}.{config_dict['CLIENT_VERSION_MINOR']}.{config_dict['CLIENT_VERSION_BUILD']}\""
     version = config_dict["PACKAGE_VERSION"].strip('"')
-    config_dict["PACKAGE_STRING"] = f"\"Bitcoins Core {version}\""
+    config_dict["PACKAGE_STRING"] = f"\"X1coin {version}\""
 
-    with open(os.path.join(SOURCE_DIR,'../build_msvc/bitcoins_config.h.in'), "r", encoding="utf8") as template_file:
+    with open(os.path.join(SOURCE_DIR,'../build_msvc/x1coin_config.h.in'), "r", encoding="utf8") as template_file:
         template = template_file.readlines()
 
     for index, line in enumerate(template):
@@ -82,7 +82,7 @@ def parse_config_into_bc_config():
         if header in config_dict:
             template[index] = line.replace("$", f"{config_dict[header]}")
 
-    with open(os.path.join(SOURCE_DIR,'../build_msvc/bitcoins_config.h'), "w", encoding="utf8") as bc_config:
+    with open(os.path.join(SOURCE_DIR,'../build_msvc/x1coin_config.h'), "w", encoding="utf8") as bc_config:
         bc_config.writelines(template)
 
 def set_properties(vcxproj_filename, placeholder, content):
@@ -91,7 +91,7 @@ def set_properties(vcxproj_filename, placeholder, content):
             vcxproj_file.write(vcxproj_in_file.read().replace(placeholder, content))
 
 def main():
-    parser = argparse.ArgumentParser(description='Bitcoins-core msbuild configuration initialiser.')
+    parser = argparse.ArgumentParser(description='X1coin-core msbuild configuration initialiser.')
     parser.add_argument('-toolset', nargs='?', default=DEFAULT_PLATFORM_TOOLSET,
         help='Optionally sets the msbuild platform toolset, e.g. v143 for Visual Studio 2022.'
          ' default is %s.'%DEFAULT_PLATFORM_TOOLSET)
@@ -110,7 +110,7 @@ def main():
             content += '    </ClCompile>\n'
         set_properties(vcxproj_filename, '@SOURCE_FILES@\n', content)
     parse_config_into_bc_config()
-    copyfile(os.path.join(SOURCE_DIR,'../build_msvc/bitcoins_config.h'), os.path.join(SOURCE_DIR, 'config/bitcoins-config.h'))
+    copyfile(os.path.join(SOURCE_DIR,'../build_msvc/x1coin_config.h'), os.path.join(SOURCE_DIR, 'config/x1coin-config.h'))
     copyfile(os.path.join(SOURCE_DIR,'../build_msvc/libsecp256k1_config.h'), os.path.join(SOURCE_DIR, 'secp256k1/src/libsecp256k1-config.h'))
 
 if __name__ == '__main__':

@@ -1,6 +1,6 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2020 The Bitcoin Core developers
-// Copyright (c) 2023 The Bitcoins Core developers
+// Copyright (c) 2023 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -46,7 +46,7 @@ std::vector<fs::path> ListDatabases(const fs::path& wallet_dir)
                     // as a wallet.
                     paths.emplace_back();
                 } else {
-                    // Found top-level btree file not called wallet.dat. Current bitcoins
+                    // Found top-level btree file not called wallet.dat. Current x1coin
                     // software will never create these files but will allow them to be
                     // opened in a shared database environment for backwards compatibility.
                     // Add it to the list of available wallets.

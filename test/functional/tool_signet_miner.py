@@ -11,7 +11,7 @@ import time
 
 from test_framework.key import ECKey
 from test_framework.script_util import key_to_p2wpkh_script
-from test_framework.test_framework import BitcoinsTestFramework
+from test_framework.test_framework import X1coinTestFramework
 from test_framework.util import assert_equal
 from test_framework.wallet_util import bytes_to_wif
 
@@ -19,7 +19,7 @@ from test_framework.wallet_util import bytes_to_wif
 CHALLENGE_PRIVATE_KEY = (42).to_bytes(32, 'big')
 
 
-class SignetMinerTest(BitcoinsTestFramework):
+class SignetMinerTest(X1coinTestFramework):
     def add_options(self, parser):
         self.add_wallet_options(parser)
 
@@ -38,7 +38,7 @@ class SignetMinerTest(BitcoinsTestFramework):
     def skip_test_if_missing_module(self):
         self.skip_if_no_cli()
         self.skip_if_no_wallet()
-        self.skip_if_no_bitcoins_util()
+        self.skip_if_no_x1coin_util()
 
     def run_test(self):
         node = self.nodes[0]
@@ -54,7 +54,7 @@ class SignetMinerTest(BitcoinsTestFramework):
                 f'--cli={node.cli.binary} -datadir={node.cli.datadir}',
                 'generate',
                 f'--address={node.getnewaddress()}',
-                f'--grind-cmd={self.options.bitcoinsutil} grind',
+                f'--grind-cmd={self.options.x1coinutil} grind',
                 '--nbits=1d00ffff',
                 f'--set-block-time={int(time.time())}',
             ], check=True, stderr=subprocess.STDOUT)

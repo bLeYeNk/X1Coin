@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_NODE_BLOCKSTORAGE_H
-#define BITCOINS_NODE_BLOCKSTORAGE_H
+#ifndef X1COIN_NODE_BLOCKSTORAGE_H
+#define X1COIN_NODE_BLOCKSTORAGE_H
 
 #include <attributes.h>
 #include <chain.h>
@@ -240,4 +240,4 @@ bool UndoReadFromDisk(CBlockUndo& blockundo, const CBlockIndex* pindex);
 void ThreadImport(ChainstateManager& chainman, std::vector<fs::path> vImportFiles, const ArgsManager& args, const fs::path& mempool_path);
 } // namespace node
 
-#endif // BITCOINS_NODE_BLOCKSTORAGE_H
+#endif // X1COIN_NODE_BLOCKSTORAGE_H

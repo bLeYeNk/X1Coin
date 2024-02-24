@@ -36,14 +36,14 @@ from random import randint
 import shutil
 
 from test_framework.blocktools import COINBASE_MATURITY
-from test_framework.test_framework import BitcoinsTestFramework
+from test_framework.test_framework import X1coinTestFramework
 from test_framework.util import (
     assert_equal,
     assert_raises_rpc_error,
 )
 
 
-class WalletBackupTest(BitcoinsTestFramework):
+class WalletBackupTest(X1coinTestFramework):
     def add_options(self, parser):
         self.add_wallet_options(parser)
 

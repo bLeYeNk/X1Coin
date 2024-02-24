@@ -3,7 +3,7 @@
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Test indices in conjunction with prune."""
-from test_framework.test_framework import BitcoinsTestFramework
+from test_framework.test_framework import X1coinTestFramework
 from test_framework.util import (
     assert_equal,
     assert_greater_than,
@@ -11,7 +11,7 @@ from test_framework.util import (
 )
 
 
-class FeatureIndexPruneTest(BitcoinsTestFramework):
+class FeatureIndexPruneTest(X1coinTestFramework):
     def set_test_params(self):
         self.num_nodes = 4
         self.extra_args = [

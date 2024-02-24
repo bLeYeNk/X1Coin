@@ -12,7 +12,7 @@ from test_framework.messages import (
     CMerkleBlock,
     from_hex,
 )
-from test_framework.test_framework import BitcoinsTestFramework
+from test_framework.test_framework import X1coinTestFramework
 from test_framework.util import (
     assert_equal,
     assert_raises_rpc_error,
@@ -20,7 +20,7 @@ from test_framework.util import (
 from test_framework.wallet_util import bytes_to_wif
 
 
-class ImportPrunedFundsTest(BitcoinsTestFramework):
+class ImportPrunedFundsTest(X1coinTestFramework):
     def add_options(self, parser):
         self.add_wallet_options(parser)
 

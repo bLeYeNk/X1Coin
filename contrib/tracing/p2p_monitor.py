@@ -3,10 +3,10 @@
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-""" Interactive bitcoinsd P2P network traffic monitor utilizing USDT and the
+""" Interactive x1coind P2P network traffic monitor utilizing USDT and the
     net:inbound_message and net:outbound_message tracepoints. """
 
-# This script demonstrates what USDT for Bitcoins Core can enable. It uses BCC
+# This script demonstrates what USDT for X1coin can enable. It uses BCC
 # (https://github.com/iovisor/bcc) to load a sandboxed eBPF program into the
 # Linux kernel (root privileges are required). The eBPF program attaches to two
 # statically defined tracepoints. The tracepoint 'net:inbound_message' is called
@@ -115,17 +115,17 @@ class Peer:
             self.total_outbound_msgs += 1
 
 
-def main(bitcoinsd_path):
+def main(x1coind_path):
     peers = dict()
 
-    bitcoinsd_with_usdts = USDT(path=str(bitcoinsd_path))
+    x1coind_with_usdts = USDT(path=str(x1coind_path))
 
     # attaching the trace functions defined in the BPF program to the tracepoints
-    bitcoinsd_with_usdts.enable_probe(
+    x1coind_with_usdts.enable_probe(
         probe="inbound_message", fn_name="trace_inbound_message")
-    bitcoinsd_with_usdts.enable_probe(
+    x1coind_with_usdts.enable_probe(
         probe="outbound_message", fn_name="trace_outbound_message")
-    bpf = BPF(text=program, usdt_contexts=[bitcoinsd_with_usdts])
+    bpf = BPF(text=program, usdt_contexts=[x1coind_with_usdts])
 
     # BCC: perf buffer handle function for inbound_messages
     def handle_inbound(_, data, size):
@@ -247,7 +247,7 @@ def render(screen, peers, cur_list_pos, scroll, ROWS_AVALIABLE_FOR_LIST, info_pa
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print("USAGE:", sys.argv[0], "path/to/bitcoinsd")
+        print("USAGE:", sys.argv[0], "path/to/x1coind")
         exit()
     path = sys.argv[1]
     main(path)

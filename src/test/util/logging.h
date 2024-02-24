@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_TEST_UTIL_LOGGING_H
-#define BITCOINS_TEST_UTIL_LOGGING_H
+#ifndef X1COIN_TEST_UTIL_LOGGING_H
+#define X1COIN_TEST_UTIL_LOGGING_H
 
 #include <util/macros.h>
 
@@ -38,4 +38,4 @@ public:
 
 #define ASSERT_DEBUG_LOG(message) DebugLogHelper UNIQUE_NAME(debugloghelper)(message)
 
-#endif // BITCOINS_TEST_UTIL_LOGGING_H
+#endif // X1COIN_TEST_UTIL_LOGGING_H

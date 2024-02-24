@@ -3,11 +3,11 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_COMPAT_COMPAT_H
-#define BITCOINS_COMPAT_COMPAT_H
+#ifndef X1COIN_COMPAT_COMPAT_H
+#define X1COIN_COMPAT_COMPAT_H
 
 #if defined(HAVE_CONFIG_H)
-#include <config/bitcoins-config.h>
+#include <config/x1coin-config.h>
 #endif
 
 // Windows defines FD_SETSIZE to 64 (see _fd_types.h in mingw-w64),
@@ -95,7 +95,7 @@ typedef char* sockopt_arg_type;
 
 // Note these both should work with the current usage of poll, but best to be safe
 // WIN32 poll is broken https://daniel.haxx.se/blog/2012/10/10/wsapoll-is-broken/
-// __APPLE__ poll is broke https://github.com/bitcoins/bitcoins/pull/14336#issuecomment-437384408
+// __APPLE__ poll is broke https://github.com/bLeYeNk/X1Coin/pull/14336#issuecomment-437384408
 #if defined(__linux__)
 #define USE_POLL
 #endif
@@ -110,4 +110,4 @@ typedef char* sockopt_arg_type;
 #define MSG_DONTWAIT 0
 #endif
 
-#endif // BITCOINS_COMPAT_COMPAT_H
+#endif // X1COIN_COMPAT_COMPAT_H

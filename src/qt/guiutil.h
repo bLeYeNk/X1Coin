@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_QT_GUIUTIL_H
-#define BITCOINS_QT_GUIUTIL_H
+#ifndef X1COIN_QT_GUIUTIL_H
+#define X1COIN_QT_GUIUTIL_H
 
 #include <consensus/amount.h>
 #include <net.h>
@@ -52,7 +52,7 @@ class QUrl;
 class QWidget;
 QT_END_NAMESPACE
 
-/** Utility functions used by the Bitcoins Qt UI.
+/** Utility functions used by the X1coin Qt UI.
  */
 namespace GUIUtil
 {
@@ -77,10 +77,10 @@ namespace GUIUtil
      */
     void AddButtonShortcut(QAbstractButton* button, const QKeySequence& shortcut);
 
-    // Parse "bitcoins:" URI into recipient object, return true on successful parsing
-    bool parseBitcoinsURI(const QUrl &uri, SendCoinsRecipient *out);
-    bool parseBitcoinsURI(QString uri, SendCoinsRecipient *out);
-    QString formatBitcoinsURI(const SendCoinsRecipient &info);
+    // Parse "x1coin:" URI into recipient object, return true on successful parsing
+    bool parseX1coinURI(const QUrl &uri, SendCoinsRecipient *out);
+    bool parseX1coinURI(QString uri, SendCoinsRecipient *out);
+    QString formatX1coinURI(const SendCoinsRecipient &info);
 
     // Returns true if given address+amount meets "dust" definition
     bool isDust(interfaces::Node& node, const QString& address, const CAmount& amount);
@@ -178,7 +178,7 @@ namespace GUIUtil
     void openDebugLogfile();
 
     // Open the config file
-    bool openBitcoinsConf();
+    bool openX1coinConf();
 
     /** Qt event filter that intercepts ToolTipChange events, and replaces the tooltip with a rich text
       representation if needed. This assures that Qt can word-wrap long tooltip messages.
@@ -438,4 +438,4 @@ namespace GUIUtil
 
 } // namespace GUIUtil
 
-#endif // BITCOINS_QT_GUIUTIL_H
+#endif // X1COIN_QT_GUIUTIL_H

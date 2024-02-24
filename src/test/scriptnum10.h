@@ -1,11 +1,11 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2020 The Bitcoin Core developers
-// Copyright (c) 2023 The Bitcoins Core developers
+// Copyright (c) 2023 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_TEST_SCRIPTNUM10_H
-#define BITCOINS_TEST_SCRIPTNUM10_H
+#ifndef X1COIN_TEST_SCRIPTNUM10_H
+#define X1COIN_TEST_SCRIPTNUM10_H
 
 #include <assert.h>
 #include <limits>
@@ -23,7 +23,7 @@ public:
 class CScriptNum10
 {
 /**
- * The ScriptNum implementation from Bitcoins Core 0.10.0, for cross-comparison.
+ * The ScriptNum implementation from X1coin 0.10.0, for cross-comparison.
  */
 public:
 
@@ -180,4 +180,4 @@ private:
 };
 
 
-#endif // BITCOINS_TEST_SCRIPTNUM10_H
+#endif // X1COIN_TEST_SCRIPTNUM10_H

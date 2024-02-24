@@ -6,7 +6,7 @@
 
 import os
 
-from test_framework.test_framework import BitcoinsTestFramework
+from test_framework.test_framework import X1coinTestFramework
 from test_framework.util import (
     assert_equal,
 )
@@ -15,7 +15,7 @@ NODE_DIR = "node0"
 FILE_NAME = "test.txt"
 
 
-class StartupNotifyTest(BitcoinsTestFramework):
+class StartupNotifyTest(X1coinTestFramework):
     def set_test_params(self):
         self.num_nodes = 1
         self.disable_syscall_sandbox = True

@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_NODE_MINER_H
-#define BITCOINS_NODE_MINER_H
+#ifndef X1COIN_NODE_MINER_H
+#define X1COIN_NODE_MINER_H
 
 #include <policy/policy.h>
 #include <primitives/block.h>
@@ -204,4 +204,4 @@ void RegenerateCommitments(CBlock& block, ChainstateManager& chainman);
 void ApplyArgsManOptions(const ArgsManager& gArgs, BlockAssembler::Options& options);
 } // namespace node
 
-#endif // BITCOINS_NODE_MINER_H
+#endif // X1COIN_NODE_MINER_H

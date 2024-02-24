@@ -8,12 +8,12 @@ import json
 
 from pathlib import Path
 
-from test_framework.test_framework import BitcoinsTestFramework
+from test_framework.test_framework import X1coinTestFramework
 from test_framework.test_node import ErrorMatch
 from test_framework.util import assert_equal
 
 
-class SettingsTest(BitcoinsTestFramework):
+class SettingsTest(X1coinTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 1
@@ -22,7 +22,7 @@ class SettingsTest(BitcoinsTestFramework):
     def run_test(self):
         node, = self.nodes
         settings = Path(node.datadir, self.chain, "settings.json")
-        conf = Path(node.datadir, "bitcoins.conf")
+        conf = Path(node.datadir, "x1coin.conf")
 
         # Assert empty settings file was created
         self.stop_node(0)

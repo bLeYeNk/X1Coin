@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_QT_GUICONSTANTS_H
-#define BITCOINS_QT_GUICONSTANTS_H
+#ifndef X1COIN_QT_GUICONSTANTS_H
+#define X1COIN_QT_GUICONSTANTS_H
 
 #include <chrono>
 #include <cstdint>
@@ -19,7 +19,7 @@ static constexpr auto SHUTDOWN_POLLING_DELAY{200ms};
 /* AskPassphraseDialog -- Maximum passphrase length */
 static const int MAX_PASSPHRASE_SIZE = 1024;
 
-/* BitcoinsGUI -- Size of icons in status bar */
+/* X1coinGUI -- Size of icons in status bar */
 static const int STATUSBAR_ICONSIZE = 16;
 
 static const bool DEFAULT_SPLASHSCREEN = true;
@@ -46,12 +46,12 @@ static const int TOOLTIP_WRAP_THRESHOLD = 80;
 /* Number of frames in spinner animation */
 #define SPINNER_FRAMES 36
 
-#define QAPP_ORG_NAME "Bitcoins"
-#define QAPP_ORG_DOMAIN "bitcoins.org"
-#define QAPP_APP_NAME_DEFAULT "Bitcoins-Qt"
-#define QAPP_APP_NAME_TESTNET "Bitcoins-Qt-testnet"
-#define QAPP_APP_NAME_SIGNET "Bitcoins-Qt-signet"
-#define QAPP_APP_NAME_REGTEST "Bitcoins-Qt-regtest"
+#define QAPP_ORG_NAME "X1coin"
+#define QAPP_ORG_DOMAIN "x1coin.org"
+#define QAPP_APP_NAME_DEFAULT "X1coin-Qt"
+#define QAPP_APP_NAME_TESTNET "X1coin-Qt-testnet"
+#define QAPP_APP_NAME_SIGNET "X1coin-Qt-signet"
+#define QAPP_APP_NAME_REGTEST "X1coin-Qt-regtest"
 
 /* One gigabyte (GB) in bytes */
 static constexpr uint64_t GB_BYTES{1000000000};
@@ -59,4 +59,4 @@ static constexpr uint64_t GB_BYTES{1000000000};
 // Default prune target displayed in GUI.
 static constexpr int DEFAULT_PRUNE_TARGET_GB{2};
 
-#endif // BITCOINS_QT_GUICONSTANTS_H
+#endif // X1COIN_QT_GUICONSTANTS_H

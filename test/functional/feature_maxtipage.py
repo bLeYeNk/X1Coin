@@ -10,14 +10,14 @@ their best known block header time is more than -maxtipage in the past.
 
 import time
 
-from test_framework.test_framework import BitcoinsTestFramework
+from test_framework.test_framework import X1coinTestFramework
 from test_framework.util import assert_equal
 
 
 DEFAULT_MAX_TIP_AGE = 24 * 60 * 60
 
 
-class MaxTipAgeTest(BitcoinsTestFramework):
+class MaxTipAgeTest(X1coinTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 2

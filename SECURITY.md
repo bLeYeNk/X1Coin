@@ -2,12 +2,12 @@
 
 ## Supported Versions
 
-See our website for versions of Bitcoins Core that are currently supported with
+See our website for versions of X1coin that are currently supported with
 security updates: https://bitcoincore.org/en/lifecycle/#schedule
 
 ## Reporting a Vulnerability
 
-To report security issues send an email to security@bitcoinscore.org (not for support).
+To report security issues send an email to security@x1coincore.org (not for support).
 
 The following keys may be used to communicate sensitive information to developers:
 

@@ -1,5 +1,5 @@
 {
-  "name": "bitcoins-core",
+  "name": "x1coin-core",
   "version-string": "1",
   "dependencies": [
     "berkeleydb",

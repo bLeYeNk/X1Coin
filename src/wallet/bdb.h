@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_WALLET_BDB_H
-#define BITCOINS_WALLET_BDB_H
+#ifndef X1COIN_WALLET_BDB_H
+#define X1COIN_WALLET_BDB_H
 
 #include <clientversion.h>
 #include <serialize.h>
@@ -241,4 +241,4 @@ bool BerkeleyDatabaseSanityCheck();
 std::unique_ptr<BerkeleyDatabase> MakeBerkeleyDatabase(const fs::path& path, const DatabaseOptions& options, DatabaseStatus& status, bilingual_str& error);
 } // namespace wallet
 
-#endif // BITCOINS_WALLET_BDB_H
+#endif // X1COIN_WALLET_BDB_H

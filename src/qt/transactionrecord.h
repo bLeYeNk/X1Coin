@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_QT_TRANSACTIONRECORD_H
-#define BITCOINS_QT_TRANSACTIONRECORD_H
+#ifndef X1COIN_QT_TRANSACTIONRECORD_H
+#define X1COIN_QT_TRANSACTIONRECORD_H
 
 #include <consensus/amount.h>
 #include <uint256.h>
@@ -133,4 +133,4 @@ public:
     bool statusUpdateNeeded(const uint256& block_hash) const;
 };
 
-#endif // BITCOINS_QT_TRANSACTIONRECORD_H
+#endif // X1COIN_QT_TRANSACTIONRECORD_H

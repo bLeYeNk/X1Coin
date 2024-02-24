@@ -12,7 +12,7 @@ from test_framework.messages import (
 )
 from test_framework.p2p import P2PDataStore
 from test_framework.test_node import ErrorMatch
-from test_framework.test_framework import BitcoinsTestFramework
+from test_framework.test_framework import X1coinTestFramework
 from test_framework.util import (
     assert_equal,
     p2p_port,
@@ -20,7 +20,7 @@ from test_framework.util import (
 from test_framework.wallet import MiniWallet
 
 
-class P2PPermissionsTests(BitcoinsTestFramework):
+class P2PPermissionsTests(X1coinTestFramework):
     def set_test_params(self):
         self.num_nodes = 2
 

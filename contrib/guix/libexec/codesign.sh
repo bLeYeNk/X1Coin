@@ -83,7 +83,7 @@ mkdir -p "$DISTSRC"
             ;;
         *darwin*)
             # Apply detached codesignatures to dist/ (in-place)
-            signapple apply dist/Bitcoins-Qt.app codesignatures/osx/dist
+            signapple apply dist/X1coin-Qt.app codesignatures/osx/dist
 
             # Make a DMG from dist/
             xorrisofs -D -l -V "$(< osx_volname)" -no-pad -r -dir-mode 0755 \

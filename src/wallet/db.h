@@ -1,11 +1,11 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2020 The Bitcoin Core developers
-// Copyright (c) 2023 The Bitcoins Core developers
+// Copyright (c) 2023 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_WALLET_DB_H
-#define BITCOINS_WALLET_DB_H
+#ifndef X1COIN_WALLET_DB_H
+#define X1COIN_WALLET_DB_H
 
 #include <clientversion.h>
 #include <streams.h>
@@ -263,4 +263,4 @@ bool IsBDBFile(const fs::path& path);
 bool IsSQLiteFile(const fs::path& path);
 } // namespace wallet
 
-#endif // BITCOINS_WALLET_DB_H
+#endif // X1COIN_WALLET_DB_H

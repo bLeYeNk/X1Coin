@@ -8,10 +8,10 @@ Dockerfile:
 
 ```sh
 cd ./ci/lint
-docker build -t bitcoins-linter .
+docker build -t x1coin-linter .
 
-cd /root/of/bitcoins/repo
-docker run --rm -v $(pwd):/bitcoins -it bitcoins-linter
+cd /root/of/x1coin/repo
+docker run --rm -v $(pwd):/x1coin -it x1coin-linter
 ```
 
 After building the container once, you can simply run the last command any time you
@@ -44,16 +44,16 @@ Usage: test/lint/git-subtree-check.sh [-r] DIR [COMMIT]
 
 To do a full check with `-r`, make sure that you have fetched the upstream repository branch in which the subtree is
 maintained:
-* for `src/secp256k1`: https://github.com/bitcoins-core/secp256k1.git (branch master)
-* for `src/leveldb`: https://github.com/bitcoins-core/leveldb-subtree.git (branch bitcoins-fork)
-* for `src/crypto/ctaes`: https://github.com/bitcoins-core/ctaes.git (branch master)
-* for `src/crc32c`: https://github.com/bitcoins-core/crc32c-subtree.git (branch bitcoins-fork)
+* for `src/secp256k1`: https://github.com/x1coin-core/secp256k1.git (branch master)
+* for `src/leveldb`: https://github.com/x1coin-core/leveldb-subtree.git (branch x1coin-fork)
+* for `src/crypto/ctaes`: https://github.com/x1coin-core/ctaes.git (branch master)
+* for `src/crc32c`: https://github.com/x1coin-core/crc32c-subtree.git (branch x1coin-fork)
 * for `src/minisketch`: https://github.com/sipa/minisketch.git (branch master)
 
 To do so, add the upstream repository as remote:
 
 ```
-git remote add --fetch secp256k1 https://github.com/bitcoins-core/secp256k1.git
+git remote add --fetch secp256k1 https://github.com/x1coin-core/secp256k1.git
 ```
 
 all-lint.py

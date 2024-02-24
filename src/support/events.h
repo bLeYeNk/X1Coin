@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_SUPPORT_EVENTS_H
-#define BITCOINS_SUPPORT_EVENTS_H
+#ifndef X1COIN_SUPPORT_EVENTS_H
+#define X1COIN_SUPPORT_EVENTS_H
 
 #include <ios>
 #include <memory>
@@ -53,4 +53,4 @@ inline raii_evhttp_connection obtain_evhttp_connection_base(struct event_base* b
     return result;
 }
 
-#endif // BITCOINS_SUPPORT_EVENTS_H
+#endif // X1COIN_SUPPORT_EVENTS_H

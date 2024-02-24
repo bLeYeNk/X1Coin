@@ -11,13 +11,13 @@ from test_framework.messages import (
     sha256,
     tx_from_hex,
 )
-from test_framework.test_framework import BitcoinsTestFramework
+from test_framework.test_framework import X1coinTestFramework
 from test_framework.util import (
     assert_equal,
 )
 
 
-class DecodeScriptTest(BitcoinsTestFramework):
+class DecodeScriptTest(X1coinTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 1
@@ -265,7 +265,7 @@ class DecodeScriptTest(BitcoinsTestFramework):
 
     def decodescript_miniscript(self):
         """Check that a Miniscript is decoded when possible under P2WSH context."""
-        # Sourced from https://github.com/bitcoins/bitcoins/pull/27037#issuecomment-1416151907.
+        # Sourced from https://github.com/bLeYeNk/X1Coin/pull/27037#issuecomment-1416151907.
         # Miniscript-compatible offered HTLC
         res = self.nodes[0].decodescript("82012088a914ffffffffffffffffffffffffffffffffffffffff88210250929b74c1a04954b78b4b6035e97a5e078a5a0f28ec96d547bfee9ace803ac0ad51b2")
         assert res["segwit"]["desc"] == "wsh(and_v(and_v(v:hash160(ffffffffffffffffffffffffffffffffffffffff),v:pk(0250929b74c1a04954b78b4b6035e97a5e078a5a0f28ec96d547bfee9ace803ac0)),older(1)))#gm8xz4fl"

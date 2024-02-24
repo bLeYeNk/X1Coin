@@ -29,12 +29,12 @@ from test_framework.script import (
     OP_TRUE,
     hash160,
 )
-from test_framework.test_framework import BitcoinsTestFramework
+from test_framework.test_framework import X1coinTestFramework
 from test_framework.util import (
     assert_equal,
 )
 
-class MempoolWtxidTest(BitcoinsTestFramework):
+class MempoolWtxidTest(X1coinTestFramework):
     def set_test_params(self):
         self.num_nodes = 1
         self.setup_clean_chain = True

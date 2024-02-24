@@ -2959,11 +2959,11 @@ bool PeerManagerImpl::ProcessOrphanTx(Peer& peer)
                 // adding such txids to the reject filter would potentially
                 // interfere with relay of valid transactions from peers that
                 // do not support wtxid-based relay. See
-                // https://github.com/bitcoins/bitcoins/issues/8279 for details.
+                // https://github.com/bLeYeNk/X1Coin/issues/8279 for details.
                 // We can remove this restriction (and always add wtxids to
                 // the filter even for witness stripped transactions) once
                 // wtxid-based relay is broadly deployed.
-                // See also comments in https://github.com/bitcoins/bitcoins/pull/18044#discussion_r443419034
+                // See also comments in https://github.com/bLeYeNk/X1Coin/pull/18044#discussion_r443419034
                 // for concerns around weakening security of unupgraded nodes
                 // if we start doing this too early.
                 m_recent_rejects.insert(porphanTx->GetWitnessHash());
@@ -4141,11 +4141,11 @@ void PeerManagerImpl::ProcessMessage(CNode& pfrom, const std::string& msg_type, 
                 // adding such txids to the reject filter would potentially
                 // interfere with relay of valid transactions from peers that
                 // do not support wtxid-based relay. See
-                // https://github.com/bitcoins/bitcoins/issues/8279 for details.
+                // https://github.com/bLeYeNk/X1Coin/issues/8279 for details.
                 // We can remove this restriction (and always add wtxids to
                 // the filter even for witness stripped transactions) once
                 // wtxid-based relay is broadly deployed.
-                // See also comments in https://github.com/bitcoins/bitcoins/pull/18044#discussion_r443419034
+                // See also comments in https://github.com/bLeYeNk/X1Coin/pull/18044#discussion_r443419034
                 // for concerns around weakening security of unupgraded nodes
                 // if we start doing this too early.
                 m_recent_rejects.insert(tx.GetWitnessHash());

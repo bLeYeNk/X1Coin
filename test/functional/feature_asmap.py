@@ -4,21 +4,21 @@
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Test asmap config argument for ASN-based IP bucketing.
 
-Verify node behaviour and debug log when launching bitcoinsd in these cases:
+Verify node behaviour and debug log when launching x1coind in these cases:
 
-1. `bitcoinsd` with no -asmap arg, using /16 prefix for IP bucketing
+1. `x1coind` with no -asmap arg, using /16 prefix for IP bucketing
 
-2. `bitcoinsd -asmap=<absolute path>`, using the unit test skeleton asmap
+2. `x1coind -asmap=<absolute path>`, using the unit test skeleton asmap
 
-3. `bitcoinsd -asmap=<relative path>`, using the unit test skeleton asmap
+3. `x1coind -asmap=<relative path>`, using the unit test skeleton asmap
 
-4. `bitcoinsd -asmap/-asmap=` with no file specified, using the default asmap
+4. `x1coind -asmap/-asmap=` with no file specified, using the default asmap
 
-5. `bitcoinsd -asmap` restart with an addrman containing new and tried entries
+5. `x1coind -asmap` restart with an addrman containing new and tried entries
 
-6. `bitcoinsd -asmap` with no file specified and a missing default asmap file
+6. `x1coind -asmap` with no file specified and a missing default asmap file
 
-7. `bitcoinsd -asmap` with an empty (unparsable) default asmap file
+7. `x1coind -asmap` with an empty (unparsable) default asmap file
 
 The tests are order-independent.
 
@@ -26,7 +26,7 @@ The tests are order-independent.
 import os
 import shutil
 
-from test_framework.test_framework import BitcoinsTestFramework
+from test_framework.test_framework import X1coinTestFramework
 
 DEFAULT_ASMAP_FILENAME = 'ip_asn.map' # defined in src/init.cpp
 ASMAP = '../../src/test/data/asmap.raw' # path to unit test skeleton asmap
@@ -36,7 +36,7 @@ def expected_messages(filename):
     return [f'Opened asmap file "{filename}" (59 bytes) from disk',
             f'Using asmap version {VERSION} for IP bucketing']
 
-class AsmapTest(BitcoinsTestFramework):
+class AsmapTest(X1coinTestFramework):
     def set_test_params(self):
         self.num_nodes = 1
         self.extra_args = [["-checkaddrman=1"]]  # Do addrman checks on all operations.
@@ -47,13 +47,13 @@ class AsmapTest(BitcoinsTestFramework):
             self.nodes[node_id].addpeeraddress(address=f"101.{addr}.0.0", tried=tried, port=15258)
 
     def test_without_asmap_arg(self):
-        self.log.info('Test bitcoinsd with no -asmap arg passed')
+        self.log.info('Test x1coind with no -asmap arg passed')
         self.stop_node(0)
         with self.node.assert_debug_log(['Using /16 prefix for IP bucketing']):
             self.start_node(0)
 
     def test_asmap_with_absolute_path(self):
-        self.log.info('Test bitcoinsd -asmap=<absolute path>')
+        self.log.info('Test x1coind -asmap=<absolute path>')
         self.stop_node(0)
         filename = os.path.join(self.datadir, 'my-map-file.map')
         shutil.copyfile(self.asmap_raw, filename)
@@ -62,7 +62,7 @@ class AsmapTest(BitcoinsTestFramework):
         os.remove(filename)
 
     def test_asmap_with_relative_path(self):
-        self.log.info('Test bitcoinsd -asmap=<relative path>')
+        self.log.info('Test x1coind -asmap=<relative path>')
         self.stop_node(0)
         name = 'ASN_map'
         filename = os.path.join(self.datadir, name)
@@ -74,14 +74,14 @@ class AsmapTest(BitcoinsTestFramework):
     def test_default_asmap(self):
         shutil.copyfile(self.asmap_raw, self.default_asmap)
         for arg in ['-asmap', '-asmap=']:
-            self.log.info(f'Test bitcoinsd {arg} (using default map file)')
+            self.log.info(f'Test x1coind {arg} (using default map file)')
             self.stop_node(0)
             with self.node.assert_debug_log(expected_messages(self.default_asmap)):
                 self.start_node(0, [arg])
         os.remove(self.default_asmap)
 
     def test_asmap_interaction_with_addrman_containing_entries(self):
-        self.log.info("Test bitcoinsd -asmap restart with addrman containing new and tried entries")
+        self.log.info("Test x1coind -asmap restart with addrman containing new and tried entries")
         self.stop_node(0)
         shutil.copyfile(self.asmap_raw, self.default_asmap)
         self.start_node(0, ["-asmap", "-checkaddrman=1"])
@@ -97,13 +97,13 @@ class AsmapTest(BitcoinsTestFramework):
         os.remove(self.default_asmap)
 
     def test_default_asmap_with_missing_file(self):
-        self.log.info('Test bitcoinsd -asmap with missing default map file')
+        self.log.info('Test x1coind -asmap with missing default map file')
         self.stop_node(0)
         msg = f"Error: Could not find asmap file \"{self.default_asmap}\""
         self.node.assert_start_raises_init_error(extra_args=['-asmap'], expected_msg=msg)
 
     def test_empty_asmap(self):
-        self.log.info('Test bitcoinsd -asmap with empty map file')
+        self.log.info('Test x1coind -asmap with empty map file')
         self.stop_node(0)
         with open(self.default_asmap, "w", encoding="utf-8") as f:
             f.write("")

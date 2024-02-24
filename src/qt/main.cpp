@@ -2,7 +2,7 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include <qt/bitcoins.h>
+#include <qt/x1coin.h>
 
 #include <common/url.h>
 #include <compat/compat.h>
@@ -15,7 +15,7 @@
 
 /** Translate string to current locale using Qt. */
 extern const std::function<std::string(const char*)> G_TRANSLATION_FUN = [](const char* psz) {
-    return QCoreApplication::translate("bitcoins-core", psz).toStdString();
+    return QCoreApplication::translate("x1coin-core", psz).toStdString();
 };
 UrlDecodeFn* const URL_DECODE = urlDecode;
 

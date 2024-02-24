@@ -1,24 +1,24 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2020 The Bitcoin Core developers
-// Copyright (c) 2023 The Bitcoins Core developers
+// Copyright (c) 2023 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_CONSENSUS_AMOUNT_H
-#define BITCOINS_CONSENSUS_AMOUNT_H
+#ifndef X1COIN_CONSENSUS_AMOUNT_H
+#define X1COIN_CONSENSUS_AMOUNT_H
 
 #include <cstdint>
 
 /** Amount in satoshis (Can be negative) */
 typedef int64_t CAmount;
 
-/** The amount of satoshis in one BC. */
+/** The amount of satoshis in one X1. */
 static constexpr CAmount COIN = 100000000;
 
 /** No amount larger than this (in satoshi) is valid.
  *
- * Note that this constant is *not* the total money supply, which in Bitcoins
- * currently happens to be less than 21,000,000 BC for various reasons, but
+ * Note that this constant is *not* the total money supply, which in X1coin
+ * currently happens to be less than 21,000,000 X1 for various reasons, but
  * rather a sanity check. As this sanity check is used by consensus-critical
  * validation code, the exact value of the MAX_MONEY constant is consensus
  * critical; in unusual circumstances like a(nother) overflow bug that allowed
@@ -27,4 +27,4 @@ static constexpr CAmount COIN = 100000000;
 static constexpr CAmount MAX_MONEY = 21000000 * COIN;
 inline bool MoneyRange(const CAmount& nValue) { return (nValue >= 0 && nValue <= MAX_MONEY); }
 
-#endif // BITCOINS_CONSENSUS_AMOUNT_H
+#endif // X1COIN_CONSENSUS_AMOUNT_H

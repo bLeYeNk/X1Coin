@@ -1,4 +1,4 @@
-This directory contains integration tests that test bitcoinsd and its
+This directory contains integration tests that test x1coind and its
 utilities in their entirety. It does not contain unit tests, which
 can be found in [/src/test](/src/test), [/src/wallet/test](/src/wallet/test),
 etc.
@@ -8,9 +8,9 @@ This directory contains the following sets of tests:
 - [fuzz](/test/fuzz) A runner to execute all fuzz targets from
   [/src/test/fuzz](/src/test/fuzz).
 - [functional](/test/functional) which test the functionality of
-bitcoinsd and bitcoins-qt by interacting with them through the RPC and P2P
+x1coind and x1coin-qt by interacting with them through the RPC and P2P
 interfaces.
-- [util](/test/util) which tests the utilities (bitcoins-util, bitcoins-tx, ...).
+- [util](/test/util) which tests the utilities (x1coin-util, x1coin-tx, ...).
 - [lint](/test/lint/) which perform various static analysis checks.
 
 The util tests are run as part of `make check` target. The fuzz tests, functional
@@ -18,7 +18,7 @@ tests and lint scripts can be run as explained in the sections below.
 
 # Running tests locally
 
-Before tests can be run locally, Bitcoins Core must be built.  See the [building instructions](/doc#building) for help.
+Before tests can be run locally, X1coin must be built.  See the [building instructions](/doc#building) for help.
 
 ## Fuzz tests
 
@@ -164,29 +164,29 @@ umount /Volumes/ramdisk
 
 ##### Resource contention
 
-The P2P and RPC ports used by the bitcoinsd nodes-under-test are chosen to make
-conflicts with other processes unlikely. However, if there is another bitcoinsd
+The P2P and RPC ports used by the x1coind nodes-under-test are chosen to make
+conflicts with other processes unlikely. However, if there is another x1coind
 process running on the system (perhaps from a previous test which hasn't successfully
-killed all its bitcoinsd nodes), then there may be a port conflict which will
+killed all its x1coind nodes), then there may be a port conflict which will
 cause the test to fail. It is recommended that you run the tests on a system
-where no other bitcoinsd processes are running.
+where no other x1coind processes are running.
 
 On linux, the test framework will warn if there is another
-bitcoinsd process running when the tests are started.
+x1coind process running when the tests are started.
 
-If there are zombie bitcoinsd processes after test failure, you can kill them
+If there are zombie x1coind processes after test failure, you can kill them
 by running the following commands. **Note that these commands will kill all
-bitcoinsd processes running on the system, so should not be used if any non-test
-bitcoinsd processes are being run.**
+x1coind processes running on the system, so should not be used if any non-test
+x1coind processes are being run.**
 
 ```bash
-killall bitcoinsd
+killall x1coind
 ```
 
 or
 
 ```bash
-pkill -9 bitcoinsd
+pkill -9 x1coind
 ```
 
 
@@ -197,11 +197,11 @@ functional test is run and is stored in test/cache. This speeds up
 test startup times since new blockchains don't need to be generated for
 each test. However, the cache may get into a bad state, in which case
 tests will fail. If this happens, remove the cache directory (and make
-sure bitcoinsd processes are stopped as above):
+sure x1coind processes are stopped as above):
 
 ```bash
 rm -rf test/cache
-killall bitcoinsd
+killall x1coind
 ```
 
 ##### Test logging
@@ -216,7 +216,7 @@ levels using the logger included in the test_framework, e.g.
 - when run directly, *all* logs are written to `test_framework.log` and INFO
   level and above are output to the console.
 - when run by [our CI (Continuous Integration)](/ci/README.md), no logs are output to the console. However, if a test
-  fails, the `test_framework.log` and bitcoinsd `debug.log`s will all be dumped
+  fails, the `test_framework.log` and x1coind `debug.log`s will all be dumped
   to the console to help troubleshooting.
 
 These log files can be located under the test data directory (which is always
@@ -231,7 +231,7 @@ e.g. `self.nodes[0]`.
 To change the level of logs output to the console, use the `-l` command line
 argument.
 
-`test_framework.log` and bitcoinsd `debug.log`s can be combined into a single
+`test_framework.log` and x1coind `debug.log`s can be combined into a single
 aggregate log by running the `combine_logs.py` script. The output can be plain
 text, colorized text or html. For example:
 
@@ -258,9 +258,9 @@ import pdb; pdb.set_trace()
 ```
 
 anywhere in the test. You will then be able to inspect variables, as well as
-call methods that interact with the bitcoinsd nodes-under-test.
+call methods that interact with the x1coind nodes-under-test.
 
-If further introspection of the bitcoinsd instances themselves becomes
+If further introspection of the x1coind instances themselves becomes
 necessary, this can be accomplished by first setting a pdb breakpoint
 at an appropriate location, running the test to that point, then using
 `gdb` (or `lldb` on macOS) to attach to the process and debug.
@@ -283,13 +283,13 @@ test run:
 Use the path to find the pid file in the temp folder:
 
 ```bash
-cat /tmp/user/1000/testo9vsdjo3/node1/regtest/bitcoinsd.pid
+cat /tmp/user/1000/testo9vsdjo3/node1/regtest/x1coind.pid
 ```
 
 Then you can use the pid to start `gdb`:
 
 ```bash
-gdb /home/example/bitcoinsd <pid>
+gdb /home/example/x1coind <pid>
 ```
 
 Note: gdb attach step may require ptrace_scope to be modified, or `sudo` preceding the `gdb`.

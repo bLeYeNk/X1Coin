@@ -10,11 +10,11 @@ Previous releases are required by this test, see test/README.md.
 import os
 import shutil
 
-from test_framework.test_framework import BitcoinsTestFramework
+from test_framework.test_framework import X1coinTestFramework
 from test_framework.wallet import MiniWallet
 
 
-class TxindexCompatibilityTest(BitcoinsTestFramework):
+class TxindexCompatibilityTest(X1coinTestFramework):
     def set_test_params(self):
         self.num_nodes = 3
         self.extra_args = [

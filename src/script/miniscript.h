@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_SCRIPT_MINISCRIPT_H
-#define BITCOINS_SCRIPT_MINISCRIPT_H
+#ifndef X1COIN_SCRIPT_MINISCRIPT_H
+#define X1COIN_SCRIPT_MINISCRIPT_H
 
 #include <algorithm>
 #include <functional>
@@ -1801,7 +1801,7 @@ enum class DecodeContext {
     ENDIF_ELSE,
 };
 
-//! Parse a miniscript from a bitcoins script
+//! Parse a miniscript from a x1coin script
 template<typename Key, typename Ctx, typename I>
 inline NodeRef<Key> DecodeScript(I& in, I last, const Ctx& ctx)
 {
@@ -2181,4 +2181,4 @@ inline NodeRef<typename Ctx::Key> FromScript(const CScript& script, const Ctx& c
 
 } // namespace miniscript
 
-#endif // BITCOINS_SCRIPT_MINISCRIPT_H
+#endif // X1COIN_SCRIPT_MINISCRIPT_H

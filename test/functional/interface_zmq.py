@@ -15,7 +15,7 @@ from test_framework.blocktools import (
     create_block,
     create_coinbase,
 )
-from test_framework.test_framework import BitcoinsTestFramework
+from test_framework.test_framework import X1coinTestFramework
 from test_framework.messages import (
     hash256,
     tx_from_hex,
@@ -101,7 +101,7 @@ class ZMQTestSetupBlock:
         )
 
 
-class ZMQTest (BitcoinsTestFramework):
+class ZMQTest (X1coinTestFramework):
     def set_test_params(self):
         self.num_nodes = 2
         # This test isn't testing txn relay/timing, so set whitelist on the
@@ -111,7 +111,7 @@ class ZMQTest (BitcoinsTestFramework):
 
     def skip_test_if_missing_module(self):
         self.skip_if_no_py3_zmq()
-        self.skip_if_no_bitcoinsd_zmq()
+        self.skip_if_no_x1coind_zmq()
 
     def run_test(self):
         self.wallet = MiniWallet(self.nodes[0])

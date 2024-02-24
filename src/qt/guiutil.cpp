@@ -4,8 +4,8 @@
 
 #include <qt/guiutil.h>
 
-#include <qt/bitcoinsaddressvalidator.h>
-#include <qt/bitcoinsunits.h>
+#include <qt/x1coinaddressvalidator.h>
+#include <qt/x1coinunits.h>
 #include <qt/platformstyle.h>
 #include <qt/qvalidatedlineedit.h>
 #include <qt/sendcoinsrecipient.h>
@@ -128,10 +128,10 @@ void setupAddressWidget(QValidatedLineEdit *widget, QWidget *parent)
     widget->setFont(fixedPitchFont());
     // We don't want translators to use own addresses in translations
     // and this is the only place, where this address is supplied.
-    widget->setPlaceholderText(QObject::tr("Enter a Bitcoins address (e.g. %1)").arg(
+    widget->setPlaceholderText(QObject::tr("Enter a X1coin address (e.g. %1)").arg(
         QString::fromStdString(DummyAddress(Params()))));
-    widget->setValidator(new BitcoinsAddressEntryValidator(parent));
-    widget->setCheckValidator(new BitcoinsAddressCheckValidator(parent));
+    widget->setValidator(new X1coinAddressEntryValidator(parent));
+    widget->setCheckValidator(new X1coinAddressCheckValidator(parent));
 }
 
 void AddButtonShortcut(QAbstractButton* button, const QKeySequence& shortcut)
@@ -139,10 +139,10 @@ void AddButtonShortcut(QAbstractButton* button, const QKeySequence& shortcut)
     QObject::connect(new QShortcut(shortcut, button), &QShortcut::activated, [button]() { button->animateClick(); });
 }
 
-bool parseBitcoinsURI(const QUrl &uri, SendCoinsRecipient *out)
+bool parseX1coinURI(const QUrl &uri, SendCoinsRecipient *out)
 {
-    // return if URI is not valid or is no bitcoins: URI
-    if(!uri.isValid() || uri.scheme() != QString("bitcoins"))
+    // return if URI is not valid or is no x1coin: URI
+    if(!uri.isValid() || uri.scheme() != QString("x1coin"))
         return false;
 
     SendCoinsRecipient rv;
@@ -178,7 +178,7 @@ bool parseBitcoinsURI(const QUrl &uri, SendCoinsRecipient *out)
         {
             if(!i->second.isEmpty())
             {
-                if (!BitcoinsUnits::parse(BitcoinsUnit::BC, i->second, &rv.amount)) {
+                if (!X1coinUnits::parse(X1coinUnit::X1, i->second, &rv.amount)) {
                     return false;
                 }
             }
@@ -195,22 +195,22 @@ bool parseBitcoinsURI(const QUrl &uri, SendCoinsRecipient *out)
     return true;
 }
 
-bool parseBitcoinsURI(QString uri, SendCoinsRecipient *out)
+bool parseX1coinURI(QString uri, SendCoinsRecipient *out)
 {
     QUrl uriInstance(uri);
-    return parseBitcoinsURI(uriInstance, out);
+    return parseX1coinURI(uriInstance, out);
 }
 
-QString formatBitcoinsURI(const SendCoinsRecipient &info)
+QString formatX1coinURI(const SendCoinsRecipient &info)
 {
     bool bech_32 = info.address.startsWith(QString::fromStdString(Params().Bech32HRP() + "1"));
 
-    QString ret = QString("bitcoins:%1").arg(bech_32 ? info.address.toUpper() : info.address);
+    QString ret = QString("x1coin:%1").arg(bech_32 ? info.address.toUpper() : info.address);
     int paramCount = 0;
 
     if (info.amount)
     {
-        ret += QString("?amount=%1").arg(BitcoinsUnits::format(BitcoinsUnit::BC, info.amount, false, BitcoinsUnits::SeparatorStyle::NEVER));
+        ret += QString("?amount=%1").arg(X1coinUnits::format(X1coinUnit::X1, info.amount, false, X1coinUnits::SeparatorStyle::NEVER));
         paramCount++;
     }
 
@@ -428,7 +428,7 @@ void openDebugLogfile()
         QDesktopServices::openUrl(QUrl::fromLocalFile(PathToQString(pathDebug)));
 }
 
-bool openBitcoinsConf()
+bool openX1coinConf()
 {
     fs::path pathConfig = gArgs.GetConfigFilePath();
 
@@ -440,7 +440,7 @@ bool openBitcoinsConf()
 
     configFile.close();
 
-    /* Open bitcoins.conf with the associated application */
+    /* Open x1coin.conf with the associated application */
     bool res = QDesktopServices::openUrl(QUrl::fromLocalFile(PathToQString(pathConfig)));
 #ifdef Q_OS_MACOS
     // Workaround for macOS-specific behavior; see #15409.
@@ -504,15 +504,15 @@ fs::path static StartupShortcutPath()
 {
     std::string chain = gArgs.GetChainName();
     if (chain == CBaseChainParams::MAIN)
-        return GetSpecialFolderPath(CSIDL_STARTUP) / "Bitcoins.lnk";
+        return GetSpecialFolderPath(CSIDL_STARTUP) / "X1coin.lnk";
     if (chain == CBaseChainParams::TESTNET) // Remove this special case when CBaseChainParams::TESTNET = "testnet4"
-        return GetSpecialFolderPath(CSIDL_STARTUP) / "Bitcoins (testnet).lnk";
-    return GetSpecialFolderPath(CSIDL_STARTUP) / fs::u8path(strprintf("Bitcoins (%s).lnk", chain));
+        return GetSpecialFolderPath(CSIDL_STARTUP) / "X1coin (testnet).lnk";
+    return GetSpecialFolderPath(CSIDL_STARTUP) / fs::u8path(strprintf("X1coin (%s).lnk", chain));
 }
 
 bool GetStartOnSystemStartup()
 {
-    // check for Bitcoins*.lnk
+    // check for X1coin*.lnk
     return fs::exists(StartupShortcutPath());
 }
 
@@ -587,8 +587,8 @@ fs::path static GetAutostartFilePath()
 {
     std::string chain = gArgs.GetChainName();
     if (chain == CBaseChainParams::MAIN)
-        return GetAutostartDir() / "bitcoins.desktop";
-    return GetAutostartDir() / fs::u8path(strprintf("bitcoins-%s.desktop", chain));
+        return GetAutostartDir() / "x1coin.desktop";
+    return GetAutostartDir() / fs::u8path(strprintf("x1coin-%s.desktop", chain));
 }
 
 bool GetStartOnSystemStartup()
@@ -629,13 +629,13 @@ bool SetStartOnSystemStartup(bool fAutoStart)
         if (!optionFile.good())
             return false;
         std::string chain = gArgs.GetChainName();
-        // Write a bitcoins.desktop file to the autostart directory:
+        // Write a x1coin.desktop file to the autostart directory:
         optionFile << "[Desktop Entry]\n";
         optionFile << "Type=Application\n";
         if (chain == CBaseChainParams::MAIN)
-            optionFile << "Name=Bitcoins\n";
+            optionFile << "Name=X1coin\n";
         else
-            optionFile << strprintf("Name=Bitcoins (%s)\n", chain);
+            optionFile << strprintf("Name=X1coin (%s)\n", chain);
         optionFile << "Exec=" << pszExePath << strprintf(" -min -chain=%s\n", chain);
         optionFile << "Terminal=false\n";
         optionFile << "Hidden=false\n";

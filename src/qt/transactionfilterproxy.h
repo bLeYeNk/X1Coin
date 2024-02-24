@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_QT_TRANSACTIONFILTERPROXY_H
-#define BITCOINS_QT_TRANSACTIONFILTERPROXY_H
+#ifndef X1COIN_QT_TRANSACTIONFILTERPROXY_H
+#define X1COIN_QT_TRANSACTIONFILTERPROXY_H
 
 #include <consensus/amount.h>
 
@@ -58,4 +58,4 @@ private:
     bool showInactive{true};
 };
 
-#endif // BITCOINS_QT_TRANSACTIONFILTERPROXY_H
+#endif // X1COIN_QT_TRANSACTIONFILTERPROXY_H

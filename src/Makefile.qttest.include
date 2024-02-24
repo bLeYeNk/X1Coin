@@ -2,8 +2,8 @@
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-bin_PROGRAMS += qt/test/test_bitcoins-qt
-TESTS += qt/test/test_bitcoins-qt
+bin_PROGRAMS += qt/test/test_x1coin-qt
+TESTS += qt/test/test_x1coin-qt
 
 TEST_QT_MOC_CPP = \
   qt/test/moc_apptests.cpp \
@@ -26,11 +26,11 @@ TEST_QT_H = \
   qt/test/util.h \
   qt/test/wallettests.h
 
-qt_test_test_bitcoins_qt_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOINS_INCLUDES) $(BITCOINS_QT_INCLUDES) \
+qt_test_test_x1coin_qt_CPPFLAGS = $(AM_CPPFLAGS) $(X1COIN_INCLUDES) $(X1COIN_QT_INCLUDES) \
   $(QT_INCLUDES) $(QT_TEST_INCLUDES) $(BOOST_CPPFLAGS)
 
-qt_test_test_bitcoins_qt_SOURCES = \
-  init/bitcoins-qt.cpp \
+qt_test_test_x1coin_qt_SOURCES = \
+  init/x1coin-qt.cpp \
   qt/test/apptests.cpp \
   qt/test/optiontests.cpp \
   qt/test/rpcnestedtests.cpp \
@@ -39,36 +39,36 @@ qt_test_test_bitcoins_qt_SOURCES = \
   qt/test/util.cpp \
   $(TEST_QT_H)
 if ENABLE_WALLET
-qt_test_test_bitcoins_qt_SOURCES += \
+qt_test_test_x1coin_qt_SOURCES += \
   qt/test/addressbooktests.cpp \
   qt/test/wallettests.cpp \
   wallet/test/wallet_test_fixture.cpp
 endif # ENABLE_WALLET
 
-nodist_qt_test_test_bitcoins_qt_SOURCES = $(TEST_QT_MOC_CPP)
+nodist_qt_test_test_x1coin_qt_SOURCES = $(TEST_QT_MOC_CPP)
 
-qt_test_test_bitcoins_qt_LDADD = $(LIBBITCOINSQT) $(LIBBITCOINS_NODE) $(LIBTEST_UTIL)
+qt_test_test_x1coin_qt_LDADD = $(LIBX1COINQT) $(LIBX1COIN_NODE) $(LIBTEST_UTIL)
 if ENABLE_WALLET
-qt_test_test_bitcoins_qt_LDADD += $(LIBBITCOINS_UTIL) $(LIBBITCOINS_WALLET)
+qt_test_test_x1coin_qt_LDADD += $(LIBX1COIN_UTIL) $(LIBX1COIN_WALLET)
 endif
 if ENABLE_ZMQ
-qt_test_test_bitcoins_qt_LDADD += $(LIBBITCOINS_ZMQ) $(ZMQ_LIBS)
+qt_test_test_x1coin_qt_LDADD += $(LIBX1COIN_ZMQ) $(ZMQ_LIBS)
 endif
-qt_test_test_bitcoins_qt_LDADD += $(LIBBITCOINS_CLI) $(LIBBITCOINS_COMMON) $(LIBBITCOINS_UTIL) $(LIBBITCOINS_CONSENSUS) $(LIBBITCOINS_CRYPTO) $(LIBUNIVALUE) $(LIBLEVELDB) \
+qt_test_test_x1coin_qt_LDADD += $(LIBX1COIN_CLI) $(LIBX1COIN_COMMON) $(LIBX1COIN_UTIL) $(LIBX1COIN_CONSENSUS) $(LIBX1COIN_CRYPTO) $(LIBUNIVALUE) $(LIBLEVELDB) \
   $(LIBMEMENV) $(QT_LIBS) $(QT_DBUS_LIBS) $(QT_TEST_LIBS) \
   $(QR_LIBS) $(BDB_LIBS) $(MINIUPNPC_LIBS) $(NATPMP_LIBS) $(LIBSECP256K1) \
   $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(SQLITE_LIBS)
-qt_test_test_bitcoins_qt_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS)
-qt_test_test_bitcoins_qt_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
+qt_test_test_x1coin_qt_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS)
+qt_test_test_x1coin_qt_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
 
-CLEAN_BITCOINS_QT_TEST = $(TEST_QT_MOC_CPP) qt/test/*.gcda qt/test/*.gcno
+CLEAN_X1COIN_QT_TEST = $(TEST_QT_MOC_CPP) qt/test/*.gcda qt/test/*.gcno
 
-CLEANFILES += $(CLEAN_BITCOINS_QT_TEST)
+CLEANFILES += $(CLEAN_X1COIN_QT_TEST)
 
-test_bitcoins_qt : qt/test/test_bitcoins-qt$(EXEEXT)
+test_x1coin_qt : qt/test/test_x1coin-qt$(EXEEXT)
 
-test_bitcoins_qt_check : qt/test/test_bitcoins-qt$(EXEEXT) FORCE
+test_x1coin_qt_check : qt/test/test_x1coin-qt$(EXEEXT) FORCE
 	$(MAKE) check-TESTS TESTS=$^
 
-test_bitcoins_qt_clean: FORCE
-	rm -f $(CLEAN_BITCOINS_QT_TEST) $(qt_test_test_bitcoins_qt_OBJECTS)
+test_x1coin_qt_clean: FORCE
+	rm -f $(CLEAN_X1COIN_QT_TEST) $(qt_test_test_x1coin_qt_OBJECTS)

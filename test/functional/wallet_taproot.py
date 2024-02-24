@@ -10,7 +10,7 @@ import uuid
 from decimal import Decimal
 from test_framework.address import output_key_to_p2tr
 from test_framework.key import H_POINT
-from test_framework.test_framework import BitcoinsTestFramework
+from test_framework.test_framework import X1coinTestFramework
 from test_framework.util import assert_equal
 from test_framework.descriptors import descsum_create
 from test_framework.script import (
@@ -182,9 +182,9 @@ def compute_taproot_address(pubkey, scripts):
     return output_key_to_p2tr(taproot_construct(pubkey, scripts).output_pubkey)
 
 def compute_raw_taproot_address(pubkey):
-    return encode_segwit_address("bcrt", 1, pubkey)
+    return encode_segwit_address("rx1", 1, pubkey)
 
-class WalletTaprootTest(BitcoinsTestFramework):
+class WalletTaprootTest(X1coinTestFramework):
     """Test generation and spending of P2TR address outputs."""
 
     def add_options(self, parser):

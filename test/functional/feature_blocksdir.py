@@ -8,10 +8,10 @@
 import os
 import shutil
 
-from test_framework.test_framework import BitcoinsTestFramework, initialize_datadir
+from test_framework.test_framework import X1coinTestFramework, initialize_datadir
 
 
-class BlocksdirTest(BitcoinsTestFramework):
+class BlocksdirTest(X1coinTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 1

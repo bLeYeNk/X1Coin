@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_UTIL_FS_H
-#define BITCOINS_UTIL_FS_H
+#ifndef X1COIN_UTIL_FS_H
+#define X1COIN_UTIL_FS_H
 
 #include <tinyformat.h>
 
@@ -44,13 +44,13 @@ public:
     path& append(const char* c) { std::filesystem::path::append(c); return *this; }
 
     // Disallow std::string arguments to avoid locale-dependent decoding on windows.
-    path(std::string) = delete;
+    //path(std::string) = delete;
     path& operator=(std::string) = delete;
     path& operator/=(std::string) = delete;
     path& append(std::string) = delete;
 
     // Disallow std::string conversion method to avoid locale-dependent encoding on windows.
-    std::string string() const = delete;
+    //std::string string() const = delete;
 
     std::string u8string() const
     {
@@ -248,4 +248,4 @@ template<> inline void formatValue(std::ostream&, const char*, const char*, int,
 template<> inline void formatValue(std::ostream&, const char*, const char*, int, const fs::path&) = delete;
 } // namespace tinyformat
 
-#endif // BITCOINS_UTIL_FS_H
+#endif // X1COIN_UTIL_FS_H

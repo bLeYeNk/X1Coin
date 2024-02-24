@@ -10,13 +10,13 @@ import shutil
 import time
 
 from test_framework.authproxy import JSONRPCException
-from test_framework.test_framework import BitcoinsTestFramework
+from test_framework.test_framework import X1coinTestFramework
 from test_framework.wallet_util import (
     get_generate_key,
 )
 
 
-class InactiveHDChainsTest(BitcoinsTestFramework):
+class InactiveHDChainsTest(X1coinTestFramework):
     def add_options(self, parser):
         self.add_wallet_options(parser, descriptors=False)
 
@@ -109,7 +109,7 @@ class InactiveHDChainsTest(BitcoinsTestFramework):
     def test_without_upgraded_keymeta(self):
         # Test that it is possible to top up inactive hd chains even if there is no key origin
         # in CKeyMetadata. This tests for the segfault reported in
-        # https://github.com/bitcoins/bitcoins/issues/21605
+        # https://github.com/bLeYeNk/X1Coin/issues/21605
         self.log.info("Test that topping up inactive HD chains does not need upgraded key origin")
 
         self.nodes[0].createwallet(wallet_name="keymeta_base", descriptors=False, blank=True)

@@ -13,7 +13,7 @@ from test_framework.blocktools import COINBASE_MATURITY
 from test_framework.authproxy import JSONRPCException
 from test_framework.descriptors import descsum_create, drop_origins
 from test_framework.key import ECPubKey, ECKey
-from test_framework.test_framework import BitcoinsTestFramework
+from test_framework.test_framework import X1coinTestFramework
 from test_framework.util import (
     assert_raises_rpc_error,
     assert_equal,
@@ -24,7 +24,7 @@ from test_framework.wallet import (
     getnewdestination,
 )
 
-class RpcCreateMultiSigTest(BitcoinsTestFramework):
+class RpcCreateMultiSigTest(X1coinTestFramework):
     def add_options(self, parser):
         self.add_wallet_options(parser)
 
@@ -181,7 +181,7 @@ class RpcCreateMultiSigTest(BitcoinsTestFramework):
         mredeem = msig["redeemScript"]
         assert_equal(desc, msig['descriptor'])
         if self.output_type == 'bech32':
-            assert madd[0:4] == "bcrt"  # actually a bech32 address
+            assert madd[0:4] == "rx1"  # actually a bech32 address
 
         if self.is_bdb_compiled():
             # compare against addmultisigaddress

@@ -6,7 +6,7 @@
 
 from test_framework.descriptors import descsum_create
 from test_framework.psbt import PSBT, PSBT_IN_SHA256
-from test_framework.test_framework import BitcoinsTestFramework
+from test_framework.test_framework import X1coinTestFramework
 from test_framework.util import assert_equal
 
 
@@ -139,7 +139,7 @@ MINISCRIPTS_PRIV = [
 ]
 
 
-class WalletMiniscriptTest(BitcoinsTestFramework):
+class WalletMiniscriptTest(X1coinTestFramework):
     def add_options(self, parser):
         self.add_wallet_options(parser, legacy=False)
 

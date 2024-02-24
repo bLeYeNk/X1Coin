@@ -16,9 +16,9 @@ Verify that:
 """
 import os
 
-from test_framework.test_framework import BitcoinsTestFramework
+from test_framework.test_framework import X1coinTestFramework
 
-class IncludeConfTest(BitcoinsTestFramework):
+class IncludeConfTest(X1coinTestFramework):
     def set_test_params(self):
         self.num_nodes = 1
 
@@ -31,7 +31,7 @@ class IncludeConfTest(BitcoinsTestFramework):
         # - tmpdir/node0/relative2.conf
         with open(os.path.join(self.options.tmpdir, "node0", "relative2.conf"), "w", encoding="utf8") as f:
             f.write("uacomment=relative2\n")
-        with open(os.path.join(self.options.tmpdir, "node0", "bitcoins.conf"), "a", encoding='utf8') as f:
+        with open(os.path.join(self.options.tmpdir, "node0", "x1coin.conf"), "a", encoding='utf8') as f:
             f.write("uacomment=main\nincludeconf=relative.conf\n")
 
     def run_test(self):
@@ -76,7 +76,7 @@ class IncludeConfTest(BitcoinsTestFramework):
             # Restore initial file contents
             f.write("uacomment=relative\n")
 
-        with open(os.path.join(self.options.tmpdir, "node0", "bitcoins.conf"), "a", encoding='utf8') as f:
+        with open(os.path.join(self.options.tmpdir, "node0", "x1coin.conf"), "a", encoding='utf8') as f:
             f.write("includeconf=relative2.conf\n")
 
         self.start_node(0)

@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_QT_OPTIONSDIALOG_H
-#define BITCOINS_QT_OPTIONSDIALOG_H
+#ifndef X1COIN_QT_OPTIONSDIALOG_H
+#define X1COIN_QT_OPTIONSDIALOG_H
 
 #include <QDialog>
 #include <QValidator>
@@ -55,7 +55,7 @@ private Q_SLOTS:
     /* set OK button state (enabled / disabled) */
     void setOkButtonState(bool fState);
     void on_resetButton_clicked();
-    void on_openBitcoinsConfButton_clicked();
+    void on_openX1coinConfButton_clicked();
     void on_okButton_clicked();
     void on_cancelButton_clicked();
 
@@ -79,4 +79,4 @@ private:
     QDataWidgetMapper* mapper{nullptr};
 };
 
-#endif // BITCOINS_QT_OPTIONSDIALOG_H
+#endif // X1COIN_QT_OPTIONSDIALOG_H

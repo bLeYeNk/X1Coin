@@ -7,7 +7,7 @@ import os
 
 from test_framework.address import ADDRESS_BCRT1_UNSPENDABLE
 from test_framework.descriptors import descsum_create
-from test_framework.test_framework import BitcoinsTestFramework
+from test_framework.test_framework import X1coinTestFramework
 from test_framework.util import (
     assert_equal,
 )
@@ -23,7 +23,7 @@ def notify_outputname(walletname, txid):
     return txid if os.name == 'nt' else f'{walletname}_{txid}'
 
 
-class NotificationsTest(BitcoinsTestFramework):
+class NotificationsTest(X1coinTestFramework):
     def add_options(self, parser):
         self.add_wallet_options(parser)
 
@@ -129,7 +129,7 @@ class NotificationsTest(BitcoinsTestFramework):
 
             # Generate bump transaction, sync mempools, and check for bump1
             # notification. In the future, per
-            # https://github.com/bitcoins/bitcoins/pull/9371, it might be better
+            # https://github.com/bLeYeNk/X1Coin/pull/9371, it might be better
             # to have notifications for both tx1 and bump1.
             bump1 = self.nodes[0].bumpfee(tx1)["txid"]
             assert_equal(bump1 in self.nodes[0].getrawmempool(), True)

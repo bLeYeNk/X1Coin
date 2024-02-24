@@ -6,14 +6,14 @@
 
 import time
 
-from test_framework.test_framework import BitcoinsTestFramework
+from test_framework.test_framework import X1coinTestFramework
 from test_framework.util import (
     assert_raises_rpc_error,
     assert_equal,
 )
 
 
-class WalletEncryptionTest(BitcoinsTestFramework):
+class WalletEncryptionTest(X1coinTestFramework):
     def add_options(self, parser):
         self.add_wallet_options(parser)
 

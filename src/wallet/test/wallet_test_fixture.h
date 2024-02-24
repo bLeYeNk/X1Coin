@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_WALLET_TEST_WALLET_TEST_FIXTURE_H
-#define BITCOINS_WALLET_TEST_WALLET_TEST_FIXTURE_H
+#ifndef X1COIN_WALLET_TEST_WALLET_TEST_FIXTURE_H
+#define X1COIN_WALLET_TEST_WALLET_TEST_FIXTURE_H
 
 #include <test/util/setup_common.h>
 
@@ -28,4 +28,4 @@ struct WalletTestingSetup : public TestingSetup {
 };
 } // namespace wallet
 
-#endif // BITCOINS_WALLET_TEST_WALLET_TEST_FIXTURE_H
+#endif // X1COIN_WALLET_TEST_WALLET_TEST_FIXTURE_H

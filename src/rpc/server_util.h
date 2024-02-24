@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_RPC_SERVER_UTIL_H
-#define BITCOINS_RPC_SERVER_UTIL_H
+#ifndef X1COIN_RPC_SERVER_UTIL_H
+#define X1COIN_RPC_SERVER_UTIL_H
 
 #include <any>
 
@@ -32,4 +32,4 @@ CBlockPolicyEstimator& EnsureAnyFeeEstimator(const std::any& context);
 CConnman& EnsureConnman(const node::NodeContext& node);
 PeerManager& EnsurePeerman(const node::NodeContext& node);
 
-#endif // BITCOINS_RPC_SERVER_UTIL_H
+#endif // X1COIN_RPC_SERVER_UTIL_H

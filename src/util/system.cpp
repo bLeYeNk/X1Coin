@@ -56,8 +56,8 @@
 // Application startup time (used for uptime calculation)
 const int64_t nStartupTime = GetTime();
 
-const char * const BITCOINS_CONF_FILENAME = "bitcoins.conf";
-const char * const BITCOINS_SETTINGS_FILENAME = "settings.json";
+const char * const X1COIN_CONF_FILENAME = "x1coin.conf";
+const char * const X1COIN_SETTINGS_FILENAME = "settings.json";
 
 ArgsManager gArgs;
 
@@ -217,7 +217,7 @@ bool ArgsManager::ParseParameters(int argc, const char* const argv[], std::strin
         if (key.substr(0, 5) == "-psn_") continue;
 #endif
 
-        if (key == "-") break; //bitcoins-tx using stdin
+        if (key == "-") break; //x1coin-tx using stdin
         std::optional<std::string> val;
         size_t is_index = key.find('=');
         if (is_index != std::string::npos) {
@@ -400,7 +400,7 @@ bool ArgsManager::IsArgSet(const std::string& strArg) const
 
 bool ArgsManager::GetSettingsPath(fs::path* filepath, bool temp, bool backup) const
 {
-    fs::path settings = GetPathArg("-settings", BITCOINS_SETTINGS_FILENAME);
+    fs::path settings = GetPathArg("-settings", X1COIN_SETTINGS_FILENAME);
     if (settings.empty()) {
         return false;
     }
@@ -711,12 +711,12 @@ std::string HelpMessageOpt(const std::string &option, const std::string &message
 
 fs::path GetDefaultDataDir()
 {
-    // Windows: C:\Users\Username\AppData\Roaming\Bitcoins
-    // macOS: ~/Library/Application Support/Bitcoins
-    // Unix-like: ~/.bitcoins
+    // Windows: C:\Users\Username\AppData\Roaming\X1coin
+    // macOS: ~/Library/Application Support/X1coin
+    // Unix-like: ~/.x1coin
 #ifdef WIN32
     // Windows
-    return GetSpecialFolderPath(CSIDL_APPDATA) / "Bitcoins";
+    return GetSpecialFolderPath(CSIDL_APPDATA) / "X1coin";
 #else
     fs::path pathRet;
     char* pszHome = getenv("HOME");
@@ -726,10 +726,10 @@ fs::path GetDefaultDataDir()
         pathRet = fs::path(pszHome);
 #ifdef MAC_OSX
     // macOS
-    return pathRet / "Library/Application Support/Bitcoins";
+    return pathRet / "Library/Application Support/X1coin";
 #else
     // Unix-like
-    return pathRet / ".bitcoins";
+    return pathRet / ".x1coin";
 #endif
 #endif
 }
@@ -835,7 +835,7 @@ bool ArgsManager::ReadConfigStream(std::istream& stream, const std::string& file
 
 fs::path ArgsManager::GetConfigFilePath() const
 {
-    return GetConfigFile(*this, GetPathArg("-conf", BITCOINS_CONF_FILENAME));
+    return GetConfigFile(*this, GetPathArg("-conf", X1COIN_CONF_FILENAME));
 }
 
 bool ArgsManager::ReadConfigFiles(std::string& error, bool ignore_invalid_keys)

@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_QT_CSVMODELWRITER_H
-#define BITCOINS_QT_CSVMODELWRITER_H
+#ifndef X1COIN_QT_CSVMODELWRITER_H
+#define X1COIN_QT_CSVMODELWRITER_H
 
 #include <QList>
 #include <QObject>
@@ -43,4 +43,4 @@ private:
     QList<Column> columns;
 };
 
-#endif // BITCOINS_QT_CSVMODELWRITER_H
+#endif // X1COIN_QT_CSVMODELWRITER_H

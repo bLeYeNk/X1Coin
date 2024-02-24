@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_CRYPTO_SHA256_H
-#define BITCOINS_CRYPTO_SHA256_H
+#ifndef X1COIN_CRYPTO_SHA256_H
+#define X1COIN_CRYPTO_SHA256_H
 
 #include <cstdlib>
 #include <stdint.h>
@@ -38,4 +38,4 @@ std::string SHA256AutoDetect();
  */
 void SHA256D64(unsigned char* output, const unsigned char* input, size_t blocks);
 
-#endif // BITCOINS_CRYPTO_SHA256_H
+#endif // X1COIN_CRYPTO_SHA256_H

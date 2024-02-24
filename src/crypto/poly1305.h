@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_CRYPTO_POLY1305_H
-#define BITCOINS_CRYPTO_POLY1305_H
+#ifndef X1COIN_CRYPTO_POLY1305_H
+#define X1COIN_CRYPTO_POLY1305_H
 
 #include <cstdlib>
 #include <stdint.h>
@@ -14,4 +14,4 @@
 void poly1305_auth(unsigned char out[POLY1305_TAGLEN], const unsigned char *m, size_t inlen,
     const unsigned char key[POLY1305_KEYLEN]);
 
-#endif // BITCOINS_CRYPTO_POLY1305_H
+#endif // X1COIN_CRYPTO_POLY1305_H

@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_INTERFACES_ECHO_H
-#define BITCOINS_INTERFACES_ECHO_H
+#ifndef X1COIN_INTERFACES_ECHO_H
+#define X1COIN_INTERFACES_ECHO_H
 
 #include <memory>
 #include <string>
@@ -23,4 +23,4 @@ public:
 std::unique_ptr<Echo> MakeEcho();
 } // namespace interfaces
 
-#endif // BITCOINS_INTERFACES_ECHO_H
+#endif // X1COIN_INTERFACES_ECHO_H

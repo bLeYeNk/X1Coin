@@ -2,11 +2,11 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_COMPAT_BYTESWAP_H
-#define BITCOINS_COMPAT_BYTESWAP_H
+#ifndef X1COIN_COMPAT_BYTESWAP_H
+#define X1COIN_COMPAT_BYTESWAP_H
 
 #if defined(HAVE_CONFIG_H)
-#include <config/bitcoins-config.h>
+#include <config/x1coin-config.h>
 #endif
 
 #include <cstdint>
@@ -56,4 +56,4 @@ inline uint64_t bswap_64(uint64_t x)
 
 #endif // defined(MAC_OSX)
 
-#endif // BITCOINS_COMPAT_BYTESWAP_H
+#endif // X1COIN_COMPAT_BYTESWAP_H

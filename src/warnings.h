@@ -1,11 +1,11 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2020 The Bitcoin Core developers
-// Copyright (c) 2023 The Bitcoins Core developers
+// Copyright (c) 2023 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_WARNINGS_H
-#define BITCOINS_WARNINGS_H
+#ifndef X1COIN_WARNINGS_H
+#define X1COIN_WARNINGS_H
 
 #include <string>
 
@@ -21,4 +21,4 @@ void SetfLargeWorkInvalidChainFound(bool flag);
  */
 bilingual_str GetWarnings(bool verbose);
 
-#endif // BITCOINS_WARNINGS_H
+#endif // X1COIN_WARNINGS_H

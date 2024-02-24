@@ -8,10 +8,10 @@ Test ports handling for I2P hosts
 
 import re
 
-from test_framework.test_framework import BitcoinsTestFramework
+from test_framework.test_framework import X1coinTestFramework
 
 
-class I2PPorts(BitcoinsTestFramework):
+class I2PPorts(X1coinTestFramework):
     def set_test_params(self):
         self.num_nodes = 1
         # The test assumes that an I2P SAM proxy is not listening here.

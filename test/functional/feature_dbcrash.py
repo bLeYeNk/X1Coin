@@ -34,7 +34,7 @@ from test_framework.blocktools import COINBASE_MATURITY
 from test_framework.messages import (
     COIN,
 )
-from test_framework.test_framework import BitcoinsTestFramework
+from test_framework.test_framework import X1coinTestFramework
 from test_framework.util import (
     assert_equal,
 )
@@ -44,7 +44,7 @@ from test_framework.wallet import (
 )
 
 
-class ChainstateWriteCrashTest(BitcoinsTestFramework):
+class ChainstateWriteCrashTest(X1coinTestFramework):
     def set_test_params(self):
         self.num_nodes = 4
         self.rpc_timeout = 480
@@ -89,14 +89,14 @@ class ChainstateWriteCrashTest(BitcoinsTestFramework):
                 return utxo_hash
             except Exception:
                 # An exception here should mean the node is about to crash.
-                # If bitcoinsd exits, then try again.  wait_for_node_exit()
-                # should raise an exception if bitcoinsd doesn't exit.
+                # If x1coind exits, then try again.  wait_for_node_exit()
+                # should raise an exception if x1coind doesn't exit.
                 self.wait_for_node_exit(node_index, timeout=10)
             self.crashed_on_restart += 1
             time.sleep(1)
 
-        # If we got here, bitcoinsd isn't coming back up on restart.  Could be a
-        # bug in bitcoinsd, or we've gotten unlucky with our dbcrash ratio --
+        # If we got here, x1coind isn't coming back up on restart.  Could be a
+        # bug in x1coind, or we've gotten unlucky with our dbcrash ratio --
         # perhaps we generated a test case that blew up our cache?
         # TODO: If this happens a lot, we should try to restart without -dbcrashratio
         # and make sure that recovery happens.

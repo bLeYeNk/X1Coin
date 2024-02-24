@@ -1,7 +1,7 @@
 Description
 ------------
 
-This directory contains data-driven tests for various aspects of Bitcoins.
+This directory contains data-driven tests for various aspects of X1coin.
 
 License
 --------

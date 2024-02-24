@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_CRYPTO_HKDF_SHA256_32_H
-#define BITCOINS_CRYPTO_HKDF_SHA256_32_H
+#ifndef X1COIN_CRYPTO_HKDF_SHA256_32_H
+#define X1COIN_CRYPTO_HKDF_SHA256_32_H
 
 #include <crypto/hmac_sha256.h>
 
@@ -22,4 +22,4 @@ public:
     void Expand32(const std::string& info, unsigned char hash[OUTPUT_SIZE]);
 };
 
-#endif // BITCOINS_CRYPTO_HKDF_SHA256_32_H
+#endif // X1COIN_CRYPTO_HKDF_SHA256_32_H

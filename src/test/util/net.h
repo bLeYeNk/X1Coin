@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_TEST_UTIL_NET_H
-#define BITCOINS_TEST_UTIL_NET_H
+#ifndef X1COIN_TEST_UTIL_NET_H
+#define X1COIN_TEST_UTIL_NET_H
 
 #include <compat/compat.h>
 #include <node/eviction.h>
@@ -196,4 +196,4 @@ private:
 
 std::vector<NodeEvictionCandidate> GetRandomNodeEvictionCandidates(int n_candidates, FastRandomContext& random_context);
 
-#endif // BITCOINS_TEST_UTIL_NET_H
+#endif // X1COIN_TEST_UTIL_NET_H

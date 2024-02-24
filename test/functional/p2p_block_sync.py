@@ -8,9 +8,9 @@ Ensure that even in IBD, we'll eventually sync chain from inbound peers
 (whether we have only inbound peers or both inbound and outbound peers).
 """
 
-from test_framework.test_framework import BitcoinsTestFramework
+from test_framework.test_framework import X1coinTestFramework
 
-class BlockSyncTest(BitcoinsTestFramework):
+class BlockSyncTest(X1coinTestFramework):
 
     def set_test_params(self):
         self.setup_clean_chain = True

@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_LOGGING_H
-#define BITCOINS_LOGGING_H
+#ifndef X1COIN_LOGGING_H
+#define X1COIN_LOGGING_H
 
 #include <threadsafety.h>
 #include <tinyformat.h>
@@ -264,4 +264,4 @@ bool error(const char* fmt, const Args&... args)
     return false;
 }
 
-#endif // BITCOINS_LOGGING_H
+#endif // X1COIN_LOGGING_H

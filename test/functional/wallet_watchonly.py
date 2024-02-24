@@ -6,14 +6,14 @@
 """
 
 from test_framework.blocktools import COINBASE_MATURITY
-from test_framework.test_framework import BitcoinsTestFramework
+from test_framework.test_framework import X1coinTestFramework
 from test_framework.util import (
     assert_equal,
     assert_raises_rpc_error
 )
 
 
-class CreateWalletWatchonlyTest(BitcoinsTestFramework):
+class CreateWalletWatchonlyTest(X1coinTestFramework):
     def add_options(self, parser):
         self.add_wallet_options(parser)
 
@@ -39,10 +39,10 @@ class CreateWalletWatchonlyTest(BitcoinsTestFramework):
         wo_wallet.importpubkey(pubkey=def_wallet.getaddressinfo(wo_addr)['pubkey'])
         wo_wallet.importpubkey(pubkey=def_wallet.getaddressinfo(wo_change)['pubkey'])
 
-        # generate some bc for testing
+        # generate some x1 for testing
         self.generatetoaddress(node, COINBASE_MATURITY + 1, a1)
 
-        # send 1 bc to our watch-only address
+        # send 1 x1 to our watch-only address
         txid = def_wallet.sendtoaddress(wo_addr, 1)
         self.generate(self.nodes[0], 1)
 

@@ -8,7 +8,7 @@ This module calls down into individual test cases via subprocess. It will
 forward all unrecognized arguments onto the individual test scripts.
 
 For a description of arguments recognized by test scripts, see
-`test/functional/test_framework/test_framework.py:BitcoinsTestFramework.main`.
+`test/functional/test_framework/test_framework.py:X1coinTestFramework.main`.
 
 """
 
@@ -168,8 +168,8 @@ BASE_SCRIPTS = [
     'wallet_fast_rescan.py --descriptors',
     'interface_zmq.py',
     'rpc_invalid_address_message.py',
-    'interface_bitcoins_cli.py --legacy-wallet',
-    'interface_bitcoins_cli.py --descriptors',
+    'interface_x1coin_cli.py --legacy-wallet',
+    'interface_x1coin_cli.py --descriptors',
     'feature_bind_extra.py',
     'mempool_resurrect.py',
     'wallet_txn_doublespend.py --mineblock',
@@ -424,9 +424,9 @@ def main():
 
     logging.debug("Temporary test directory at %s" % tmpdir)
 
-    enable_bitcoinsd = config["components"].getboolean("ENABLE_BITCOINSD")
+    enable_x1coind = config["components"].getboolean("ENABLE_X1COIND")
 
-    if not enable_bitcoinsd:
+    if not enable_x1coind:
         print("No functional tests to run.")
         print("Rerun ./configure with --with-daemon and then make")
         sys.exit(0)
@@ -508,11 +508,11 @@ def main():
 def run_tests(*, test_list, src_dir, build_dir, tmpdir, jobs=1, enable_coverage=False, args=None, combined_logs_len=0, failfast=False, use_term_control):
     args = args or []
 
-    # Warn if bitcoinsd is already running
+    # Warn if x1coind is already running
     try:
         # pgrep exits with code zero when one or more matching processes found
-        if subprocess.run(["pgrep", "-x", "bitcoinsd"], stdout=subprocess.DEVNULL).returncode == 0:
-            print("%sWARNING!%s There is already a bitcoinsd process running on this system. Tests may fail unexpectedly due to resource contention!" % (BOLD[1], BOLD[0]))
+        if subprocess.run(["pgrep", "-x", "x1coind"], stdout=subprocess.DEVNULL).returncode == 0:
+            print("%sWARNING!%s There is already a x1coind process running on this system. Tests may fail unexpectedly due to resource contention!" % (BOLD[1], BOLD[0]))
     except OSError:
         # pgrep not supported
         pass
@@ -790,7 +790,7 @@ class RPCCoverage():
     Coverage calculation works by having each test script subprocess write
     coverage files into a particular directory. These files contain the RPC
     commands invoked during testing, as well as a complete listing of RPC
-    commands per `bitcoins-cli help` (`rpc_interface.txt`).
+    commands per `x1coin-cli help` (`rpc_interface.txt`).
 
     After all tests complete, the commands run are combined and diff'd against
     the complete list to calculate uncovered RPC commands.

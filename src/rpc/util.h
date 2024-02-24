@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_RPC_UTIL_H
-#define BITCOINS_RPC_UTIL_H
+#ifndef X1COIN_RPC_UTIL_H
+#define X1COIN_RPC_UTIL_H
 
 #include <node/transaction.h>
 #include <outputtype.h>
@@ -390,4 +390,4 @@ private:
 void PushWarnings(const UniValue& warnings, UniValue& obj);
 void PushWarnings(const std::vector<bilingual_str>& warnings, UniValue& obj);
 
-#endif // BITCOINS_RPC_UTIL_H
+#endif // X1COIN_RPC_UTIL_H

@@ -1,23 +1,23 @@
 Benchmarking
 ============
 
-Bitcoins Core has an internal benchmarking framework, with benchmarks
+X1coin has an internal benchmarking framework, with benchmarks
 for cryptographic algorithms (e.g. SHA1, SHA256, SHA512, RIPEMD160, Poly1305, ChaCha20), rolling bloom filter, coins selection,
 thread queue, wallet balance.
 
 Running
 ---------------------
 
-For benchmarking, you only need to compile `bitcoins_bench`.  The bench runner
+For benchmarking, you only need to compile `x1coin_bench`.  The bench runner
 warns if you configure with `--enable-debug`, but consider if building without
 it will impact the benchmark(s) you are interested in by unlatching log printers
 and lock analysis.
 
-    make -C src bitcoins_bench
+    make -C src x1coin_bench
 
-After compiling bitcoins-core, the benchmarks can be run with:
+After compiling x1coin-core, the benchmarks can be run with:
 
-    src/bench/bench_bitcoins
+    src/bench/bench_x1coin
 
 The output will look similar to:
 ```
@@ -39,7 +39,7 @@ The output will look similar to:
 Help
 ---------------------
 
-    src/bench/bench_bitcoins -?
+    src/bench/bench_x1coin -?
 
 To print the various options, like listing the benchmarks without running them
 or using a regex filter to only run certain benchmarks.
@@ -56,6 +56,6 @@ More benchmarks are needed for, in no particular order:
 Going Further
 --------------------
 
-To monitor Bitcoins Core performance more in depth (like reindex or IBD): https://github.com/chaincodelabs/bitcoinsperf
+To monitor X1coin performance more in depth (like reindex or IBD): https://github.com/chaincodelabs/x1coinperf
 
-To generate Flame Graphs for Bitcoins Core: https://github.com/eklitzke/bitcoins/blob/flamegraphs/doc/flamegraphs.md
+To generate Flame Graphs for X1coin: https://github.com/eklitzke/x1coin/blob/flamegraphs/doc/flamegraphs.md

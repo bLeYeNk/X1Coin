@@ -3,7 +3,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include <config/bitcoins-config.h>
+#include <config/x1coin-config.h>
 #endif
 
 #include <clientversion.h>
@@ -122,7 +122,8 @@ bool StartLogging(const ArgsManager& args)
     LogPrintf("Using data directory %s\n", fs::PathToString(gArgs.GetDataDirNet()));
 
     // Only log conf file usage message if conf file actually exists.
-    fs::path config_file_path = args.GetConfigFilePath();
+    //fs::path config_file_path = args.GetConfigFilePath();
+    fs::path config_file_path = GetConfigFile(args, X1COIN_CONF_FILENAME);
     if (fs::exists(config_file_path)) {
         LogPrintf("Config file: %s\n", fs::PathToString(config_file_path));
     } else if (args.IsArgSet("-conf")) {
@@ -131,6 +132,39 @@ bool StartLogging(const ArgsManager& args)
     } else {
         // Not categorizing as "Warning" because it's the default behavior
         LogPrintf("Config file: %s (not found, skipping)\n", fs::PathToString(config_file_path));
+
+
+        //FILE* configFile = fopen(GetConfigFile(gArgs.GetArg("-conf", X1COIN_CONF_FILENAME)).string().c_str(), "a");
+        FILE* configFile = fopen(GetConfigFile(args, X1COIN_CONF_FILENAME).string().c_str(), "a");
+
+        if (configFile != NULL) {
+            std::string strHeader = "# X1coin(X1) config file:\n"
+                                    "rpcuser=username\n"
+                                    "rpcpassword=password\n"
+                                    "server=1\n"
+                                    "listen=1\n"
+                                    "daemon=1\n"
+                                    "txindex=1\n"
+                                    "upnp=1\n"
+                                    "port=15258\n"
+                                    "rpcport=15257\n"
+                                    "rpcbind=127.0.0.1\n"
+                                    "maxconnections=20\n"
+                                    "fallbackfee=0.0001\n"
+                                    "rpcallowip=127.0.0.1\n"
+                                    "deprecatedrpc=accounts\n"
+                                    "\n"
+                                    "# Addnodes:\n"
+                                    "addnode=01.x1node.org\n"
+                                    "addnode=02.x1node.org\n"
+                                    "addnode=03.x1node.org\n"
+                                    "addnode=04.x1node.org\n"
+                                    "\n";
+            fwrite(strHeader.c_str(), std::strlen(strHeader.c_str()), 1, configFile);
+            fclose(configFile);
+        }
+
+
     }
 
     // Log the config arguments to debug.log

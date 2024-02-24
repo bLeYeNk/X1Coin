@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_UTIL_MACROS_H
-#define BITCOINS_UTIL_MACROS_H
+#ifndef X1COIN_UTIL_MACROS_H
+#define X1COIN_UTIL_MACROS_H
 
 #define PASTE(x, y) x ## y
 #define PASTE2(x, y) PASTE(x, y)
@@ -17,4 +17,4 @@
 #define STRINGIZE(X) DO_STRINGIZE(X)
 #define DO_STRINGIZE(X) #X
 
-#endif // BITCOINS_UTIL_MACROS_H
+#endif // X1COIN_UTIL_MACROS_H

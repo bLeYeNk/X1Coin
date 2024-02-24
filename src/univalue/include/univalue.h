@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or https://opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_UNIVALUE_INCLUDE_UNIVALUE_H
-#define BITCOINS_UNIVALUE_INCLUDE_UNIVALUE_H
+#ifndef X1COIN_UNIVALUE_INCLUDE_UNIVALUE_H
+#define X1COIN_UNIVALUE_INCLUDE_UNIVALUE_H
 
 #include <charconv>
 #include <cstdint>
@@ -203,4 +203,4 @@ extern const UniValue NullUniValue;
 
 const UniValue& find_value( const UniValue& obj, const std::string& name);
 
-#endif // BITCOINS_UNIVALUE_INCLUDE_UNIVALUE_H
+#endif // X1COIN_UNIVALUE_INCLUDE_UNIVALUE_H

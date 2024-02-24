@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_COMMON_BLOOM_H
-#define BITCOINS_COMMON_BLOOM_H
+#ifndef X1COIN_COMMON_BLOOM_H
+#define X1COIN_COMMON_BLOOM_H
 
 #include <serialize.h>
 #include <span.h>
@@ -124,4 +124,4 @@ private:
     int nHashFuncs;
 };
 
-#endif // BITCOINS_COMMON_BLOOM_H
+#endif // X1COIN_COMMON_BLOOM_H

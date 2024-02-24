@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_SUPPORT_LOCKEDPOOL_H
-#define BITCOINS_SUPPORT_LOCKEDPOOL_H
+#ifndef X1COIN_SUPPORT_LOCKEDPOOL_H
+#define X1COIN_SUPPORT_LOCKEDPOOL_H
 
 #include <cstddef>
 #include <list>
@@ -237,4 +237,4 @@ private:
     static LockedPoolManager* _instance;
 };
 
-#endif // BITCOINS_SUPPORT_LOCKEDPOOL_H
+#endif // X1COIN_SUPPORT_LOCKEDPOOL_H

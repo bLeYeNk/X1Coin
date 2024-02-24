@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_INTERFACES_IPC_H
-#define BITCOINS_INTERFACES_IPC_H
+#ifndef X1COIN_INTERFACES_IPC_H
+#define X1COIN_INTERFACES_IPC_H
 
 #include <functional>
 #include <memory>
@@ -75,4 +75,4 @@ protected:
 std::unique_ptr<Ipc> MakeIpc(const char* exe_name, const char* process_argv0, Init& init);
 } // namespace interfaces
 
-#endif // BITCOINS_INTERFACES_IPC_H
+#endif // X1COIN_INTERFACES_IPC_H

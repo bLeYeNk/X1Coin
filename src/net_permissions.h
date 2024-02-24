@@ -8,8 +8,8 @@
 #include <type_traits>
 #include <vector>
 
-#ifndef BITCOINS_NET_PERMISSIONS_H
-#define BITCOINS_NET_PERMISSIONS_H
+#ifndef X1COIN_NET_PERMISSIONS_H
+#define X1COIN_NET_PERMISSIONS_H
 
 struct bilingual_str;
 
@@ -87,4 +87,4 @@ public:
     CSubNet m_subnet;
 };
 
-#endif // BITCOINS_NET_PERMISSIONS_H
+#endif // X1COIN_NET_PERMISSIONS_H

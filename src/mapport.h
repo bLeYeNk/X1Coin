@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_MAPPORT_H
-#define BITCOINS_MAPPORT_H
+#ifndef X1COIN_MAPPORT_H
+#define X1COIN_MAPPORT_H
 
 static constexpr bool DEFAULT_UPNP = false;
 
@@ -19,4 +19,4 @@ void StartMapPort(bool use_upnp, bool use_natpmp);
 void InterruptMapPort();
 void StopMapPort();
 
-#endif // BITCOINS_MAPPORT_H
+#endif // X1COIN_MAPPORT_H

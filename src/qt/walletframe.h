@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_QT_WALLETFRAME_H
-#define BITCOINS_QT_WALLETFRAME_H
+#ifndef X1COIN_QT_WALLETFRAME_H
+#define X1COIN_QT_WALLETFRAME_H
 
 #include <QFrame>
 #include <QMap>
@@ -20,9 +20,9 @@ QT_END_NAMESPACE
 
 /**
  * A container for embedding all wallet-related
- * controls into BitcoinsGUI. The purpose of this class is to allow future
+ * controls into X1coinGUI. The purpose of this class is to allow future
  * refinements of the wallet controls with minimal need for further
- * modifications to BitcoinsGUI, thus greatly simplifying merges while
+ * modifications to X1coinGUI, thus greatly simplifying merges while
  * reducing the risk of breaking top-level stuff.
  */
 class WalletFrame : public QFrame
@@ -81,7 +81,7 @@ public Q_SLOTS:
     /** Show Sign/Verify Message dialog and switch to verify message tab */
     void gotoVerifyMessageTab(QString addr = "");
 
-    /** Load Partially Signed Bitcoins Transaction */
+    /** Load Partially Signed X1coin Transaction */
     void gotoLoadPSBT(bool from_clipboard = false);
 
     /** Encrypt the wallet */
@@ -99,4 +99,4 @@ public Q_SLOTS:
     void usedReceivingAddresses();
 };
 
-#endif // BITCOINS_QT_WALLETFRAME_H
+#endif // X1COIN_QT_WALLETFRAME_H

@@ -6,7 +6,7 @@
 
 from decimal import Decimal
 
-from test_framework.test_framework import BitcoinsTestFramework
+from test_framework.test_framework import X1coinTestFramework
 from test_framework.util import assert_equal
 
 signet_blocks = [
@@ -23,7 +23,7 @@ signet_blocks = [
 ]
 
 
-class SignetBasicTest(BitcoinsTestFramework):
+class SignetBasicTest(X1coinTestFramework):
     def set_test_params(self):
         self.chain = "signet"
         self.num_nodes = 6

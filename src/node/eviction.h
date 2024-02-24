@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_NODE_EVICTION_H
-#define BITCOINS_NODE_EVICTION_H
+#ifndef X1COIN_NODE_EVICTION_H
+#define X1COIN_NODE_EVICTION_H
 
 #include <node/connection_types.h>
 #include <net_permissions.h>
@@ -66,4 +66,4 @@ struct NodeEvictionCandidate {
  */
 void ProtectEvictionCandidatesByRatio(std::vector<NodeEvictionCandidate>& vEvictionCandidates);
 
-#endif // BITCOINS_NODE_EVICTION_H
+#endif // X1COIN_NODE_EVICTION_H

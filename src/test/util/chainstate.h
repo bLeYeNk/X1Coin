@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 //
-#ifndef BITCOINS_TEST_UTIL_CHAINSTATE_H
-#define BITCOINS_TEST_UTIL_CHAINSTATE_H
+#ifndef X1COIN_TEST_UTIL_CHAINSTATE_H
+#define X1COIN_TEST_UTIL_CHAINSTATE_H
 
 #include <clientversion.h>
 #include <logging.h>
@@ -96,4 +96,4 @@ CreateAndActivateUTXOSnapshot(
 }
 
 
-#endif // BITCOINS_TEST_UTIL_CHAINSTATE_H
+#endif // X1COIN_TEST_UTIL_CHAINSTATE_H

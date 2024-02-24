@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_INDEX_DISKTXPOS_H
-#define BITCOINS_INDEX_DISKTXPOS_H
+#ifndef X1COIN_INDEX_DISKTXPOS_H
+#define X1COIN_INDEX_DISKTXPOS_H
 
 #include <flatfile.h>
 #include <serialize.h>
@@ -24,4 +24,4 @@ struct CDiskTxPos : public FlatFilePos
     CDiskTxPos() {}
 };
 
-#endif // BITCOINS_INDEX_DISKTXPOS_H
+#endif // X1COIN_INDEX_DISKTXPOS_H

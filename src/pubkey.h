@@ -4,8 +4,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_PUBKEY_H
-#define BITCOINS_PUBKEY_H
+#ifndef X1COIN_PUBKEY_H
+#define X1COIN_PUBKEY_H
 
 #include <hash.h>
 #include <serialize.h>
@@ -330,4 +330,4 @@ struct CExtPubKey {
     [[nodiscard]] bool Derive(CExtPubKey& out, unsigned int nChild) const;
 };
 
-#endif // BITCOINS_PUBKEY_H
+#endif // X1COIN_PUBKEY_H

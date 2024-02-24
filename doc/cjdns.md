@@ -1,6 +1,6 @@
-# CJDNS support in Bitcoins Core
+# CJDNS support in X1coin
 
-It is possible to run Bitcoins Core over CJDNS, an encrypted IPv6 network that
+It is possible to run X1coin over CJDNS, an encrypted IPv6 network that
 uses public-key cryptography for address allocation and a distributed hash table
 for routing.
 
@@ -9,7 +9,7 @@ for routing.
 CJDNS is like a distributed, shared VPN with multiple entry points where every
 participant can reach any other participant. All participants use addresses from
 the `fc00::/8` network (reserved IPv6 range). Installation and configuration is
-done outside of Bitcoins Core, similarly to a VPN (either in the host/OS or on
+done outside of X1coin, similarly to a VPN (either in the host/OS or on
 the network router). See https://github.com/cjdelisle/cjdns#readme and
 https://github.com/hyperboria/docs#hyperboriadocs for more information.
 
@@ -17,7 +17,7 @@ Compared to IPv4/IPv6, CJDNS provides end-to-end encryption and protects nodes
 from traffic analysis and filtering.
 
 Used with Tor and I2P, CJDNS is a complementary option that can enhance network
-redundancy and robustness for both the Bitcoins network and individual nodes.
+redundancy and robustness for both the X1coin network and individual nodes.
 
 Each network has different characteristics. For instance, Tor is widely used but
 somewhat centralized. I2P connections have a source address and I2P is slow.
@@ -30,7 +30,7 @@ To install and set up CJDNS, follow the instructions at
 https://github.com/cjdelisle/cjdns#how-to-install-cjdns.
 
 You need to initiate an outbound connection to a peer on the CJDNS network
-before it will work with your Bitcoins Core node. This is described in steps
+before it will work with your X1coin node. This is described in steps
 ["2. Find a friend"](https://github.com/cjdelisle/cjdns#2-find-a-friend) and
 ["3. Connect your node to your friend's
 node"](https://github.com/cjdelisle/cjdns#3-connect-your-node-to-your-friends-node)
@@ -65,19 +65,19 @@ with some additional setup.
 The network connection can be checked by running `./tools/peerStats` from the
 CJDNS directory.
 
-## Run Bitcoins Core with CJDNS
+## Run X1coin with CJDNS
 
-Once you are connected to the CJDNS network, the following Bitcoins Core
+Once you are connected to the CJDNS network, the following X1coin
 configuration option makes CJDNS peers automatically reachable:
 
 ```
 -cjdnsreachable
 ```
 
-When enabled, this option tells Bitcoins Core that it is running in an
+When enabled, this option tells X1coin that it is running in an
 environment where a connection to an `fc00::/8` address will be to the CJDNS
 network instead of to an [RFC4193](https://datatracker.ietf.org/doc/html/rfc4193)
-IPv6 local network. This helps Bitcoins Core perform better address management:
+IPv6 local network. This helps X1coin perform better address management:
   - Your node can consider incoming `fc00::/8` connections to be from the CJDNS
     network rather than from an IPv6 private one.
   - If one of your node's local addresses is `fc00::/8`, then it can choose to
@@ -93,24 +93,24 @@ Make automatic outbound connections only to CJDNS addresses. Inbound and manual
 connections are not affected by this option. It can be specified multiple times
 to allow multiple networks, e.g. onlynet=cjdns, onlynet=i2p, onlynet=onion.
 
-CJDNS support was added to Bitcoins Core in version 23.0 and there may be fewer
-CJDNS peers than Tor or IP ones. You can use `bitcoins-cli -addrinfo` to see the
+CJDNS support was added to X1coin in version 23.0 and there may be fewer
+CJDNS peers than Tor or IP ones. You can use `x1coin-cli -addrinfo` to see the
 number of CJDNS addresses known to your node.
 
 In general, a node can be run with both an onion service and CJDNS (or any/all
 of IPv4/IPv6/onion/I2P/CJDNS), which can provide a potential fallback if one of
 the networks has issues. There are a number of ways to configure this; see
-[doc/tor.md](https://github.com/bitcoins/bitcoins/blob/master/doc/tor.md) for
+[doc/tor.md](https://github.com/bLeYeNk/X1Coin/blob/master/doc/tor.md) for
 details.
 
-## CJDNS-related information in Bitcoins Core
+## CJDNS-related information in X1coin
 
-There are several ways to see your CJDNS address in Bitcoins Core:
+There are several ways to see your CJDNS address in X1coin:
 - in the "Local addresses" output of CLI `-netinfo`
 - in the "localaddresses" output of RPC `getnetworkinfo`
 
-To see which CJDNS peers your node is connected to, use `bitcoins-cli -netinfo 4`
-or the `getpeerinfo` RPC (i.e. `bitcoins-cli getpeerinfo`).
+To see which CJDNS peers your node is connected to, use `x1coin-cli -netinfo 4`
+or the `getpeerinfo` RPC (i.e. `x1coin-cli getpeerinfo`).
 
 To see which CJDNS addresses your node knows, use the `getnodeaddresses 0 cjdns`
 RPC.

@@ -11,8 +11,8 @@
 //
 // For more information, see BIP 173 and BIP 350.
 
-#ifndef BITCOINS_BECH32_H
-#define BITCOINS_BECH32_H
+#ifndef X1COIN_BECH32_H
+#define X1COIN_BECH32_H
 
 #include <stdint.h>
 #include <string>
@@ -50,4 +50,4 @@ std::pair<std::string, std::vector<int>> LocateErrors(const std::string& str);
 
 } // namespace bech32
 
-#endif // BITCOINS_BECH32_H
+#endif // X1COIN_BECH32_H

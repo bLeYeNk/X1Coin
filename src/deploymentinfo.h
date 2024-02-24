@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_DEPLOYMENTINFO_H
-#define BITCOINS_DEPLOYMENTINFO_H
+#ifndef X1COIN_DEPLOYMENTINFO_H
+#define X1COIN_DEPLOYMENTINFO_H
 
 #include <consensus/params.h>
 
@@ -29,4 +29,4 @@ inline std::string DeploymentName(Consensus::DeploymentPos pos)
 
 std::optional<Consensus::BuriedDeployment> GetBuriedDeployment(const std::string_view deployment_name);
 
-#endif // BITCOINS_DEPLOYMENTINFO_H
+#endif // X1COIN_DEPLOYMENTINFO_H

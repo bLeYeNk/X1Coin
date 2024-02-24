@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_KERNEL_CHAIN_H
-#define BITCOINS_KERNEL_CHAIN_H
+#ifndef X1COIN_KERNEL_CHAIN_H
+#define X1COIN_KERNEL_CHAIN_H
 
 class CBlock;
 class CBlockIndex;
@@ -16,4 +16,4 @@ namespace kernel {
 interfaces::BlockInfo MakeBlockInfo(const CBlockIndex* block_index, const CBlock* data = nullptr);
 } // namespace kernel
 
-#endif // BITCOINS_KERNEL_CHAIN_H
+#endif // X1COIN_KERNEL_CHAIN_H

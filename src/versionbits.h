@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_VERSIONBITS_H
-#define BITCOINS_VERSIONBITS_H
+#ifndef X1COIN_VERSIONBITS_H
+#define X1COIN_VERSIONBITS_H
 
 #include <chain.h>
 #include <sync.h>
@@ -104,4 +104,4 @@ public:
     void Clear() EXCLUSIVE_LOCKS_REQUIRED(!m_mutex);
 };
 
-#endif // BITCOINS_VERSIONBITS_H
+#endif // X1COIN_VERSIONBITS_H

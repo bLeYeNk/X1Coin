@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_RPC_BLOCKCHAIN_H
-#define BITCOINS_RPC_BLOCKCHAIN_H
+#ifndef X1COIN_RPC_BLOCKCHAIN_H
+#define X1COIN_RPC_BLOCKCHAIN_H
 
 #include <consensus/amount.h>
 #include <core_io.h>
@@ -57,4 +57,4 @@ UniValue CreateUTXOSnapshot(
     const fs::path& path,
     const fs::path& tmppath);
 
-#endif // BITCOINS_RPC_BLOCKCHAIN_H
+#endif // X1COIN_RPC_BLOCKCHAIN_H

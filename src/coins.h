@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_COINS_H
-#define BITCOINS_COINS_H
+#ifndef X1COIN_COINS_H
+#define X1COIN_COINS_H
 
 #include <compressor.h>
 #include <core_memusage.h>
@@ -351,7 +351,7 @@ const Coin& AccessByTxid(const CCoinsViewCache& cache, const uint256& txid);
 /**
  * This is a minimally invasive approach to shutdown on LevelDB read errors from the
  * chainstate, while keeping user interface out of the common library, which is shared
- * between bitcoinsd, and bitcoins-qt and non-server tools.
+ * between x1coind, and x1coin-qt and non-server tools.
  *
  * Writes do not need similar protection, as failure to write is handled by the caller.
 */
@@ -372,4 +372,4 @@ private:
 
 };
 
-#endif // BITCOINS_COINS_H
+#endif // X1COIN_COINS_H

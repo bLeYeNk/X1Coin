@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_WALLET_WALLETDB_H
-#define BITCOINS_WALLET_WALLETDB_H
+#ifndef X1COIN_WALLET_WALLETDB_H
+#define X1COIN_WALLET_WALLETDB_H
 
 #include <script/sign.h>
 #include <wallet/db.h>
@@ -313,4 +313,4 @@ std::unique_ptr<WalletDatabase> CreateMockWalletDatabase(DatabaseOptions& option
 std::unique_ptr<WalletDatabase> CreateMockWalletDatabase();
 } // namespace wallet
 
-#endif // BITCOINS_WALLET_WALLETDB_H
+#endif // X1COIN_WALLET_WALLETDB_H

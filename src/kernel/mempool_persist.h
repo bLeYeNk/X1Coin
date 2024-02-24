@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_KERNEL_MEMPOOL_PERSIST_H
-#define BITCOINS_KERNEL_MEMPOOL_PERSIST_H
+#ifndef X1COIN_KERNEL_MEMPOOL_PERSIST_H
+#define X1COIN_KERNEL_MEMPOOL_PERSIST_H
 
 #include <util/fs.h>
 
@@ -25,4 +25,4 @@ bool LoadMempool(CTxMemPool& pool, const fs::path& load_path,
 } // namespace kernel
 
 
-#endif // BITCOINS_KERNEL_MEMPOOL_PERSIST_H
+#endif // X1COIN_KERNEL_MEMPOOL_PERSIST_H

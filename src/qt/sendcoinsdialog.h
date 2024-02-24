@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_QT_SENDCOINSDIALOG_H
-#define BITCOINS_QT_SENDCOINSDIALOG_H
+#ifndef X1COIN_QT_SENDCOINSDIALOG_H
+#define X1COIN_QT_SENDCOINSDIALOG_H
 
 #include <qt/clientmodel.h>
 #include <qt/walletmodel.h>
@@ -29,7 +29,7 @@ QT_BEGIN_NAMESPACE
 class QUrl;
 QT_END_NAMESPACE
 
-/** Dialog for sending bitcoinss */
+/** Dialog for sending x1coins */
 class SendCoinsDialog : public QDialog
 {
     Q_OBJECT
@@ -149,4 +149,4 @@ private:
     QString m_psbt_button_text{tr("Create Unsigned")};
 };
 
-#endif // BITCOINS_QT_SENDCOINSDIALOG_H
+#endif // X1COIN_QT_SENDCOINSDIALOG_H

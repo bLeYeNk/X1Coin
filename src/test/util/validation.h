@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_TEST_UTIL_VALIDATION_H
-#define BITCOINS_TEST_UTIL_VALIDATION_H
+#ifndef X1COIN_TEST_UTIL_VALIDATION_H
+#define X1COIN_TEST_UTIL_VALIDATION_H
 
 #include <validation.h>
 
@@ -22,4 +22,4 @@ public:
     static void BlockConnected(CValidationInterface& obj, const std::shared_ptr<const CBlock>& block, const CBlockIndex* pindex);
 };
 
-#endif // BITCOINS_TEST_UTIL_VALIDATION_H
+#endif // X1COIN_TEST_UTIL_VALIDATION_H

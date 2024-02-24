@@ -13,7 +13,7 @@ from test_framework.messages import (
     tx_from_hex,
 )
 from test_framework.p2p import P2PTxInvStore
-from test_framework.test_framework import BitcoinsTestFramework
+from test_framework.test_framework import X1coinTestFramework
 from test_framework.util import (
     assert_equal,
     assert_fee_amount,
@@ -26,7 +26,7 @@ from test_framework.wallet import (
 )
 
 
-class RPCPackagesTest(BitcoinsTestFramework):
+class RPCPackagesTest(X1coinTestFramework):
     def set_test_params(self):
         self.num_nodes = 1
         self.setup_clean_chain = True

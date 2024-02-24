@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_INTERFACES_NODE_H
-#define BITCOINS_INTERFACES_NODE_H
+#ifndef X1COIN_INTERFACES_NODE_H
+#define X1COIN_INTERFACES_NODE_H
 
 #include <consensus/amount.h>          // For CAmount
 #include <net.h>                       // For NodeId
@@ -65,7 +65,7 @@ public:
     virtual std::string getName() = 0;
 };
 
-//! Top-level interface for a bitcoins node (bitcoinsd process).
+//! Top-level interface for a x1coin node (x1coind process).
 class Node
 {
 public:
@@ -102,7 +102,7 @@ public:
     //! would be ignored because it is also specified in the command line.
     virtual bool isSettingIgnored(const std::string& name) = 0;
 
-    //! Return setting value from <datadir>/settings.json or bitcoins.conf.
+    //! Return setting value from <datadir>/settings.json or x1coin.conf.
     virtual util::SettingsValue getPersistentSetting(const std::string& name) = 0;
 
     //! Update a setting in <datadir>/settings.json.
@@ -278,4 +278,4 @@ struct BlockTip {
 
 } // namespace interfaces
 
-#endif // BITCOINS_INTERFACES_NODE_H
+#endif // X1COIN_INTERFACES_NODE_H

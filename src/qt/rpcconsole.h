@@ -2,11 +2,11 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_QT_RPCCONSOLE_H
-#define BITCOINS_QT_RPCCONSOLE_H
+#ifndef X1COIN_QT_RPCCONSOLE_H
+#define X1COIN_QT_RPCCONSOLE_H
 
 #if defined(HAVE_CONFIG_H)
-#include <config/bitcoins-config.h>
+#include <config/x1coin-config.h>
 #endif
 
 #include <qt/clientmodel.h>
@@ -39,7 +39,7 @@ class QMenu;
 class QItemSelection;
 QT_END_NAMESPACE
 
-/** Local Bitcoins RPC console. */
+/** Local X1coin RPC console. */
 class RPCConsole: public QWidget
 {
     Q_OBJECT
@@ -189,4 +189,4 @@ private Q_SLOTS:
     void updateAlerts(const QString& warnings);
 };
 
-#endif // BITCOINS_QT_RPCCONSOLE_H
+#endif // X1COIN_QT_RPCCONSOLE_H

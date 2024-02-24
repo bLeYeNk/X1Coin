@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_UTIL_TRANSLATION_H
-#define BITCOINS_UTIL_TRANSLATION_H
+#ifndef X1COIN_UTIL_TRANSLATION_H
+#define X1COIN_UTIL_TRANSLATION_H
 
 #include <tinyformat.h>
 
@@ -80,4 +80,4 @@ inline bilingual_str _(const char* psz)
     return bilingual_str{psz, G_TRANSLATION_FUN ? (G_TRANSLATION_FUN)(psz) : psz};
 }
 
-#endif // BITCOINS_UTIL_TRANSLATION_H
+#endif // X1COIN_UTIL_TRANSLATION_H

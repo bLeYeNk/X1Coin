@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_NODE_CACHES_H
-#define BITCOINS_NODE_CACHES_H
+#ifndef X1COIN_NODE_CACHES_H
+#define X1COIN_NODE_CACHES_H
 
 #include <cstddef>
 #include <cstdint>
@@ -21,4 +21,4 @@ struct CacheSizes {
 CacheSizes CalculateCacheSizes(const ArgsManager& args, size_t n_indexes = 0);
 } // namespace node
 
-#endif // BITCOINS_NODE_CACHES_H
+#endif // X1COIN_NODE_CACHES_H

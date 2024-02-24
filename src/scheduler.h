@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_SCHEDULER_H
-#define BITCOINS_SCHEDULER_H
+#ifndef X1COIN_SCHEDULER_H
+#define X1COIN_SCHEDULER_H
 
 #include <attributes.h>
 #include <sync.h>
@@ -152,4 +152,4 @@ public:
     size_t CallbacksPending() EXCLUSIVE_LOCKS_REQUIRED(!m_callbacks_mutex);
 };
 
-#endif // BITCOINS_SCHEDULER_H
+#endif // X1COIN_SCHEDULER_H

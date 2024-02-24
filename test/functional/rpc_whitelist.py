@@ -5,7 +5,7 @@
 """
 A test for RPC users with restricted permissions
 """
-from test_framework.test_framework import BitcoinsTestFramework
+from test_framework.test_framework import X1coinTestFramework
 import os
 from test_framework.util import (
     get_datadir_path,
@@ -26,7 +26,7 @@ def rpccall(node, user, method):
     return resp
 
 
-class RPCWhitelistTest(BitcoinsTestFramework):
+class RPCWhitelistTest(X1coinTestFramework):
     def set_test_params(self):
         self.num_nodes = 1
 
@@ -55,7 +55,7 @@ class RPCWhitelistTest(BitcoinsTestFramework):
         ]
         # These commands shouldn't be allowed for any user to test failures
         self.never_allowed = ["getnetworkinfo"]
-        with open(os.path.join(get_datadir_path(self.options.tmpdir, 0), "bitcoins.conf"), 'a', encoding='utf8') as f:
+        with open(os.path.join(get_datadir_path(self.options.tmpdir, 0), "x1coin.conf"), 'a', encoding='utf8') as f:
             f.write("\nrpcwhitelistdefault=0\n")
             for user in self.users:
                 f.write("rpcauth=" + user[0] + ":" + user[1] + "\n")

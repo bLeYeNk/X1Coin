@@ -1,29 +1,29 @@
-# Support for signing transactions outside of Bitcoins Core
+# Support for signing transactions outside of X1coin
 
-Bitcoins Core can be launched with `-signer=<cmd>` where `<cmd>` is an external tool which can sign transactions and perform other functions. For example, it can be used to communicate with a hardware wallet.
+X1coin can be launched with `-signer=<cmd>` where `<cmd>` is an external tool which can sign transactions and perform other functions. For example, it can be used to communicate with a hardware wallet.
 
 ## Example usage
 
-The following example is based on the [HWI](https://github.com/bitcoins-core/HWI) tool. Version 2.0 or newer is required. Although this tool is hosted under the Bitcoins Core GitHub organization and maintained by Bitcoins Core developers, it should be used with caution. It is considered experimental and has far less review than Bitcoins Core itself. Be particularly careful when running tools such as these on a computer with private keys on it.
+The following example is based on the [HWI](https://github.com/x1coin-core/HWI) tool. Version 2.0 or newer is required. Although this tool is hosted under the X1coin GitHub organization and maintained by Bitcoin Core developers, it should be used with caution. It is considered experimental and has far less review than X1coin itself. Be particularly careful when running tools such as these on a computer with private keys on it.
 
-When using a hardware wallet, consult the manufacturer website for (alternative) software they recommend. As long as their software conforms to the standard below, it should be able to work with Bitcoins Core.
+When using a hardware wallet, consult the manufacturer website for (alternative) software they recommend. As long as their software conforms to the standard below, it should be able to work with X1coin.
 
-Start Bitcoins Core:
+Start X1coin:
 
 ```sh
-$ bitcoinsd -signer=../HWI/hwi.py
+$ x1coind -signer=../HWI/hwi.py
 ```
 
 ### Device setup
 
-Follow the hardware manufacturers instructions for the initial device setup, as well as their instructions for creating a backup. Alternatively, for some devices, you can use the `setup`, `restore` and `backup` commands provided by [HWI](https://github.com/bitcoins-core/HWI).
+Follow the hardware manufacturers instructions for the initial device setup, as well as their instructions for creating a backup. Alternatively, for some devices, you can use the `setup`, `restore` and `backup` commands provided by [HWI](https://github.com/x1coin-core/HWI).
 
 ### Create wallet and import keys
 
 Get a list of signing devices / services:
 
 ```
-$ bitcoins-cli enumeratesigners
+$ x1coin-cli enumeratesigners
 {
   "signers": [
     {
@@ -37,7 +37,7 @@ The master key fingerprint is used to identify a device.
 Create a wallet, this automatically imports the public keys:
 
 ```sh
-$ bitcoins-cli createwallet "hww" true true "" true true true
+$ x1coin-cli createwallet "hww" true true "" true true true
 ```
 
 ### Verify an address
@@ -45,18 +45,18 @@ $ bitcoins-cli createwallet "hww" true true "" true true true
 Display an address on the device:
 
 ```sh
-$ bitcoins-cli -rpcwallet=<wallet> getnewaddress
-$ bitcoins-cli -rpcwallet=<wallet> walletdisplayaddress <address>
+$ x1coin-cli -rpcwallet=<wallet> getnewaddress
+$ x1coin-cli -rpcwallet=<wallet> walletdisplayaddress <address>
 ```
 
 Replace `<address>` with the result of `getnewaddress`.
 
 ### Spending
 
-Under the hood this uses a [Partially Signed Bitcoins Transaction](psbt.md).
+Under the hood this uses a [Partially Signed X1coin Transaction](psbt.md).
 
 ```sh
-$ bitcoins-cli -rpcwallet=<wallet> sendtoaddress <address> <amount>
+$ x1coin-cli -rpcwallet=<wallet> sendtoaddress <address> <amount>
 ```
 
 This prompts your hardware wallet to sign, and fail if it's not connected. If successful
@@ -68,11 +68,11 @@ it automatically broadcasts the transaction.
 
 ## Signer API
 
-In order to be compatible with Bitcoins Core any signer command should conform to the specification below. This specification is subject to change. Ideally a BIP should propose a standard so that other wallets can also make use of it.
+In order to be compatible with X1coin any signer command should conform to the specification below. This specification is subject to change. Ideally a BIP should propose a standard so that other wallets can also make use of it.
 
 Prerequisite knowledge:
 * [Output Descriptors](descriptors.md)
-* Partially Signed Bitcoins Transaction ([PSBT](psbt.md))
+* Partially Signed X1coin Transaction ([PSBT](psbt.md))
 
 ### `enumerate` (required)
 
@@ -156,7 +156,7 @@ If <descriptor> contains an xpub, the command MUST fail if it does not match the
 
 The command MAY complain if `--testnet` is set, but the BIP32 coin type is not `1h` (and vice versa).
 
-## How Bitcoins Core uses the Signer API
+## How X1coin uses the Signer API
 
 The `enumeratesigners` RPC simply calls `<cmd> enumerate`.
 

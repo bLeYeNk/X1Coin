@@ -2,9 +2,9 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_IPC_CAPNP_INIT_TYPES_H
-#define BITCOINS_IPC_CAPNP_INIT_TYPES_H
+#ifndef X1COIN_IPC_CAPNP_INIT_TYPES_H
+#define X1COIN_IPC_CAPNP_INIT_TYPES_H
 
 #include <ipc/capnp/echo.capnp.proxy-types.h>
 
-#endif // BITCOINS_IPC_CAPNP_INIT_TYPES_H
+#endif // X1COIN_IPC_CAPNP_INIT_TYPES_H

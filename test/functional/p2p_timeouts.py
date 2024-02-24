@@ -22,7 +22,7 @@
 
 from test_framework.messages import msg_ping
 from test_framework.p2p import P2PInterface
-from test_framework.test_framework import BitcoinsTestFramework
+from test_framework.test_framework import X1coinTestFramework
 
 import time
 
@@ -33,7 +33,7 @@ class TestP2PConn(P2PInterface):
         pass
 
 
-class TimeoutsTest(BitcoinsTestFramework):
+class TimeoutsTest(X1coinTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 1

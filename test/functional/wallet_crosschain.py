@@ -5,10 +5,10 @@
 
 import os
 
-from test_framework.test_framework import BitcoinsTestFramework
+from test_framework.test_framework import X1coinTestFramework
 from test_framework.util import assert_raises_rpc_error
 
-class WalletCrossChain(BitcoinsTestFramework):
+class WalletCrossChain(X1coinTestFramework):
     def add_options(self, parser):
         self.add_wallet_options(parser)
 

@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_QT_NETWORKSTYLE_H
-#define BITCOINS_QT_NETWORKSTYLE_H
+#ifndef X1COIN_QT_NETWORKSTYLE_H
+#define X1COIN_QT_NETWORKSTYLE_H
 
 #include <QIcon>
 #include <QPixmap>
@@ -30,4 +30,4 @@ private:
     QString titleAddText;
 };
 
-#endif // BITCOINS_QT_NETWORKSTYLE_H
+#endif // X1COIN_QT_NETWORKSTYLE_H

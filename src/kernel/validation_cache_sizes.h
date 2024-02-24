@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_KERNEL_VALIDATION_CACHE_SIZES_H
-#define BITCOINS_KERNEL_VALIDATION_CACHE_SIZES_H
+#ifndef X1COIN_KERNEL_VALIDATION_CACHE_SIZES_H
+#define X1COIN_KERNEL_VALIDATION_CACHE_SIZES_H
 
 #include <script/sigcache.h>
 
@@ -17,4 +17,4 @@ struct ValidationCacheSizes {
 };
 }
 
-#endif // BITCOINS_KERNEL_VALIDATION_CACHE_SIZES_H
+#endif // X1COIN_KERNEL_VALIDATION_CACHE_SIZES_H

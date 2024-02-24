@@ -1,11 +1,11 @@
 .PHONY: FORCE
 all: FORCE
-	$(MAKE) -C .. bitcoins_qt test_bitcoins_qt
+	$(MAKE) -C .. x1coin_qt test_x1coin_qt
 clean: FORCE
-	$(MAKE) -C .. bitcoins_qt_clean test_bitcoins_qt_clean
+	$(MAKE) -C .. x1coin_qt_clean test_x1coin_qt_clean
 check: FORCE
-	$(MAKE) -C .. test_bitcoins_qt_check
-bitcoins-qt bitcoins-qt.exe: FORCE
-	 $(MAKE) -C .. bitcoins_qt
+	$(MAKE) -C .. test_x1coin_qt_check
+x1coin-qt x1coin-qt.exe: FORCE
+	 $(MAKE) -C .. x1coin_qt
 apk: FORCE
-	$(MAKE) -C .. bitcoins_qt_apk
+	$(MAKE) -C .. x1coin_qt_apk

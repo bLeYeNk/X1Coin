@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_WALLET_WALLETTOOL_H
-#define BITCOINS_WALLET_WALLETTOOL_H
+#ifndef X1COIN_WALLET_WALLETTOOL_H
+#define X1COIN_WALLET_WALLETTOOL_H
 
 #include <string>
 
@@ -17,4 +17,4 @@ bool ExecuteWalletToolFunc(const ArgsManager& args, const std::string& command);
 } // namespace WalletTool
 } // namespace wallet
 
-#endif // BITCOINS_WALLET_WALLETTOOL_H
+#endif // X1COIN_WALLET_WALLETTOOL_H

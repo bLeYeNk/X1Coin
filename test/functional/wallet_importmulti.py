@@ -20,7 +20,7 @@ from test_framework.script import (
     CScript,
     OP_NOP,
 )
-from test_framework.test_framework import BitcoinsTestFramework
+from test_framework.test_framework import X1coinTestFramework
 from test_framework.descriptors import descsum_create
 from test_framework.util import (
     assert_equal,
@@ -34,7 +34,7 @@ from test_framework.wallet_util import (
 )
 
 
-class ImportMultiTest(BitcoinsTestFramework):
+class ImportMultiTest(X1coinTestFramework):
     def add_options(self, parser):
         self.add_wallet_options(parser, descriptors=False)
 
@@ -84,7 +84,7 @@ class ImportMultiTest(BitcoinsTestFramework):
 
         # RPC importmulti -----------------------------------------------
 
-        # Bitcoins Address (implicit non-internal)
+        # X1coin Address (implicit non-internal)
         self.log.info("Should import an address")
         key = get_key(self.nodes[0])
         self.test_importmulti({"scriptPubKey": {"address": key.p2pkh_addr},

@@ -1,8 +1,8 @@
-# PSBT Howto for Bitcoins Core
+# PSBT Howto for X1coin
 
-Since Bitcoins Core 0.17, an RPC interface exists for Partially Signed Bitcoins
+Since X1coin 0.17, an RPC interface exists for Partially Signed X1coin
 Transactions (PSBTs, as specified in
-[BIP 174](https://github.com/bitcoins/bips/blob/master/bip-0174.mediawiki)).
+[BIP 174](https://github.com/x1coin/bips/blob/master/bip-0174.mediawiki)).
 
 This document describes the overall workflow for producing signed transactions
 through the use of PSBT, and the specific RPC commands used in typical
@@ -10,15 +10,15 @@ scenarios.
 
 ## PSBT in general
 
-PSBT is an interchange format for Bitcoins transactions that are not fully signed
+PSBT is an interchange format for X1coin transactions that are not fully signed
 yet, together with relevant metadata to help entities work towards signing it.
 It is intended to simplify workflows where multiple parties need to cooperate to
 produce a transaction. Examples include hardware wallets, multisig setups, and
-[CoinJoin](https://bitcoinstalk.org/?topic=279249) transactions.
+[CoinJoin](https://x1cointalk.org/?topic=279249) transactions.
 
 ### Overall workflow
 
-Overall, the construction of a fully signed Bitcoins transaction goes through the
+Overall, the construction of a fully signed X1coin transaction goes through the
 following steps:
 
 - A **Creator** proposes a particular transaction to be created. They construct
@@ -32,7 +32,7 @@ following steps:
   partial signature for the inputs for which they have relevant key(s).
 - A **Finalizer** is run for each input to convert the partial signatures and
   possibly script information into a final `scriptSig` and/or `scriptWitness`.
-- An **Extractor** produces a valid Bitcoins transaction (in network format)
+- An **Extractor** produces a valid X1coin transaction (in network format)
   from a PSBT for which all inputs are finalized.
 
 Generally, each of the above (excluding Creator and Extractor) will simply
@@ -46,7 +46,7 @@ The names above in bold are the names of the roles defined in BIP174. They're
 useful in understanding the underlying steps, but in practice, software and
 hardware implementations will typically implement multiple roles simultaneously.
 
-## PSBT in Bitcoins Core
+## PSBT in X1coin
 
 ### RPCs
 
@@ -90,16 +90,16 @@ hardware implementations will typically implement multiple roles simultaneously.
 
 ### Workflows
 
-#### Multisig with multiple Bitcoins Core instances
+#### Multisig with multiple X1coin instances
 
 For a quick start see [Basic M-of-N multisig example using descriptor wallets and PSBTs](./descriptors.md#basic-multisig-example).
 If you are using legacy wallets feel free to continue with the example provided here.
 
 Alice, Bob, and Carol want to create a 2-of-3 multisig address. They're all using
-Bitcoins Core. We assume their wallets only contain the multisig funds. In case
+X1coin. We assume their wallets only contain the multisig funds. In case
 they also have a personal wallet, this can be accomplished through the
 multiwallet feature - possibly resulting in a need to add `-rpcwallet=name` to
-the command line in case `bitcoins-cli` is used.
+the command line in case `x1coin-cli` is used.
 
 Setup:
 - All three call `getnewaddress` to create a new address; call these addresses
@@ -121,7 +121,7 @@ Setup:
   initiate transactions later, however.
 - They can now give out *Amulti* as address others can pay to.
 
-Later, when *V* BC has been received on *Amulti*, and Bob and Carol want to
+Later, when *V* X1 has been received on *Amulti*, and Bob and Carol want to
 move the coins in their entirety to address *Asend*, with no change. Alice
 does not need to be involved.
 - One of them - let's assume Carol here - initiates the creation. She runs

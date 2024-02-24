@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_VERSION_H
-#define BITCOINS_VERSION_H
+#ifndef X1COIN_VERSION_H
+#define X1COIN_VERSION_H
 
 /**
  * network protocol versioning
@@ -41,4 +41,4 @@ static const int WTXID_RELAY_VERSION = 70016;
 // Make sure that none of the values above collide with
 // `SERIALIZE_TRANSACTION_NO_WITNESS` or `ADDRV2_FORMAT`.
 
-#endif // BITCOINS_VERSION_H
+#endif // X1COIN_VERSION_H

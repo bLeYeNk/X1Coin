@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_QT_WALLETMODELTRANSACTION_H
-#define BITCOINS_QT_WALLETMODELTRANSACTION_H
+#ifndef X1COIN_QT_WALLETMODELTRANSACTION_H
+#define X1COIN_QT_WALLETMODELTRANSACTION_H
 
 #include <primitives/transaction.h>
 #include <qt/sendcoinsrecipient.h>
@@ -44,4 +44,4 @@ private:
     CAmount fee{0};
 };
 
-#endif // BITCOINS_QT_WALLETMODELTRANSACTION_H
+#endif // X1COIN_QT_WALLETMODELTRANSACTION_H

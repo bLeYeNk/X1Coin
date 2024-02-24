@@ -17,7 +17,7 @@
 
 # eBPF Limitations:
 #
-# Bitcoins P2P messages can be larger than 32kb (e.g. tx, block, ...). The eBPF
+# X1coin P2P messages can be larger than 32kb (e.g. tx, block, ...). The eBPF
 # VM's stack is limited to 512 bytes, and we can't allocate more than about 32kb
 # for a P2P message in the eBPF VM. The message data is cut off when the message
 # is larger than MAX_MSG_DATA_LENGTH (see definition below). This can be detected
@@ -132,15 +132,15 @@ def print_message(event, inbound):
           )
 
 
-def main(bitcoinsd_path):
-    bitcoinsd_with_usdts = USDT(path=str(bitcoinsd_path))
+def main(x1coind_path):
+    x1coind_with_usdts = USDT(path=str(x1coind_path))
 
     # attaching the trace functions defined in the BPF program to the tracepoints
-    bitcoinsd_with_usdts.enable_probe(
+    x1coind_with_usdts.enable_probe(
         probe="inbound_message", fn_name="trace_inbound_message")
-    bitcoinsd_with_usdts.enable_probe(
+    x1coind_with_usdts.enable_probe(
         probe="outbound_message", fn_name="trace_outbound_message")
-    bpf = BPF(text=program, usdt_contexts=[bitcoinsd_with_usdts])
+    bpf = BPF(text=program, usdt_contexts=[x1coind_with_usdts])
 
     # BCC: perf buffer handle function for inbound_messages
     def handle_inbound(_, data, size):
@@ -177,7 +177,7 @@ def main(bitcoinsd_path):
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print("USAGE:", sys.argv[0], "path/to/bitcoinsd")
+        print("USAGE:", sys.argv[0], "path/to/x1coind")
         exit()
     path = sys.argv[1]
     main(path)

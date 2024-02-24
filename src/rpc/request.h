@@ -1,11 +1,11 @@
 // Copyright (c) 2010 Satoshi Nakamoto
 // Copyright (c) 2009-2020 The Bitcoin Core developers
-// Copyright (c) 2023 The Bitcoins Core developers
+// Copyright (c) 2023 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_RPC_REQUEST_H
-#define BITCOINS_RPC_REQUEST_H
+#ifndef X1COIN_RPC_REQUEST_H
+#define X1COIN_RPC_REQUEST_H
 
 #include <any>
 #include <string>
@@ -41,4 +41,4 @@ public:
     void parse(const UniValue& valRequest);
 };
 
-#endif // BITCOINS_RPC_REQUEST_H
+#endif // X1COIN_RPC_REQUEST_H

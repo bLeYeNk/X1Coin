@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_COMMON_INIT_H
-#define BITCOINS_COMMON_INIT_H
+#ifndef X1COIN_COMMON_INIT_H
+#define X1COIN_COMMON_INIT_H
 
 #include <util/translation.h>
 
@@ -36,4 +36,4 @@ using SettingsAbortFn = std::function<bool(const bilingual_str& message, const s
 std::optional<ConfigError> InitConfig(ArgsManager& args, SettingsAbortFn settings_abort_fn = nullptr);
 } // namespace common
 
-#endif // BITCOINS_COMMON_INIT_H
+#endif // X1COIN_COMMON_INIT_H

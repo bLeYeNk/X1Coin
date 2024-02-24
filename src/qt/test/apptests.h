@@ -2,27 +2,27 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_QT_TEST_APPTESTS_H
-#define BITCOINS_QT_TEST_APPTESTS_H
+#ifndef X1COIN_QT_TEST_APPTESTS_H
+#define X1COIN_QT_TEST_APPTESTS_H
 
 #include <QObject>
 #include <set>
 #include <string>
 #include <utility>
 
-class BitcoinsApplication;
-class BitcoinsGUI;
+class X1coinApplication;
+class X1coinGUI;
 class RPCConsole;
 
 class AppTests : public QObject
 {
     Q_OBJECT
 public:
-    explicit AppTests(BitcoinsApplication& app) : m_app(app) {}
+    explicit AppTests(X1coinApplication& app) : m_app(app) {}
 
 private Q_SLOTS:
     void appTests();
-    void guiTests(BitcoinsGUI* window);
+    void guiTests(X1coinGUI* window);
     void consoleTests(RPCConsole* console);
 
 private:
@@ -37,8 +37,8 @@ private:
         ~HandleCallback();
     };
 
-    //! Bitcoins application.
-    BitcoinsApplication& m_app;
+    //! X1coin application.
+    X1coinApplication& m_app;
 
     //! Set of pending callback names. Used to track expected callbacks and shut
     //! down the app after the last callback has been handled and all tests have
@@ -47,4 +47,4 @@ private:
     std::multiset<std::string> m_callbacks;
 };
 
-#endif // BITCOINS_QT_TEST_APPTESTS_H
+#endif // X1COIN_QT_TEST_APPTESTS_H

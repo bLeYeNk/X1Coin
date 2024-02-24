@@ -5,7 +5,7 @@
 """Test wallet group functionality."""
 
 from test_framework.blocktools import COINBASE_MATURITY
-from test_framework.test_framework import BitcoinsTestFramework
+from test_framework.test_framework import X1coinTestFramework
 from test_framework.messages import (
     tx_from_hex,
 )
@@ -15,7 +15,7 @@ from test_framework.util import (
 )
 
 
-class WalletGroupTest(BitcoinsTestFramework):
+class WalletGroupTest(X1coinTestFramework):
     def add_options(self, parser):
         self.add_wallet_options(parser)
 
@@ -100,7 +100,7 @@ class WalletGroupTest(BitcoinsTestFramework):
         # - D ~0.3
         assert_approx(self.nodes[1].getbalance(), vexp=4.3, vspan=0.0001)
         assert_approx(self.nodes[2].getbalance(), vexp=4.3, vspan=0.0001)
-        # Sending 1.4 bc should pick one 1.0 + one more. For node #1,
+        # Sending 1.4 x1 should pick one 1.0 + one more. For node #1,
         # this could be (A / B0 / C0) + (B1 / C1 / D). We ensure that it is
         # B0 + B1 or C0 + C1, because this avoids partial spends while not being
         # detrimental to transaction cost

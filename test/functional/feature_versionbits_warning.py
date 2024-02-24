@@ -13,7 +13,7 @@ import re
 from test_framework.blocktools import create_block, create_coinbase
 from test_framework.messages import msg_block
 from test_framework.p2p import P2PInterface
-from test_framework.test_framework import BitcoinsTestFramework
+from test_framework.test_framework import X1coinTestFramework
 
 VB_PERIOD = 144           # versionbits period length for regtest
 VB_THRESHOLD = 108        # versionbits activation threshold for regtest
@@ -24,7 +24,7 @@ VB_UNKNOWN_VERSION = VB_TOP_BITS | (1 << VB_UNKNOWN_BIT)
 WARN_UNKNOWN_RULES_ACTIVE = f"Unknown new rules activated (versionbit {VB_UNKNOWN_BIT})"
 VB_PATTERN = re.compile("Unknown new rules activated.*versionbit")
 
-class VersionBitsWarningTest(BitcoinsTestFramework):
+class VersionBitsWarningTest(X1coinTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 1
@@ -88,7 +88,7 @@ class VersionBitsWarningTest(BitcoinsTestFramework):
         # is cleared. This will move the versionbit state to ACTIVE.
         self.generatetoaddress(node, VB_PERIOD, node_deterministic_address)
 
-        # Stop-start the node. This is required because bitcoinsd will only warn once about unknown versions or unknown rules activating.
+        # Stop-start the node. This is required because x1coind will only warn once about unknown versions or unknown rules activating.
         self.restart_node(0)
 
         # Generating one block guarantees that we'll get out of IBD

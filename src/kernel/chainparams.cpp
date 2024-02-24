@@ -1,6 +1,6 @@
 // Copyright (c) 2010 Satoshi Nakamoto
 // Copyright (c) 2009-2020 The Bitcoin Core developers
-// Copyright (c) 2023 The Bitcoins Core developers
+// Copyright (c) 2023 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -149,10 +149,10 @@ public:
         assert(consensus.hashGenesisBlock == uint256S("0x00000d5f9d5a9c7eb3bb89e7f8f6881dc083df29c344fba93f9b77297898eb51"));
         assert(genesis.hashMerkleRoot == uint256S("0xbdb36c7aae2de6d5169719d7bc76f6bfb4aa47a2ee6a91cc3aa47878bbf8bb64"));
 
-        vSeeds.emplace_back("seed01.bitcoinsglobal.online");
-        vSeeds.emplace_back("seed02.bitcoinsglobal.online");
-        vSeeds.emplace_back("seed03.bitcoinsglobal.online");
-        vSeeds.emplace_back("seed04.bitcoinsglobal.online");
+        vSeeds.emplace_back("01.x1node.org");
+        vSeeds.emplace_back("02.x1node.org");
+        vSeeds.emplace_back("03.x1node.org");
+        vSeeds.emplace_back("04.x1node.org");
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,29);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,28);
@@ -160,7 +160,7 @@ public:
         base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x88, 0xB2, 0x1E};
         base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x88, 0xAD, 0xE4};
 
-        bech32_hrp = "bc";
+        bech32_hrp = "x1";
 
 
         fDefaultConsistencyChecks = false;
@@ -275,7 +275,7 @@ public:
         base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x35, 0x87, 0xCF};
         base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x35, 0x83, 0x94};
 
-        bech32_hrp = "tbc";
+        bech32_hrp = "tx1";
 
 
         fDefaultConsistencyChecks = false;
@@ -417,7 +417,7 @@ public:
         base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x35, 0x87, 0xCF};
         base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x35, 0x83, 0x94};
 
-        bech32_hrp = "tbc";
+        bech32_hrp = "tx1";
 
         fDefaultConsistencyChecks = false;
         fRequireStandard = true;
@@ -557,7 +557,7 @@ public:
         base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x35, 0x87, 0xCF};
         base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x35, 0x83, 0x94};
 
-        bech32_hrp = "rbc";
+        bech32_hrp = "rx1";
     }
 };
 

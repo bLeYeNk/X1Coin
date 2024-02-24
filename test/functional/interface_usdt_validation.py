@@ -4,7 +4,7 @@
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 """ Tests the validation:* tracepoint API interface.
-    See https://github.com/bitcoins/bitcoins/blob/master/doc/tracing.md#context-validation
+    See https://github.com/bLeYeNk/X1Coin/blob/master/doc/tracing.md#context-validation
 """
 
 import ctypes
@@ -16,7 +16,7 @@ except ImportError:
     pass
 
 from test_framework.address import ADDRESS_BCRT1_UNSPENDABLE
-from test_framework.test_framework import BitcoinsTestFramework
+from test_framework.test_framework import X1coinTestFramework
 from test_framework.util import assert_equal
 
 
@@ -50,13 +50,13 @@ int trace_block_connected(struct pt_regs *ctx) {
 """
 
 
-class ValidationTracepointTest(BitcoinsTestFramework):
+class ValidationTracepointTest(X1coinTestFramework):
     def set_test_params(self):
         self.num_nodes = 1
 
     def skip_test_if_missing_module(self):
         self.skip_if_platform_not_linux()
-        self.skip_if_no_bitcoinsd_tracepoints()
+        self.skip_if_no_x1coind_tracepoints()
         self.skip_if_no_python_bcc()
         self.skip_if_no_bpf_permissions()
 
@@ -64,7 +64,7 @@ class ValidationTracepointTest(BitcoinsTestFramework):
         # Tests the validation:block_connected tracepoint by generating blocks
         # and comparing the values passed in the tracepoint arguments with the
         # blocks.
-        # See https://github.com/bitcoins/bitcoins/blob/master/doc/tracing.md#tracepoint-validationblock_connected
+        # See https://github.com/bLeYeNk/X1Coin/blob/master/doc/tracing.md#tracepoint-validationblock_connected
 
         class Block(ctypes.Structure):
             _fields_ = [

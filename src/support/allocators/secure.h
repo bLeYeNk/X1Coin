@@ -1,11 +1,11 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2020 The Bitcoin Core developers
-// Copyright (c) 2023 The Bitcoins Core developers
+// Copyright (c) 2023 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_SUPPORT_ALLOCATORS_SECURE_H
-#define BITCOINS_SUPPORT_ALLOCATORS_SECURE_H
+#ifndef X1COIN_SUPPORT_ALLOCATORS_SECURE_H
+#define X1COIN_SUPPORT_ALLOCATORS_SECURE_H
 
 #include <support/lockedpool.h>
 #include <support/cleanse.h>
@@ -60,4 +60,4 @@ struct secure_allocator : public std::allocator<T> {
 // TODO: Consider finding a way to make incoming RPC request.params[i] mlock()ed as well
 typedef std::basic_string<char, std::char_traits<char>, secure_allocator<char> > SecureString;
 
-#endif // BITCOINS_SUPPORT_ALLOCATORS_SECURE_H
+#endif // X1COIN_SUPPORT_ALLOCATORS_SECURE_H

@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_INTERFACES_CHAIN_H
-#define BITCOINS_INTERFACES_CHAIN_H
+#ifndef X1COIN_INTERFACES_CHAIN_H
+#define X1COIN_INTERFACES_CHAIN_H
 
 #include <blockfilter.h>
 #include <primitives/transaction.h> // For CTransactionRef
@@ -96,13 +96,13 @@ struct BlockInfo {
 //! estimate fees, and submit transactions.
 //!
 //! TODO: Current chain methods are too low level, exposing too much of the
-//! internal workings of the bitcoins node, and not being very convenient to use.
+//! internal workings of the x1coin node, and not being very convenient to use.
 //! Chain methods should be cleaned up and simplified over time. Examples:
 //!
 //! * The initMessages() and showProgress() methods which the wallet uses to send
 //!   notifications to the GUI should go away when GUI and wallet can directly
 //!   communicate with each other without going through the node
-//!   (https://github.com/bitcoins/bitcoins/pull/15288#discussion_r253321096).
+//!   (https://github.com/bLeYeNk/X1Coin/pull/15288#discussion_r253321096).
 //!
 //! * The handleRpc, registerRpcs, rpcEnableDeprecated methods and other RPC
 //!   methods can go away if wallets listen for HTTP requests on their own
@@ -114,7 +114,7 @@ struct BlockInfo {
 //!
 //! * `guessVerificationProgress` and similar methods can go away if rescan
 //!   logic moves out of the wallet, and the wallet just requests scans from the
-//!   node (https://github.com/bitcoins/bitcoins/issues/11756)
+//!   node (https://github.com/bLeYeNk/X1Coin/issues/11756)
 class Chain
 {
 public:
@@ -361,4 +361,4 @@ std::unique_ptr<Chain> MakeChain(node::NodeContext& node);
 
 } // namespace interfaces
 
-#endif // BITCOINS_INTERFACES_CHAIN_H
+#endif // X1COIN_INTERFACES_CHAIN_H

@@ -16,30 +16,30 @@ endif
 
 export PYTHONPATH
 
-if BUILD_BITCOINS_LIBS
+if BUILD_X1COIN_LIBS
 pkgconfigdir = $(libdir)/pkgconfig
-pkgconfig_DATA = libbitcoinsconsensus.pc
+pkgconfig_DATA = libx1coinconsensus.pc
 endif
 
-BITCOINSD_BIN=$(top_builddir)/src/$(BITCOINS_DAEMON_NAME)$(EXEEXT)
-BITCOINS_QT_BIN=$(top_builddir)/src/qt/$(BITCOINS_GUI_NAME)$(EXEEXT)
-BITCOINS_TEST_BIN=$(top_builddir)/src/test/$(BITCOINS_TEST_NAME)$(EXEEXT)
-BITCOINS_CLI_BIN=$(top_builddir)/src/$(BITCOINS_CLI_NAME)$(EXEEXT)
-BITCOINS_TX_BIN=$(top_builddir)/src/$(BITCOINS_TX_NAME)$(EXEEXT)
-BITCOINS_UTIL_BIN=$(top_builddir)/src/$(BITCOINS_UTIL_NAME)$(EXEEXT)
-BITCOINS_WALLET_BIN=$(top_builddir)/src/$(BITCOINS_WALLET_TOOL_NAME)$(EXEEXT)
-BITCOINS_NODE_BIN=$(top_builddir)/src/$(BITCOINS_MP_NODE_NAME)$(EXEEXT)
-BITCOINS_GUI_BIN=$(top_builddir)/src/$(BITCOINS_MP_GUI_NAME)$(EXEEXT)
-BITCOINS_WIN_INSTALLER=$(PACKAGE)-$(PACKAGE_VERSION)-win64-setup$(EXEEXT)
+X1COIND_BIN=$(top_builddir)/src/$(X1COIN_DAEMON_NAME)$(EXEEXT)
+X1COIN_QT_BIN=$(top_builddir)/src/qt/$(X1COIN_GUI_NAME)$(EXEEXT)
+X1COIN_TEST_BIN=$(top_builddir)/src/test/$(X1COIN_TEST_NAME)$(EXEEXT)
+X1COIN_CLI_BIN=$(top_builddir)/src/$(X1COIN_CLI_NAME)$(EXEEXT)
+X1COIN_TX_BIN=$(top_builddir)/src/$(X1COIN_TX_NAME)$(EXEEXT)
+X1COIN_UTIL_BIN=$(top_builddir)/src/$(X1COIN_UTIL_NAME)$(EXEEXT)
+X1COIN_WALLET_BIN=$(top_builddir)/src/$(X1COIN_WALLET_TOOL_NAME)$(EXEEXT)
+X1COIN_NODE_BIN=$(top_builddir)/src/$(X1COIN_MP_NODE_NAME)$(EXEEXT)
+X1COIN_GUI_BIN=$(top_builddir)/src/$(X1COIN_MP_GUI_NAME)$(EXEEXT)
+X1COIN_WIN_INSTALLER=$(PACKAGE)-$(PACKAGE_VERSION)-win64-setup$(EXEEXT)
 
 empty :=
 space := $(empty) $(empty)
 
-OSX_APP=Bitcoins-Qt.app
+OSX_APP=X1coin-Qt.app
 OSX_VOLNAME = $(subst $(space),-,$(PACKAGE_NAME))
 OSX_DMG = $(OSX_VOLNAME).dmg
 OSX_DEPLOY_SCRIPT=$(top_srcdir)/contrib/macdeploy/macdeployqtplus
-OSX_INSTALLER_ICONS=$(top_srcdir)/src/qt/res/icons/bitcoins.icns
+OSX_INSTALLER_ICONS=$(top_srcdir)/src/qt/res/icons/x1coin.icns
 OSX_PLIST=$(top_builddir)/share/qt/Info.plist #not installed
 
 DIST_CONTRIB = \
@@ -58,7 +58,7 @@ BIN_CHECKS=$(top_srcdir)/contrib/devtools/symbol-check.py \
            $(top_srcdir)/contrib/devtools/security-check.py \
            $(top_srcdir)/contrib/devtools/utils.py
 
-WINDOWS_PACKAGING = $(top_srcdir)/share/pixmaps/bitcoins.ico \
+WINDOWS_PACKAGING = $(top_srcdir)/share/pixmaps/x1coin.ico \
   $(top_srcdir)/share/pixmaps/nsis-header.bmp \
   $(top_srcdir)/share/pixmaps/nsis-wizard.bmp \
   $(top_srcdir)/doc/README_windows.txt
@@ -67,28 +67,27 @@ OSX_PACKAGING = $(OSX_DEPLOY_SCRIPT) $(OSX_INSTALLER_ICONS) \
   $(top_srcdir)/contrib/macdeploy/detached-sig-create.sh
 
 COVERAGE_INFO = $(COV_TOOL_WRAPPER) baseline.info \
-  test_bitcoins_filtered.info total_coverage.info \
+  test_x1coin_filtered.info total_coverage.info \
   baseline_filtered.info functional_test.info functional_test_filtered.info \
-  test_bitcoins_coverage.info test_bitcoins.info fuzz.info fuzz_filtered.info fuzz_coverage.info
+  test_x1coin_coverage.info test_x1coin.info fuzz.info fuzz_filtered.info fuzz_coverage.info
 
 dist-hook:
 	-$(GIT) archive --format=tar HEAD -- src/clientversion.cpp | $(AMTAR) -C $(top_distdir) -xf -
 
 if TARGET_WINDOWS
-$(BITCOINS_WIN_INSTALLER): all-recursive
+$(X1COIN_WIN_INSTALLER): all-recursive
 	$(MKDIR_P) $(top_builddir)/release
-	STRIPPROG="$(STRIP)" $(INSTALL_STRIP_PROGRAM) $(BITCOINSD_BIN) $(top_builddir)/release
-	STRIPPROG="$(STRIP)" $(INSTALL_STRIP_PROGRAM) $(BITCOINS_QT_BIN) $(top_builddir)/release
-	STRIPPROG="$(STRIP)" $(INSTALL_STRIP_PROGRAM) $(BITCOINS_TEST_BIN) $(top_builddir)/release
-	STRIPPROG="$(STRIP)" $(INSTALL_STRIP_PROGRAM) $(BITCOINS_CLI_BIN) $(top_builddir)/release
-	STRIPPROG="$(STRIP)" $(INSTALL_STRIP_PROGRAM) $(BITCOINS_TX_BIN) $(top_builddir)/release
-	STRIPPROG="$(STRIP)" $(INSTALL_STRIP_PROGRAM) $(BITCOINS_WALLET_BIN) $(top_builddir)/release
-	STRIPPROG="$(STRIP)" $(INSTALL_STRIP_PROGRAM) $(BITCOINS_UTIL_BIN) $(top_builddir)/release
+	STRIPPROG="$(STRIP)" $(INSTALL_STRIP_PROGRAM) $(X1COIND_BIN) $(top_builddir)/release
+	STRIPPROG="$(STRIP)" $(INSTALL_STRIP_PROGRAM) $(X1COIN_QT_BIN) $(top_builddir)/release
+	STRIPPROG="$(STRIP)" $(INSTALL_STRIP_PROGRAM) $(X1COIN_CLI_BIN) $(top_builddir)/release
+	STRIPPROG="$(STRIP)" $(INSTALL_STRIP_PROGRAM) $(X1COIN_TX_BIN) $(top_builddir)/release
+	STRIPPROG="$(STRIP)" $(INSTALL_STRIP_PROGRAM) $(X1COIN_WALLET_BIN) $(top_builddir)/release
+	STRIPPROG="$(STRIP)" $(INSTALL_STRIP_PROGRAM) $(X1COIN_UTIL_BIN) $(top_builddir)/release
 	@test -f $(MAKENSIS) && echo 'OutFile "$@"' | cat $(top_builddir)/share/setup.nsi - | $(MAKENSIS) -V2 - || \
 	  echo error: could not build $@
 	@echo built $@
 
-deploy: $(BITCOINS_WIN_INSTALLER)
+deploy: $(X1COIN_WIN_INSTALLER)
 endif
 
 if TARGET_DARWIN
@@ -104,21 +103,21 @@ $(OSX_APP)/Contents/Info.plist: $(OSX_PLIST)
 	$(MKDIR_P) $(@D)
 	$(INSTALL_DATA) $< $@
 
-$(OSX_APP)/Contents/Resources/bitcoins.icns: $(OSX_INSTALLER_ICONS)
+$(OSX_APP)/Contents/Resources/x1coin.icns: $(OSX_INSTALLER_ICONS)
 	$(MKDIR_P) $(@D)
 	$(INSTALL_DATA) $< $@
 
-$(OSX_APP)/Contents/MacOS/Bitcoins-Qt: all-recursive
+$(OSX_APP)/Contents/MacOS/X1coin-Qt: all-recursive
 	$(MKDIR_P) $(@D)
-	STRIPPROG="$(STRIP)" $(INSTALL_STRIP_PROGRAM)  $(BITCOINS_QT_BIN) $@
+	STRIPPROG="$(STRIP)" $(INSTALL_STRIP_PROGRAM)  $(X1COIN_QT_BIN) $@
 
 $(OSX_APP)/Contents/Resources/Base.lproj/InfoPlist.strings:
 	$(MKDIR_P) $(@D)
 	echo '{	CFBundleDisplayName = "$(PACKAGE_NAME)"; CFBundleName = "$(PACKAGE_NAME)"; }' > $@
 
 OSX_APP_BUILT=$(OSX_APP)/Contents/PkgInfo $(OSX_APP)/Contents/Resources/empty.lproj \
-  $(OSX_APP)/Contents/Resources/bitcoins.icns $(OSX_APP)/Contents/Info.plist \
-  $(OSX_APP)/Contents/MacOS/Bitcoins-Qt $(OSX_APP)/Contents/Resources/Base.lproj/InfoPlist.strings
+  $(OSX_APP)/Contents/Resources/x1coin.icns $(OSX_APP)/Contents/Info.plist \
+  $(OSX_APP)/Contents/MacOS/X1coin-Qt $(OSX_APP)/Contents/Resources/Base.lproj/InfoPlist.strings
 
 osx_volname:
 	echo $(OSX_VOLNAME) >$@
@@ -134,37 +133,37 @@ APP_DIST_DIR=$(top_builddir)/dist
 $(OSX_DMG): deploydir
 	$(XORRISOFS) -D -l -V "$(OSX_VOLNAME)" -no-pad -r -dir-mode 0755 -o $@ $(APP_DIST_DIR) -- $(if $(SOURCE_DATE_EPOCH),-volume_date all_file_dates =$(SOURCE_DATE_EPOCH))
 
-$(APP_DIST_DIR)/$(OSX_APP)/Contents/MacOS/Bitcoins-Qt: $(OSX_APP_BUILT) $(OSX_PACKAGING)
+$(APP_DIST_DIR)/$(OSX_APP)/Contents/MacOS/X1coin-Qt: $(OSX_APP_BUILT) $(OSX_PACKAGING)
 	INSTALL_NAME_TOOL=$(INSTALL_NAME_TOOL) OTOOL=$(OTOOL) STRIP=$(STRIP) $(PYTHON) $(OSX_DEPLOY_SCRIPT) $(OSX_APP) $(OSX_VOLNAME) -translations-dir=$(QT_TRANSLATION_DIR)
 
-deploydir: $(APP_DIST_DIR)/$(OSX_APP)/Contents/MacOS/Bitcoins-Qt
+deploydir: $(APP_DIST_DIR)/$(OSX_APP)/Contents/MacOS/X1coin-Qt
 endif !BUILD_DARWIN
 
 deploy: $(OSX_DMG)
 endif
 
-$(BITCOINS_QT_BIN): FORCE
+$(X1COIN_QT_BIN): FORCE
 	$(MAKE) -C src qt/$(@F)
 
-$(BITCOINSD_BIN): FORCE
+$(X1COIND_BIN): FORCE
 	$(MAKE) -C src $(@F)
 
-$(BITCOINS_CLI_BIN): FORCE
+$(X1COIN_CLI_BIN): FORCE
 	$(MAKE) -C src $(@F)
 
-$(BITCOINS_TX_BIN): FORCE
+$(X1COIN_TX_BIN): FORCE
 	$(MAKE) -C src $(@F)
 
-$(BITCOINS_UTIL_BIN): FORCE
+$(X1COIN_UTIL_BIN): FORCE
 	$(MAKE) -C src $(@F)
 
-$(BITCOINS_WALLET_BIN): FORCE
+$(X1COIN_WALLET_BIN): FORCE
 	$(MAKE) -C src $(@F)
 
-$(BITCOINS_NODE_BIN): FORCE
+$(X1COIN_NODE_BIN): FORCE
 	$(MAKE) -C src $(@F)
 
-$(BITCOINS_GUI_BIN): FORCE
+$(X1COIN_GUI_BIN): FORCE
 	$(MAKE) -C src $(@F)
 
 if USE_LCOV
@@ -203,16 +202,16 @@ fuzz_filtered.info: fuzz.info
 	$(abs_builddir)/contrib/filter-lcov.py $(LCOV_FILTER_PATTERN) $< $@
 	$(LCOV) -a $@ $(LCOV_OPTS) -o $@
 
-test_bitcoins.info: baseline_filtered.info
+test_x1coin.info: baseline_filtered.info
 	$(MAKE) -C src/ check
-	$(LCOV) -c $(LCOV_OPTS) -d $(abs_builddir)/src -t test_bitcoins -o $@
+	$(LCOV) -c $(LCOV_OPTS) -d $(abs_builddir)/src -t test_x1coin -o $@
 	$(LCOV) -z $(LCOV_OPTS) -d $(abs_builddir)/src
 
-test_bitcoins_filtered.info: test_bitcoins.info
+test_x1coin_filtered.info: test_x1coin.info
 	$(abs_builddir)/contrib/filter-lcov.py $(LCOV_FILTER_PATTERN) $< $@
 	$(LCOV) -a $@ $(LCOV_OPTS) -o $@
 
-functional_test.info: test_bitcoins_filtered.info
+functional_test.info: test_x1coin_filtered.info
 	@TIMEOUT=15 test/functional/test_runner.py $(EXTENDED_FUNCTIONAL_TESTS)
 	$(LCOV) -c $(LCOV_OPTS) -d $(abs_builddir)/src --t functional-tests -o $@
 	$(LCOV) -z $(LCOV_OPTS) -d $(abs_builddir)/src
@@ -224,17 +223,17 @@ functional_test_filtered.info: functional_test.info
 fuzz_coverage.info: fuzz_filtered.info
 	$(LCOV) -a $(LCOV_OPTS) baseline_filtered.info -a fuzz_filtered.info -o $@ | $(GREP) "\%" | $(AWK) '{ print substr($$3,2,50) "/" $$5 }' > coverage_percent.txt
 
-test_bitcoins_coverage.info: baseline_filtered.info test_bitcoins_filtered.info
-	$(LCOV) -a $(LCOV_OPTS) baseline_filtered.info -a test_bitcoins_filtered.info -o $@
+test_x1coin_coverage.info: baseline_filtered.info test_x1coin_filtered.info
+	$(LCOV) -a $(LCOV_OPTS) baseline_filtered.info -a test_x1coin_filtered.info -o $@
 
-total_coverage.info: test_bitcoins_filtered.info functional_test_filtered.info
-	$(LCOV) -a $(LCOV_OPTS) baseline_filtered.info -a test_bitcoins_filtered.info -a functional_test_filtered.info -o $@ | $(GREP) "\%" | $(AWK) '{ print substr($$3,2,50) "/" $$5 }' > coverage_percent.txt
+total_coverage.info: test_x1coin_filtered.info functional_test_filtered.info
+	$(LCOV) -a $(LCOV_OPTS) baseline_filtered.info -a test_x1coin_filtered.info -a functional_test_filtered.info -o $@ | $(GREP) "\%" | $(AWK) '{ print substr($$3,2,50) "/" $$5 }' > coverage_percent.txt
 
 fuzz.coverage/.dirstamp: fuzz_coverage.info
 	$(GENHTML) -s $(LCOV_OPTS) $< -o $(@D)
 	@touch $@
 
-test_bitcoins.coverage/.dirstamp:  test_bitcoins_coverage.info
+test_x1coin.coverage/.dirstamp:  test_x1coin_coverage.info
 	$(GENHTML) -s $(LCOV_OPTS) $< -o $(@D)
 	@touch $@
 
@@ -244,7 +243,7 @@ total.coverage/.dirstamp: total_coverage.info
 
 cov_fuzz: fuzz.coverage/.dirstamp
 
-cov: test_bitcoins.coverage/.dirstamp total.coverage/.dirstamp
+cov: test_x1coin.coverage/.dirstamp total.coverage/.dirstamp
 
 endif
 
@@ -258,7 +257,7 @@ EXTRA_DIST += \
 
 EXTRA_DIST += \
     test/util/test_runner.py \
-    test/util/data/bitcoins-util-test.json \
+    test/util/data/x1coin-util-test.json \
     test/util/data/blanktxv1.hex \
     test/util/data/blanktxv1.json \
     test/util/data/blanktxv2.hex \
@@ -313,7 +312,7 @@ EXTRA_DIST += \
     test/util/data/txcreatesignv2.hex \
     test/util/rpcauth-test.py
 
-CLEANFILES = $(OSX_DMG) $(BITCOINS_WIN_INSTALLER)
+CLEANFILES = $(OSX_DMG) $(X1COIN_WIN_INSTALLER)
 
 DISTCHECK_CONFIGURE_FLAGS = --enable-man
 
@@ -333,7 +332,7 @@ clean-docs:
 	rm -rf doc/doxygen
 
 clean-local: clean-docs
-	rm -rf coverage_percent.txt test_bitcoins.coverage/ total.coverage/ fuzz.coverage/ test/tmp/ cache/ $(OSX_APP)
+	rm -rf coverage_percent.txt test_x1coin.coverage/ total.coverage/ fuzz.coverage/ test/tmp/ cache/ $(OSX_APP)
 	rm -rf test/functional/__pycache__ test/functional/test_framework/__pycache__ test/cache share/rpcauth/__pycache__
 	rm -rf osx_volname dist/
 

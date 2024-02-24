@@ -4,7 +4,7 @@
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Test the wallet accounts properly when there are cloned transactions with malleated scriptsigs."""
 
-from test_framework.test_framework import BitcoinsTestFramework
+from test_framework.test_framework import X1coinTestFramework
 from test_framework.util import (
     assert_equal,
     find_vout_for_address
@@ -15,7 +15,7 @@ from test_framework.messages import (
 )
 
 
-class TxnMallTest(BitcoinsTestFramework):
+class TxnMallTest(X1coinTestFramework):
     def set_test_params(self):
         self.num_nodes = 3
         self.supports_cli = False
@@ -48,7 +48,7 @@ class TxnMallTest(BitcoinsTestFramework):
         else:
             output_type = "legacy"
 
-        # All nodes should start with 1,250 BC:
+        # All nodes should start with 1,250 X1:
         starting_balance = 1250
         for i in range(3):
             assert_equal(self.nodes[i].getbalance(), starting_balance)
@@ -141,7 +141,7 @@ class TxnMallTest(BitcoinsTestFramework):
         assert_equal(tx1_clone["confirmations"], 2)
         assert_equal(tx2["confirmations"], 1)
 
-        # Check node0's total balance; should be same as before the clone, + 100 BC for 2 matured,
+        # Check node0's total balance; should be same as before the clone, + 100 X1 for 2 matured,
         # less possible orphaned matured subsidy
         expected += 100
         if (self.options.mine_block):

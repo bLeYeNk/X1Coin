@@ -1,11 +1,11 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2020 The Bitcoin Core developers
-// Copyright (c) 2023 The Bitcoins Core developers
+// Copyright (c) 2023 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_CHAINPARAMS_H
-#define BITCOINS_CHAINPARAMS_H
+#ifndef X1COIN_CHAINPARAMS_H
+#define X1COIN_CHAINPARAMS_H
 
 #include <kernel/chainparams.h>
 
@@ -41,4 +41,4 @@ const CChainParams &Params();
  */
 void SelectParams(const std::string& chain);
 
-#endif // BITCOINS_CHAINPARAMS_H
+#endif // X1COIN_CHAINPARAMS_H

@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_TEST_UTIL_TXMEMPOOL_H
-#define BITCOINS_TEST_UTIL_TXMEMPOOL_H
+#ifndef X1COIN_TEST_UTIL_TXMEMPOOL_H
+#define X1COIN_TEST_UTIL_TXMEMPOOL_H
 
 #include <txmempool.h>
 #include <util/time.h>
@@ -34,4 +34,4 @@ struct TestMemPoolEntryHelper {
     TestMemPoolEntryHelper& SigOpsCost(unsigned int _sigopsCost) { sigOpCost = _sigopsCost; return *this; }
 };
 
-#endif // BITCOINS_TEST_UTIL_TXMEMPOOL_H
+#endif // X1COIN_TEST_UTIL_TXMEMPOOL_H

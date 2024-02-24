@@ -2,11 +2,11 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_QT_WALLETMODEL_H
-#define BITCOINS_QT_WALLETMODEL_H
+#ifndef X1COIN_QT_WALLETMODEL_H
+#define X1COIN_QT_WALLETMODEL_H
 
 #if defined(HAVE_CONFIG_H)
-#include <config/bitcoins-config.h>
+#include <config/x1coin-config.h>
 #endif
 
 #include <key.h>
@@ -48,7 +48,7 @@ QT_BEGIN_NAMESPACE
 class QTimer;
 QT_END_NAMESPACE
 
-/** Interface to Bitcoins wallet from Qt view code. */
+/** Interface to X1coin wallet from Qt view code. */
 class WalletModel : public QObject
 {
     Q_OBJECT
@@ -243,4 +243,4 @@ public Q_SLOTS:
     void pollBalanceChanged();
 };
 
-#endif // BITCOINS_QT_WALLETMODEL_H
+#endif // X1COIN_QT_WALLETMODEL_H

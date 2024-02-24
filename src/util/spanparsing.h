@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_UTIL_SPANPARSING_H
-#define BITCOINS_UTIL_SPANPARSING_H
+#ifndef X1COIN_UTIL_SPANPARSING_H
+#define X1COIN_UTIL_SPANPARSING_H
 
 #include <span.h>
 
@@ -76,4 +76,4 @@ std::vector<T> Split(const Span<const char>& sp, char sep)
 
 } // namespace spanparsing
 
-#endif // BITCOINS_UTIL_SPANPARSING_H
+#endif // X1COIN_UTIL_SPANPARSING_H

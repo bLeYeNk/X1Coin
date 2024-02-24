@@ -20,7 +20,7 @@ from test_framework.p2p import (
     p2p_lock,
     P2P_SERVICES,
 )
-from test_framework.test_framework import BitcoinsTestFramework
+from test_framework.test_framework import X1coinTestFramework
 from test_framework.util import (
     assert_equal,
     assert_greater_than,
@@ -83,7 +83,7 @@ class AddrReceiver(P2PInterface):
         return self.message_count['getaddr'] > 0
 
 
-class AddrTest(BitcoinsTestFramework):
+class AddrTest(X1coinTestFramework):
     counter = 0
     mocktime = int(time.time())
 

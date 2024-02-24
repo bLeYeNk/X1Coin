@@ -28,7 +28,7 @@ but still know when to expect mixing due to the wallet being close to empty.
 """
 
 import random
-from test_framework.test_framework import BitcoinsTestFramework
+from test_framework.test_framework import X1coinTestFramework
 from test_framework.blocktools import COINBASE_MATURITY
 
 ADDRESS_TYPES = [
@@ -105,7 +105,7 @@ def generate_payment_values(n, m):
     return [a - b for a, b in zip(dividers + [m], [0] + dividers)]
 
 
-class AddressInputTypeGrouping(BitcoinsTestFramework):
+class AddressInputTypeGrouping(X1coinTestFramework):
     def add_options(self, parser):
         self.add_wallet_options(parser, legacy=False)
 
@@ -131,7 +131,7 @@ class AddressInputTypeGrouping(BitcoinsTestFramework):
 
     def make_payment(self, A, B, v, addr_type):
         fee_rate = random.randint(1, 20)
-        self.log.debug(f"Making payment of {v} BC at fee_rate {fee_rate}")
+        self.log.debug(f"Making payment of {v} X1 at fee_rate {fee_rate}")
         tx = B.sendtoaddress(
             address=A.getnewaddress(address_type=addr_type),
             amount=v,
@@ -147,19 +147,19 @@ class AddressInputTypeGrouping(BitcoinsTestFramework):
 
         self.log.info("Creating mixed UTXOs in B's wallet")
         for v in generate_payment_values(3, 10):
-            self.log.debug(f"Making payment of {v} BC to legacy")
+            self.log.debug(f"Making payment of {v} X1 to legacy")
             A.sendtoaddress(B.getnewaddress(address_type="legacy"), v)
 
         for v in generate_payment_values(3, 10):
-            self.log.debug(f"Making payment of {v} BC to p2sh")
+            self.log.debug(f"Making payment of {v} X1 to p2sh")
             A.sendtoaddress(B.getnewaddress(address_type="p2sh-segwit"), v)
 
         for v in generate_payment_values(3, 10):
-            self.log.debug(f"Making payment of {v} BC to bech32")
+            self.log.debug(f"Making payment of {v} X1 to bech32")
             A.sendtoaddress(B.getnewaddress(address_type="bech32"), v)
 
         for v in generate_payment_values(3, 10):
-            self.log.debug(f"Making payment of {v} BC to bech32m")
+            self.log.debug(f"Making payment of {v} X1 to bech32m")
             A.sendtoaddress(B.getnewaddress(address_type="bech32m"), v)
 
         self.generate(A, 1)

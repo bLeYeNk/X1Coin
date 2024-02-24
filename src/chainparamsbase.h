@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_CHAINPARAMSBASE_H
-#define BITCOINS_CHAINPARAMSBASE_H
+#ifndef X1COIN_CHAINPARAMSBASE_H
+#define X1COIN_CHAINPARAMSBASE_H
 
 #include <memory>
 #include <string>
@@ -11,8 +11,8 @@
 class ArgsManager;
 
 /**
- * CBaseChainParams defines the base parameters (shared between bitcoins-cli and bitcoinsd)
- * of a given instance of the Bitcoins system.
+ * CBaseChainParams defines the base parameters (shared between x1coin-cli and x1coind)
+ * of a given instance of the X1coin system.
  */
 class CBaseChainParams
 {
@@ -60,4 +60,4 @@ const CBaseChainParams& BaseParams();
 /** Sets the params returned by Params() to those for the given network. */
 void SelectBaseParams(const std::string& chain);
 
-#endif // BITCOINS_CHAINPARAMSBASE_H
+#endif // X1COIN_CHAINPARAMSBASE_H

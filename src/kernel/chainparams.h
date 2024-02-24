@@ -1,11 +1,11 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2020 The Bitcoin Core developers
-// Copyright (c) 2023 The Bitcoins Core developers
+// Copyright (c) 2023 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_KERNEL_CHAINPARAMS_H
-#define BITCOINS_KERNEL_CHAINPARAMS_H
+#ifndef X1COIN_KERNEL_CHAINPARAMS_H
+#define X1COIN_KERNEL_CHAINPARAMS_H
 
 #include <consensus/params.h>
 #include <netaddress.h>
@@ -71,7 +71,7 @@ struct ChainTxData {
 
 /**
  * CChainParams defines various tweakable parameters of a given instance of the
- * Bitcoins system.
+ * X1coin system.
  */
 class CChainParams
 {
@@ -185,4 +185,4 @@ protected:
     ChainTxData chainTxData;
 };
 
-#endif // BITCOINS_KERNEL_CHAINPARAMS_H
+#endif // X1COIN_KERNEL_CHAINPARAMS_H

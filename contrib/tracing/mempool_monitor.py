@@ -3,7 +3,7 @@
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-""" Example logging Bitcoins Core mempool events using the mempool:added,
+""" Example logging X1coin mempool events using the mempool:added,
     mempool:removed, mempool:replaced, and mempool:rejected tracepoints. """
 
 import curses
@@ -114,16 +114,16 @@ int trace_replaced(struct pt_regs *ctx) {
 """
 
 
-def main(bitcoinsd_path):
-    bitcoinsd_with_usdts = USDT(path=str(bitcoinsd_path))
+def main(x1coind_path):
+    x1coind_with_usdts = USDT(path=str(x1coind_path))
 
     # attaching the trace functions defined in the BPF program
     # to the tracepoints
-    bitcoinsd_with_usdts.enable_probe(probe="mempool:added", fn_name="trace_added")
-    bitcoinsd_with_usdts.enable_probe(probe="mempool:removed", fn_name="trace_removed")
-    bitcoinsd_with_usdts.enable_probe(probe="mempool:replaced", fn_name="trace_replaced")
-    bitcoinsd_with_usdts.enable_probe(probe="mempool:rejected", fn_name="trace_rejected")
-    bpf = BPF(text=PROGRAM, usdt_contexts=[bitcoinsd_with_usdts])
+    x1coind_with_usdts.enable_probe(probe="mempool:added", fn_name="trace_added")
+    x1coind_with_usdts.enable_probe(probe="mempool:removed", fn_name="trace_removed")
+    x1coind_with_usdts.enable_probe(probe="mempool:replaced", fn_name="trace_replaced")
+    x1coind_with_usdts.enable_probe(probe="mempool:rejected", fn_name="trace_rejected")
+    bpf = BPF(text=PROGRAM, usdt_contexts=[x1coind_with_usdts])
 
     events = []
 
@@ -365,7 +365,7 @@ class Dashboard:
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print("USAGE: ", sys.argv[0], "path/to/bitcoinsd")
+        print("USAGE: ", sys.argv[0], "path/to/x1coind")
         exit(1)
 
     path = sys.argv[1]

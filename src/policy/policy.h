@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_POLICY_POLICY_H
-#define BITCOINS_POLICY_POLICY_H
+#ifndef X1COIN_POLICY_POLICY_H
+#define X1COIN_POLICY_POLICY_H
 
 #include <consensus/amount.h>
 #include <consensus/consensus.h>
@@ -148,4 +148,4 @@ static inline int64_t GetVirtualTransactionInputSize(const CTxIn& tx)
     return GetVirtualTransactionInputSize(tx, 0, 0);
 }
 
-#endif // BITCOINS_POLICY_POLICY_H
+#endif // X1COIN_POLICY_POLICY_H

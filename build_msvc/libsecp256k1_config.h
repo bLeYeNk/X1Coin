@@ -4,12 +4,12 @@
  * file COPYING or http://www.opensource.org/licenses/mit-license.php.*
  **********************************************************************/
 
-#ifndef BITCOINS_LIBSECP256K1_CONFIG_H
-#define BITCOINS_LIBSECP256K1_CONFIG_H
+#ifndef X1COIN_LIBSECP256K1_CONFIG_H
+#define X1COIN_LIBSECP256K1_CONFIG_H
 
 #undef USE_ASM_X86_64
 
 #define ECMULT_GEN_PREC_BITS 4
 #define ECMULT_WINDOW_SIZE 15
 
-#endif // BITCOINS_LIBSECP256K1_CONFIG_H
+#endif // X1COIN_LIBSECP256K1_CONFIG_H

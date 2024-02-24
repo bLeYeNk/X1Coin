@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_CRYPTO_CHACHA20_H
-#define BITCOINS_CRYPTO_CHACHA20_H
+#ifndef X1COIN_CRYPTO_CHACHA20_H
+#define X1COIN_CRYPTO_CHACHA20_H
 
 #include <cstdlib>
 #include <stdint.h>
@@ -81,4 +81,4 @@ public:
     void Crypt(const unsigned char* input, unsigned char* output, size_t bytes);
 };
 
-#endif // BITCOINS_CRYPTO_CHACHA20_H
+#endif // X1COIN_CRYPTO_CHACHA20_H

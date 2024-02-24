@@ -5,7 +5,7 @@
 
 export LC_ALL=C
 INPUT=$(cat /dev/stdin)
-if [ "$BITCOINS_VERIFY_COMMITS_ALLOW_SHA1" = 1 ]; then
+if [ "$X1COIN_VERIFY_COMMITS_ALLOW_SHA1" = 1 ]; then
     printf '%s\n' "$INPUT" | gpg --trust-model always "$@" 2>/dev/null
     exit $?
 else

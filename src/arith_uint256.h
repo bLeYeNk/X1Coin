@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_ARITH_UINT256_H
-#define BITCOINS_ARITH_UINT256_H
+#ifndef X1COIN_ARITH_UINT256_H
+#define X1COIN_ARITH_UINT256_H
 
 #include <cstring>
 #include <limits>
@@ -264,7 +264,7 @@ public:
      * Thus 0x1234560000 is compact (0x05123456)
      * and  0xc0de000000 is compact (0x0600c0de)
      *
-     * Bitcoins only uses this "compact" format for encoding difficulty
+     * X1coin only uses this "compact" format for encoding difficulty
      * targets, which are unsigned 256bit quantities.  Thus, all the
      * complexities of the sign bit and using base 256 are probably an
      * implementation accident.
@@ -281,4 +281,4 @@ arith_uint256 UintToArith256(const uint256 &);
 
 extern template class base_uint<256>;
 
-#endif // BITCOINS_ARITH_UINT256_H
+#endif // X1COIN_ARITH_UINT256_H

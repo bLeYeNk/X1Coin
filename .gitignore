@@ -2,18 +2,18 @@
 
 *.exe
 *.pdb
-src/bitcoins
-src/bitcoinsd
-src/bitcoins-cli
-src/bitcoins-gui
-src/bitcoins-node
-src/bitcoins-tx
-src/bitcoins-util
-src/bitcoins-chainstate
-src/bitcoins-wallet
+src/x1coin
+src/x1coind
+src/x1coin-cli
+src/x1coin-gui
+src/x1coin-node
+src/x1coin-tx
+src/x1coin-util
+src/x1coin-chainstate
+src/x1coin-wallet
 src/test/fuzz/fuzz
-src/test/test_bitcoins
-src/qt/test/test_bitcoins-qt
+src/test/test_x1coin
+src/qt/test/test_x1coin-qt
 
 # autoreconf
 Makefile.in
@@ -37,8 +37,8 @@ config.log
 config.status
 configure
 libtool
-src/config/bitcoins-config.h
-src/config/bitcoins-config.h.in
+src/config/x1coin-config.h
+src/config/x1coin-config.h.in
 src/config/stamp-h1
 src/obj
 share/setup.nsi
@@ -50,11 +50,11 @@ src/qt/forms/ui_*.h
 
 src/qt/test/moc*.cpp
 
-src/qt/bitcoins-qt.config
-src/qt/bitcoins-qt.creator
-src/qt/bitcoins-qt.creator.user
-src/qt/bitcoins-qt.files
-src/qt/bitcoins-qt.includes
+src/qt/x1coin-qt.config
+src/qt/x1coin-qt.creator
+src/qt/x1coin-qt.creator.user
+src/qt/x1coin-qt.files
+src/qt/x1coin-qt.includes
 
 .deps
 .dirstamp
@@ -92,15 +92,15 @@ src/qt/bitcoins-qt.includes
 *.qm
 Makefile
 !depends/Makefile
-src/qt/bitcoins-qt
-Bitcoins-Qt.app
+src/qt/x1coin-qt
+X1coin-Qt.app
 
 # Qt Creator
 Makefile.am.user
 
 # Unit-tests
 Makefile.test
-bitcoins-qt_test
+x1coin-qt_test
 
 # Resources cpp
 qrc_*.cpp
@@ -116,7 +116,7 @@ releases
 *.gcno
 *.gcda
 /*.info
-test_bitcoins.coverage/
+test_x1coin.coverage/
 total.coverage/
 fuzz.coverage/
 coverage_percent.txt
@@ -135,7 +135,7 @@ test/.mypy_cache/
 
 /doc/doxygen/
 
-libbitcoinsconsensus.pc
+libx1coinconsensus.pc
 contrib/devtools/split-debug.sh
 
 # Output from running db4 installation

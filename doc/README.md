@@ -1,42 +1,42 @@
-Bitcoins Core
+X1coin
 =============
 
 Setup
 ---------------------
-Bitcoins Core is the original Bitcoins client and it builds the backbone of the network. It downloads and, by default, stores the entire history of Bitcoins transactions, which requires a few hundred gigabytes of disk space. Depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more.
+X1coin is the original X1coin client and it builds the backbone of the network. It downloads and, by default, stores the entire history of X1coin transactions, which requires a few hundred gigabytes of disk space. Depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more.
 
-To download Bitcoins Core, visit [bitcoinscore.org](https://bitcoincore.org/en/download/).
+To download X1coin, visit [x1coincore.org](https://bitcoincore.org/en/download/).
 
 Running
 ---------------------
-The following are some helpful notes on how to run Bitcoins Core on your native platform.
+The following are some helpful notes on how to run X1coin on your native platform.
 
 ### Unix
 
 Unpack the files into a directory and run:
 
-- `bin/bitcoins-qt` (GUI) or
-- `bin/bitcoinsd` (headless)
+- `bin/x1coin-qt` (GUI) or
+- `bin/x1coind` (headless)
 
 ### Windows
 
-Unpack the files into a directory, and then run bitcoins-qt.exe.
+Unpack the files into a directory, and then run x1coin-qt.exe.
 
 ### macOS
 
-Drag Bitcoins Core to your applications folder, and then run Bitcoins Core.
+Drag X1coin to your applications folder, and then run X1coin.
 
 ### Need Help?
 
-* See the documentation at the [Bitcoins Wiki](https://en.bitcoins.it/wiki/Main_Page)
+* See the documentation at the [X1coin Wiki](https://en.x1coin.it/wiki/Main_Page)
 for help and more information.
-* Ask for help on [Bitcoins StackExchange](https://bitcoins.stackexchange.com).
-* Ask for help on #bitcoins on Libera Chat. If you don't have an IRC client, you can use [web.libera.chat](https://web.libera.chat/#bitcoins).
-* Ask for help on the [BitcoinsTalk](https://bitcoinstalk.org/) forums, in the [Technical Support board](https://bitcoinstalk.org/index.php?board=4.0).
+* Ask for help on [X1coin StackExchange](https://x1coin.stackexchange.com).
+* Ask for help on #x1coin on Libera Chat. If you don't have an IRC client, you can use [web.libera.chat](https://web.libera.chat/#x1coin).
+* Ask for help on the [X1coinTalk](https://x1cointalk.org/) forums, in the [Technical Support board](https://x1cointalk.org/index.php?board=4.0).
 
 Building
 ---------------------
-The following are developer notes on how to build Bitcoins Core on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
+The following are developer notes on how to build X1coin on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
 
 - [Dependencies](dependencies.md)
 - [macOS Build Notes](build-osx.md)
@@ -49,12 +49,12 @@ The following are developer notes on how to build Bitcoins Core on your native p
 
 Development
 ---------------------
-The Bitcoins repo's [root README](/README.md) contains relevant information on the development process and automated testing.
+The X1coin repo's [root README](/README.md) contains relevant information on the development process and automated testing.
 
 - [Developer Notes](developer-notes.md)
 - [Productivity Notes](productivity.md)
 - [Release Process](release-process.md)
-- [Source Code Documentation (External Link)](https://doxygen.bitcoinscore.org/)
+- [Source Code Documentation (External Link)](https://doxygen.x1coincore.org/)
 - [Translation Process](translation_process.md)
 - [Translation Strings Policy](translation_strings_policy.md)
 - [JSON-RPC Interface](JSON-RPC-interface.md)
@@ -66,12 +66,12 @@ The Bitcoins repo's [root README](/README.md) contains relevant information on t
 - [Internal Design Docs](design/)
 
 ### Resources
-* Discuss on the [BitcoinsTalk](https://bitcoinstalk.org/) forums, in the [Development & Technical Discussion board](https://bitcoinstalk.org/index.php?board=6.0).
-* Discuss project-specific development on #bitcoins-core-dev on Libera Chat. If you don't have an IRC client, you can use [web.libera.chat](https://web.libera.chat/#bitcoins-core-dev).
+* Discuss on the [X1coinTalk](https://x1cointalk.org/) forums, in the [Development & Technical Discussion board](https://x1cointalk.org/index.php?board=6.0).
+* Discuss project-specific development on #x1coin-core-dev on Libera Chat. If you don't have an IRC client, you can use [web.libera.chat](https://web.libera.chat/#x1coin-core-dev).
 
 ### Miscellaneous
 - [Assets Attribution](assets-attribution.md)
-- [bitcoins.conf Configuration File](bitcoins-conf.md)
+- [x1coin.conf Configuration File](x1coin-conf.md)
 - [CJDNS Support](cjdns.md)
 - [Files](files.md)
 - [Fuzz-testing](fuzzing.md)

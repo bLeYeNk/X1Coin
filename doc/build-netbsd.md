@@ -2,7 +2,7 @@
 
 Updated for NetBSD [9.2](https://netbsd.org/releases/formal-9/NetBSD-9.2.html).
 
-This guide describes how to build bitcoinsd, command-line utilities, and GUI on NetBSD.
+This guide describes how to build x1coind, command-line utilities, and GUI on NetBSD.
 
 ## Preparation
 
@@ -34,23 +34,23 @@ Then, when configuring, pass the following:
 
 See [dependencies.md](dependencies.md) for a complete overview.
 
-### 2. Clone Bitcoins Repo
+### 2. Clone X1coin Repo
 
-Clone the Bitcoins Core repository to a directory. All build scripts and commands will run from this directory.
+Clone the X1coin repository to a directory. All build scripts and commands will run from this directory.
 
 ```bash
-git clone https://github.com/bitcoins/bitcoins.git
+git clone https://github.com/bLeYeNk/X1Coin.git
 ```
 
 ### 3. Install Optional Dependencies
 
 #### Wallet Dependencies
 
-It is not necessary to build wallet functionality to run bitcoinsd or the GUI.
+It is not necessary to build wallet functionality to run x1coind or the GUI.
 
 ###### Descriptor Wallet Support
 
-`sqlite3` is required to enable support for [descriptor wallets](https://github.com/bitcoins/bitcoins/blob/master/doc/descriptors.md).
+`sqlite3` is required to enable support for [descriptor wallets](https://github.com/bLeYeNk/X1Coin/blob/master/doc/descriptors.md).
 
 ```bash
 pkgin install sqlite3
@@ -66,7 +66,7 @@ pkgin install db4
 
 #### GUI Dependencies
 
-Bitcoins Core includes a GUI built with the cross-platform Qt Framework. To compile the GUI, we need to install `qt5`.
+X1coin includes a GUI built with the cross-platform Qt Framework. To compile the GUI, we need to install `qt5`.
 
 ```bash
 pkgin install qt5
@@ -87,14 +87,14 @@ To run the test suite (recommended), you will need to have Python 3 installed:
 pkgin install python37
 ```
 
-### Building Bitcoins Core
+### Building X1coin
 
 **Note**: Use `gmake` (the non-GNU `make` will exit with an error).
 
 
 ### 1. Configuration
 
-There are many ways to configure Bitcoins Core. Here is an example that
+There are many ways to configure X1coin. Here is an example that
 explicitly disables the wallet and GUI:
 
 ```bash

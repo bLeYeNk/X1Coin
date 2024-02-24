@@ -7,11 +7,11 @@
  * Server/client environment: argument handling, config file parsing,
  * thread wrappers, startup time
  */
-#ifndef BITCOINS_UTIL_SYSTEM_H
-#define BITCOINS_UTIL_SYSTEM_H
+#ifndef X1COIN_UTIL_SYSTEM_H
+#define X1COIN_UTIL_SYSTEM_H
 
 #if defined(HAVE_CONFIG_H)
-#include <config/bitcoins-config.h>
+#include <config/x1coin-config.h>
 #endif
 
 #include <compat/assumptions.h>
@@ -37,8 +37,8 @@ class UniValue;
 // Application startup time (used for uptime calculation)
 int64_t GetStartupTime();
 
-extern const char * const BITCOINS_CONF_FILENAME;
-extern const char * const BITCOINS_SETTINGS_FILENAME;
+extern const char * const X1COIN_CONF_FILENAME;
+extern const char * const X1COIN_SETTINGS_FILENAME;
 
 void SetupEnvironment();
 bool SetupNetworking();
@@ -513,4 +513,4 @@ private:
 
 } // namespace util
 
-#endif // BITCOINS_UTIL_SYSTEM_H
+#endif // X1COIN_UTIL_SYSTEM_H

@@ -1,13 +1,13 @@
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Upstream-Name: Bitcoins
+Upstream-Name: X1coin
 Upstream-Contact: Satoshi Nakamoto <satoshin@gmx.com>
- irc://#bitcoins-core-dev@libera.chat
-Source: https://github.com/bitcoins/bitcoins
+ irc://#x1coin-core-dev@libera.chat
+Source: https://github.com/bLeYeNk/X1Coin
 
 Files: *
 Copyright: 2009-2023, Bitcoin Core Developers
 License: Expat
-Comment: The Bitcoins Core Developers encompasses all contributors to the
+Comment: The Bitcoin Core developers encompasses all contributors to the
          project, listed in the release notes or the git log.
 
 Files: debian/*
@@ -67,12 +67,12 @@ Copyright: Stephen Hutchings, Jonas Schnelli
 License: Expat
 Comment: Modifications of Stephen Hutchings' Typicons
 
-Files: src/qt/res/icons/bitcoins.*
-       share/pixmaps/bitcoins*
-       src/qt/res/src/bitcoins.svg
+Files: src/qt/res/icons/x1coin.*
+       share/pixmaps/x1coin*
+       src/qt/res/src/x1coin.svg
 Copyright: Bitboy, Jonas Schnelli
 License: public-domain
-Comment: Site: https://bitcoinstalk.org/?topic=1756.0
+Comment: Site: https://x1cointalk.org/?topic=1756.0
 
 Files: src/qt/res/icons/proxy.png
        src/qt/res/src/proxy.svg

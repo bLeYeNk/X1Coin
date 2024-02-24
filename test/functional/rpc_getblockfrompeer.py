@@ -15,14 +15,14 @@ from test_framework.p2p import (
     P2P_SERVICES,
     P2PInterface,
 )
-from test_framework.test_framework import BitcoinsTestFramework
+from test_framework.test_framework import X1coinTestFramework
 from test_framework.util import (
     assert_equal,
     assert_raises_rpc_error,
 )
 
 
-class GetBlockFromPeerTest(BitcoinsTestFramework):
+class GetBlockFromPeerTest(X1coinTestFramework):
     def set_test_params(self):
         self.num_nodes = 3
         self.extra_args = [

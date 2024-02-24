@@ -1,13 +1,13 @@
-Building Bitcoins Core with Visual Studio
+Building X1coin with Visual Studio
 ========================================
 
 Introduction
 ---------------------
-Visual Studio 2022 is minimum required to build Bitcoins Core.
+Visual Studio 2022 is minimum required to build X1coin.
 
 Solution and project files to build with `msbuild` or Visual Studio can be found in the `build_msvc` directory.
 
-To build Bitcoins Core from the command-line, it is sufficient to only install the [Visual Studio Build Tools](https://visualstudio.microsoft.com/downloads/) component.
+To build X1coin from the command-line, it is sufficient to only install the [Visual Studio Build Tools](https://visualstudio.microsoft.com/downloads/) component.
 
 The "Desktop development with C++" workload must be installed as well.
 
@@ -30,7 +30,7 @@ Add-Content -Path "vcpkg\triplets\x64-windows-static.cmake" -Value "set(VCPKG_BU
 
 Qt
 ---------------------
-To build Bitcoins Core with the GUI, a static build of Qt is required.
+To build X1coin with the GUI, a static build of Qt is required.
 
 1. Download a single ZIP archive of Qt source code from https://download.qt.io/official_releases/qt/ (e.g., [`qt-everywhere-opensource-src-5.15.5.zip`](https://download.qt.io/official_releases/qt/5.15/5.15.5/single/qt-everywhere-opensource-src-5.15.5.zip)), and expand it into a dedicated folder. The following instructions assume that this folder is `C:\dev\qt-source`.
 
@@ -46,7 +46,7 @@ nmake install
 
 One could speed up building with [`jom`](https://wiki.qt.io/Jom), a replacement for `nmake` which makes use of all CPU cores.
 
-To build Bitcoins Core without Qt, unload or disable the `bitcoins-qt`, `libbitcoins_qt` and `test_bitcoins-qt` projects.
+To build X1coin without Qt, unload or disable the `x1coin-qt`, `libx1coin_qt` and `test_x1coin-qt` projects.
 
 
 Building
@@ -62,19 +62,19 @@ python build_msvc\msvc-autogen.py
 3. To build from the command-line with the Visual Studio toolchain use:
 
 ```cmd
-msbuild build_msvc\bitcoins.sln -property:Configuration=Release -maxCpuCount -verbosity:minimal
+msbuild build_msvc\x1coin.sln -property:Configuration=Release -maxCpuCount -verbosity:minimal
 ```
 
-Alternatively, open the `build_msvc/bitcoins.sln` file in Visual Studio.
+Alternatively, open the `build_msvc/x1coin.sln` file in Visual Studio.
 
 Security
 ---------------------
-[Base address randomization](https://learn.microsoft.com/en-us/cpp/build/reference/dynamicbase-use-address-space-layout-randomization) is used to make Bitcoins Core more secure. When building Bitcoins using the `build_msvc` process base address randomization can be disabled by editing `common.init.vcproj` to change `RandomizedBaseAddress` from `true` to `false` and then rebuilding the project.
+[Base address randomization](https://learn.microsoft.com/en-us/cpp/build/reference/dynamicbase-use-address-space-layout-randomization) is used to make X1coin more secure. When building X1coin using the `build_msvc` process base address randomization can be disabled by editing `common.init.vcproj` to change `RandomizedBaseAddress` from `true` to `false` and then rebuilding the project.
 
-To check if `bitcoinsd` has `RandomizedBaseAddress` enabled or disabled run
+To check if `x1coind` has `RandomizedBaseAddress` enabled or disabled run
 
 ```
-.\dumpbin.exe /headers src/bitcoinsd.exe
+.\dumpbin.exe /headers src/x1coind.exe
 ```
 
 If is it enabled then in the output `Dynamic base` will be listed in the `DLL characteristics` under `OPTIONAL HEADER VALUES` as shown below

@@ -9,7 +9,7 @@ from typing import List
 
 from test_framework.address import address_to_scriptpubkey
 from test_framework.descriptors import descsum_create
-from test_framework.test_framework import BitcoinsTestFramework
+from test_framework.test_framework import X1coinTestFramework
 from test_framework.test_node import TestNode
 from test_framework.util import assert_equal
 from test_framework.wallet import MiniWallet
@@ -21,7 +21,7 @@ NUM_DESCRIPTORS = 9  # number of descriptors (8 default ranged ones + 1 fixed no
 NUM_BLOCKS = 6       # number of blocks to mine
 
 
-class WalletFastRescanTest(BitcoinsTestFramework):
+class WalletFastRescanTest(X1coinTestFramework):
     def add_options(self, parser):
         self.add_wallet_options(parser, legacy=False)
 

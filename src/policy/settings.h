@@ -3,9 +3,9 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_POLICY_SETTINGS_H
-#define BITCOINS_POLICY_SETTINGS_H
+#ifndef X1COIN_POLICY_SETTINGS_H
+#define X1COIN_POLICY_SETTINGS_H
 
 extern unsigned int nBytesPerSigOp;
 
-#endif // BITCOINS_POLICY_SETTINGS_H
+#endif // X1COIN_POLICY_SETTINGS_H

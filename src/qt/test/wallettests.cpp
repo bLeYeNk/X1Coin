@@ -9,8 +9,8 @@
 #include <interfaces/chain.h>
 #include <interfaces/node.h>
 #include <key_io.h>
-#include <qt/bitcoinsamountfield.h>
-#include <qt/bitcoinsunits.h>
+#include <qt/x1coinamountfield.h>
+#include <qt/x1coinunits.h>
 #include <qt/clientmodel.h>
 #include <qt/optionsmodel.h>
 #include <qt/overviewpage.h>
@@ -79,7 +79,7 @@ uint256 SendCoins(CWallet& wallet, SendCoinsDialog& sendCoinsDialog, const CTxDe
     QVBoxLayout* entries = sendCoinsDialog.findChild<QVBoxLayout*>("entries");
     SendCoinsEntry* entry = qobject_cast<SendCoinsEntry*>(entries->itemAt(0)->widget());
     entry->findChild<QValidatedLineEdit*>("payTo")->setText(QString::fromStdString(EncodeDestination(address)));
-    entry->findChild<BitcoinsAmountField*>("payAmount")->setValue(amount);
+    entry->findChild<X1coinAmountField*>("payAmount")->setValue(amount);
     sendCoinsDialog.findChild<QFrame*>("frameFee")
         ->findChild<QFrame*>("frameFeeSelection")
         ->findChild<QCheckBox*>("optInRBF")
@@ -136,8 +136,8 @@ void BumpFee(TransactionView& view, const uint256& txid, bool expectDisabled, st
 
 void CompareBalance(WalletModel& walletModel, CAmount expected_balance, QLabel* balance_label_to_check)
 {
-    BitcoinsUnit unit = walletModel.getOptionsModel()->getDisplayUnit();
-    QString balanceComparison = BitcoinsUnits::formatWithUnit(unit, expected_balance, false, BitcoinsUnits::SeparatorStyle::ALWAYS);
+    X1coinUnit unit = walletModel.getOptionsModel()->getDisplayUnit();
+    QString balanceComparison = X1coinUnits::formatWithUnit(unit, expected_balance, false, X1coinUnits::SeparatorStyle::ALWAYS);
     QCOMPARE(balance_label_to_check->text().trimmed(), balanceComparison);
 }
 
@@ -264,9 +264,9 @@ public:
 //
 // This also requires overriding the default minimal Qt platform:
 //
-//     QT_QPA_PLATFORM=xcb     src/qt/test/test_bitcoins-qt  # Linux
-//     QT_QPA_PLATFORM=windows src/qt/test/test_bitcoins-qt  # Windows
-//     QT_QPA_PLATFORM=cocoa   src/qt/test/test_bitcoins-qt  # macOS
+//     QT_QPA_PLATFORM=xcb     src/qt/test/test_x1coin-qt  # Linux
+//     QT_QPA_PLATFORM=windows src/qt/test/test_x1coin-qt  # Windows
+//     QT_QPA_PLATFORM=cocoa   src/qt/test/test_x1coin-qt  # macOS
 void TestGUI(interfaces::Node& node, const std::shared_ptr<CWallet>& wallet)
 {
     // Create widgets for sending coins and listing transactions.
@@ -318,7 +318,7 @@ void TestGUI(interfaces::Node& node, const std::shared_ptr<CWallet>& wallet)
     labelInput->setText("TEST_LABEL_1");
 
     // Amount input
-    BitcoinsAmountField* amountInput = receiveCoinsDialog.findChild<BitcoinsAmountField*>("reqAmount");
+    X1coinAmountField* amountInput = receiveCoinsDialog.findChild<X1coinAmountField*>("reqAmount");
     amountInput->setValue(1);
 
     // Message input
@@ -334,7 +334,7 @@ void TestGUI(interfaces::Node& node, const std::shared_ptr<CWallet>& wallet)
             QCOMPARE(receiveRequestDialog->QObject::findChild<QLabel*>("payment_header")->text(), QString("Payment information"));
             QCOMPARE(receiveRequestDialog->QObject::findChild<QLabel*>("uri_tag")->text(), QString("URI:"));
             QString uri = receiveRequestDialog->QObject::findChild<QLabel*>("uri_content")->text();
-            QCOMPARE(uri.count("bitcoins:"), 2);
+            QCOMPARE(uri.count("x1coin:"), 2);
             QCOMPARE(receiveRequestDialog->QObject::findChild<QLabel*>("address_tag")->text(), QString("Address:"));
             QVERIFY(address.isEmpty());
             address = receiveRequestDialog->QObject::findChild<QLabel*>("address_content")->text();
@@ -472,7 +472,7 @@ void WalletTests::walletTests()
         // and fails to handle returned nulls
         // (https://bugreports.qt.io/browse/QTBUG-49686).
         QWARN("Skipping WalletTests on mac build with 'minimal' platform set due to Qt bugs. To run AppTests, invoke "
-              "with 'QT_QPA_PLATFORM=cocoa test_bitcoins-qt' on mac, or else use a linux or windows build.");
+              "with 'QT_QPA_PLATFORM=cocoa test_x1coin-qt' on mac, or else use a linux or windows build.");
         return;
     }
 #endif

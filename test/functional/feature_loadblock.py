@@ -17,11 +17,11 @@ import tempfile
 import urllib
 
 from test_framework.blocktools import COINBASE_MATURITY
-from test_framework.test_framework import BitcoinsTestFramework
+from test_framework.test_framework import X1coinTestFramework
 from test_framework.util import assert_equal
 
 
-class LoadblockTest(BitcoinsTestFramework):
+class LoadblockTest(X1coinTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 2

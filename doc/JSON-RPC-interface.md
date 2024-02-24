@@ -1,7 +1,7 @@
 # JSON-RPC Interface
 
-The headless daemon `bitcoinsd` has the JSON-RPC API enabled by default, the GUI
-`bitcoins-qt` has it disabled by default. This can be changed with the `-server`
+The headless daemon `x1coind` has the JSON-RPC API enabled by default, the GUI
+`x1coin-qt` has it disabled by default. This can be changed with the `-server`
 option. In the GUI it is possible to execute RPC methods in the Debug Console
 Dialog.
 
@@ -18,18 +18,18 @@ Examples:
 
 ```sh
 # "params": ["mywallet", false, false, "", false, false, true]
-bitcoins-cli createwallet mywallet false false "" false false true
+x1coin-cli createwallet mywallet false false "" false false true
 
 # "params": {"wallet_name": "mywallet", "load_on_startup": true}
-bitcoins-cli -named createwallet wallet_name=mywallet load_on_startup=true
+x1coin-cli -named createwallet wallet_name=mywallet load_on_startup=true
 
 # "params": {"args": ["mywallet"], "load_on_startup": true}
-bitcoins-cli -named createwallet mywallet load_on_startup=true
+x1coin-cli -named createwallet mywallet load_on_startup=true
 ```
 
 ## Versioning
 
-The RPC interface might change from one major version of Bitcoins Core to the
+The RPC interface might change from one major version of X1coin to the
 next. This makes the RPC interface implicitly versioned on the major version.
 The version tuple can be retrieved by e.g. the `getnetworkinfo` RPC in
 `version`.
@@ -41,21 +41,21 @@ were deprecated and how to re-enable them temporarily.
 
 ## Security
 
-The RPC interface allows other programs to control Bitcoins Core,
+The RPC interface allows other programs to control X1coin,
 including the ability to spend funds from your wallets, affect consensus
 verification, read private data, and otherwise perform operations that
 can cause loss of money, data, or privacy.  This section suggests how
-you should use and configure Bitcoins Core to reduce the risk that its
+you should use and configure X1coin to reduce the risk that its
 RPC interface will be abused.
 
 - **Securing the executable:** Anyone with physical or remote access to
-  the computer, container, or virtual machine running Bitcoins Core can
+  the computer, container, or virtual machine running X1coin can
   compromise either the whole program or just the RPC interface.  This
   includes being able to record any passphrases you enter for unlocking
-  your encrypted wallets or changing settings so that your Bitcoins Core
+  your encrypted wallets or changing settings so that your X1coin
   program tells you that certain transactions have multiple
   confirmations even when they aren't part of the best block chain.  For
-  this reason, you should not use Bitcoins Core for security sensitive
+  this reason, you should not use X1coin for security sensitive
   operations on systems you do not exclusively control, such as shared
   computers or virtual private servers.
 
@@ -65,43 +65,43 @@ RPC interface will be abused.
   and passphrase).  Any program on your computer with access to the file
   system and local network can obtain this level of access.
   Additionally, other programs on your computer can attempt to provide
-  an RPC interface on the same port as used by Bitcoins Core in order to
+  an RPC interface on the same port as used by X1coin in order to
   trick you into revealing your authentication credentials.  For this
-  reason, it is important to only use Bitcoins Core for
+  reason, it is important to only use X1coin for
   security-sensitive operations on a computer whose other programs you
   trust.
 
 - **Securing remote network access:** You may optionally allow other
-  computers to remotely control Bitcoins Core by setting the `rpcallowip`
+  computers to remotely control X1coin by setting the `rpcallowip`
   and `rpcbind` configuration parameters.  These settings are only meant
   for enabling connections over secure private networks or connections
   that have been otherwise secured (e.g. using a VPN or port forwarding
   with SSH or stunnel).  **Do not enable RPC connections over the public
-  Internet.**  Although Bitcoins Core's RPC interface does use
+  Internet.**  Although X1coin's RPC interface does use
   authentication, it does not use encryption, so your login credentials
   are sent as clear text that can be read by anyone on your network
   path.  Additionally, the RPC interface has not been hardened to
   withstand arbitrary Internet traffic, so changing the above settings
   to expose it to the Internet (even using something like a Tor onion
   service) could expose you to unconsidered vulnerabilities.  See
-  `bitcoinsd -help` for more information about these settings and other
+  `x1coind -help` for more information about these settings and other
   settings described in this document.
 
-    Related, if you use Bitcoins Core inside a Docker container, you may
+    Related, if you use X1coin inside a Docker container, you may
     need to expose the RPC port to the host system.  The default way to
     do this in Docker also exposes the port to the public Internet.
     Instead, expose it only on the host system's localhost, for example:
     `-p 127.0.0.1:15257:15257`
 
-- **Secure authentication:** By default, Bitcoins Core generates unique
+- **Secure authentication:** By default, X1coin generates unique
   login credentials each time it restarts and puts them into a file
-  readable only by the user that started Bitcoins Core, allowing any of
+  readable only by the user that started X1coin, allowing any of
   that user's RPC clients with read access to the file to login
-  automatically.  The file is `.cookie` in the Bitcoins Core
+  automatically.  The file is `.cookie` in the X1coin
   configuration directory, and using these credentials is the preferred
   RPC authentication method.  If you need to generate static login
   credentials for your programs, you can use the script in the
-  `share/rpcauth` directory in the Bitcoins Core source tree.  As a final
+  `share/rpcauth` directory in the X1coin source tree.  As a final
   fallback, you can directly use manually-chosen `rpcuser` and
   `rpcpassword` configuration parameters---but you must ensure that you
   choose a strong and unique passphrase (and still don't use insecure

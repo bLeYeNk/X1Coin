@@ -1,27 +1,27 @@
 dist_man1_MANS=
 
-if BUILD_BITCOINSD
-  dist_man1_MANS+=bitcoinsd.1
+if BUILD_X1COIND
+  dist_man1_MANS+=x1coind.1
 endif
 
 if ENABLE_QT
-  dist_man1_MANS+=bitcoins-qt.1
+  dist_man1_MANS+=x1coin-qt.1
 endif
 
-if BUILD_BITCOINS_CLI
-  dist_man1_MANS+=bitcoins-cli.1
+if BUILD_X1COIN_CLI
+  dist_man1_MANS+=x1coin-cli.1
 endif
 
-if BUILD_BITCOINS_TX
-  dist_man1_MANS+=bitcoins-tx.1
+if BUILD_X1COIN_TX
+  dist_man1_MANS+=x1coin-tx.1
 endif
 
-if BUILD_BITCOINS_UTIL
-  dist_man1_MANS+=bitcoins-util.1
+if BUILD_X1COIN_UTIL
+  dist_man1_MANS+=x1coin-util.1
 endif
 
 if ENABLE_WALLET
-if BUILD_BITCOINS_WALLET
-  dist_man1_MANS+=bitcoins-wallet.1
+if BUILD_X1COIN_WALLET
+  dist_man1_MANS+=x1coin-wallet.1
 endif
 endif

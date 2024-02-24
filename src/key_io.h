@@ -1,11 +1,11 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2020 The Bitcoin Core developers
-// Copyright (c) 2023 The Bitcoins Core developers
+// Copyright (c) 2023 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_KEY_IO_H
-#define BITCOINS_KEY_IO_H
+#ifndef X1COIN_KEY_IO_H
+#define X1COIN_KEY_IO_H
 
 #include <chainparams.h>
 #include <key.h>
@@ -28,4 +28,4 @@ CTxDestination DecodeDestination(const std::string& str, std::string& error_msg,
 bool IsValidDestinationString(const std::string& str);
 bool IsValidDestinationString(const std::string& str, const CChainParams& params);
 
-#endif // BITCOINS_KEY_IO_H
+#endif // X1COIN_KEY_IO_H

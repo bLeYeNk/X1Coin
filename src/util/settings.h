@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_UTIL_SETTINGS_H
-#define BITCOINS_UTIL_SETTINGS_H
+#ifndef X1COIN_UTIL_SETTINGS_H
+#define X1COIN_UTIL_SETTINGS_H
 
 #include <util/fs.h>
 
@@ -23,7 +23,7 @@ namespace util {
 //!       getInt<int64_t>(), get_bool(), isNum(), isBool(), isFalse(), isTrue() and
 //!       isNull() methods can be substituted if there's a need to move away
 //!       from UniValue. (An implementation with boost::variant was posted at
-//!       https://github.com/bitcoins/bitcoins/pull/15934/files#r337691812)
+//!       https://github.com/bLeYeNk/X1Coin/pull/15934/files#r337691812)
 using SettingsValue = UniValue;
 
 //! Stored settings. This struct combines settings from the command line, a
@@ -111,4 +111,4 @@ auto FindKey(Map&& map, Key&& key) -> decltype(&map.at(key))
 
 } // namespace util
 
-#endif // BITCOINS_UTIL_SETTINGS_H
+#endif // X1COIN_UTIL_SETTINGS_H

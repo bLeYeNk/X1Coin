@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_TEST_FUZZ_UTIL_H
-#define BITCOINS_TEST_FUZZ_UTIL_H
+#ifndef X1COIN_TEST_FUZZ_UTIL_H
+#define X1COIN_TEST_FUZZ_UTIL_H
 
 #include <arith_uint256.h>
 #include <chainparamsbase.h>
@@ -324,4 +324,4 @@ void ReadFromStream(FuzzedDataProvider& fuzzed_data_provider, Stream& stream) no
     }
 }
 
-#endif // BITCOINS_TEST_FUZZ_UTIL_H
+#endif // X1COIN_TEST_FUZZ_UTIL_H

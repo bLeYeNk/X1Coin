@@ -5,8 +5,8 @@
 /**
  * Functionality for communicating with Tor.
  */
-#ifndef BITCOINS_TORCONTROL_H
-#define BITCOINS_TORCONTROL_H
+#ifndef X1COIN_TORCONTROL_H
+#define X1COIN_TORCONTROL_H
 
 #include <netaddress.h>
 #include <util/fs.h>
@@ -104,7 +104,7 @@ private:
     static void eventcb(struct bufferevent *bev, short what, void *ctx);
 };
 
-/****** Bitcoins specific TorController implementation ********/
+/****** X1coin specific TorController implementation ********/
 
 /** Controller that connects to Tor control socket, authenticate, then create
  * and maintain an ephemeral onion service.
@@ -159,4 +159,4 @@ public:
     static void reconnect_cb(evutil_socket_t fd, short what, void *arg);
 };
 
-#endif // BITCOINS_TORCONTROL_H
+#endif // X1COIN_TORCONTROL_H

@@ -5,8 +5,8 @@ connections, inter-process communication, and shared-memory,
 providing various message-oriented semantics such as publish/subscribe,
 request/reply, and push/pull.
 
-The Bitcoins Core daemon can be configured to act as a trusted "border
-router", implementing the bitcoins wire protocol and relay, making
+The X1coin daemon can be configured to act as a trusted "border
+router", implementing the x1coin wire protocol and relay, making
 consensus decisions, maintaining the local blockchain database,
 broadcasting locally generated transactions into the network, and
 providing a queryable RPC interface to interact on a polled basis for
@@ -33,7 +33,7 @@ buffering or reassembly.
 
 ## Prerequisites
 
-The ZeroMQ feature in Bitcoins Core requires the ZeroMQ API >= 4.0.0
+The ZeroMQ feature in X1coin requires the ZeroMQ API >= 4.0.0
 [libzmq](https://github.com/zeromq/libzmq/releases).
 For version information, see [dependencies.md](dependencies.md).
 Typically, it is packaged by distributions as something like
@@ -48,7 +48,7 @@ operation.
 
 By default, the ZeroMQ feature is automatically compiled in if the
 necessary prerequisites are found.  To disable, use --disable-zmq
-during the *configure* step of building bitcoinsd:
+during the *configure* step of building x1coind:
 
     $ ./configure --disable-zmq (other options)
 
@@ -82,16 +82,16 @@ The high water mark value must be an integer greater than or equal to 0.
 
 For instance:
 
-    $ bitcoinsd -zmqpubhashtx=tcp://127.0.0.1:215257 \
+    $ x1coind -zmqpubhashtx=tcp://127.0.0.1:215257 \
                -zmqpubhashtx=tcp://192.168.1.2:215257 \
                -zmqpubhashblock="tcp://[::1]:215258" \
-               -zmqpubrawtx=ipc:///tmp/bitcoinsd.tx.raw \
+               -zmqpubrawtx=ipc:///tmp/x1coind.tx.raw \
                -zmqpubhashtxhwm=10000
 
 Each PUB notification has a topic and body, where the header
 corresponds to the notification type. For instance, for the
 notification `-zmqpubhashtx` the topic is `hashtx` (no null
-terminator). These options can also be provided in bitcoins.conf.
+terminator). These options can also be provided in x1coin.conf.
 
 The topics are:
 
@@ -150,9 +150,9 @@ hosts as well. If needed, this option has to be set on the client side too.
 
 ## Remarks
 
-From the perspective of bitcoinsd, the ZeroMQ socket is write-only; PUB
+From the perspective of x1coind, the ZeroMQ socket is write-only; PUB
 sockets don't even have a read function. Thus, there is no state
-introduced into bitcoinsd directly. Furthermore, no information is
+introduced into x1coind directly. Furthermore, no information is
 broadcast that wasn't already received from the public P2P network.
 
 No authentication or authorization is done on connecting clients; it
@@ -169,7 +169,7 @@ disconnections.
 
 There are several possibilities that ZMQ notification can get lost
 during transmission depending on the communication type you are
-using. Bitcoinsd appends an up-counting sequence number to each
+using. X1coind appends an up-counting sequence number to each
 notification which allows listeners to detect lost notifications.
 
 The `sequence` topic refers specifically to the mempool sequence

@@ -1,7 +1,7 @@
 Translation Strings Policy
 ===========================
 
-This document provides guidelines for internationalization of the Bitcoins Core software.
+This document provides guidelines for internationalization of the X1coin software.
 
 How to translate?
 ------------------
@@ -76,10 +76,10 @@ In Qt code, use tr's third argument for optional plurality. For example:
 This adds `<numerusform>`s to the respective `.ts` file, which can be translated separately depending on the language. In English, this is simply:
 
     <message numerus="yes">
-        <source>%n active connection(s) to Bitcoins network</source>
+        <source>%n active connection(s) to X1coin network</source>
         <translation>
-            <numerusform>%n active connection to Bitcoins network</numerusform>
-            <numerusform>%n active connections to Bitcoins network</numerusform>
+            <numerusform>%n active connection to X1coin network</numerusform>
+            <numerusform>%n active connections to X1coin network</numerusform>
         </translation>
     </message>
 
@@ -97,4 +97,4 @@ The second example reduces the number of pluralized words that translators have 
 
 During a string freeze (often before a major release), no translation strings are to be added, modified or removed.
 
-This can be checked by executing `make translate` in the `src` directory, then verifying that `bitcoins_en.ts` remains unchanged.
+This can be checked by executing `make translate` in the `src` directory, then verifying that `x1coin_en.ts` remains unchanged.

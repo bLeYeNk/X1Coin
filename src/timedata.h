@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_TIMEDATA_H
-#define BITCOINS_TIMEDATA_H
+#ifndef X1COIN_TIMEDATA_H
+#define X1COIN_TIMEDATA_H
 
 #include <util/time.h>
 
@@ -83,4 +83,4 @@ void AddTimeData(const CNetAddr& ip, int64_t nTime);
  */
 void TestOnlyResetTimeData();
 
-#endif // BITCOINS_TIMEDATA_H
+#endif // X1COIN_TIMEDATA_H

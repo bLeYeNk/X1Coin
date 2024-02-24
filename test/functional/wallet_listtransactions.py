@@ -12,7 +12,7 @@ from test_framework.messages import (
     COIN,
     tx_from_hex,
 )
-from test_framework.test_framework import BitcoinsTestFramework
+from test_framework.test_framework import X1coinTestFramework
 from test_framework.util import (
     assert_array_result,
     assert_equal,
@@ -20,7 +20,7 @@ from test_framework.util import (
 )
 
 
-class ListTransactionsTest(BitcoinsTestFramework):
+class ListTransactionsTest(X1coinTestFramework):
     def add_options(self, parser):
         self.add_wallet_options(parser)
 

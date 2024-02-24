@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_QT_INITEXECUTOR_H
-#define BITCOINS_QT_INITEXECUTOR_H
+#ifndef X1COIN_QT_INITEXECUTOR_H
+#define X1COIN_QT_INITEXECUTOR_H
 
 #include <interfaces/node.h>
 
@@ -16,7 +16,7 @@ QT_BEGIN_NAMESPACE
 class QString;
 QT_END_NAMESPACE
 
-/** Class encapsulating Bitcoins Core startup and shutdown.
+/** Class encapsulating X1coin startup and shutdown.
  * Allows running startup and shutdown in a different thread from the UI thread.
  */
 class InitExecutor : public QObject
@@ -44,4 +44,4 @@ private:
     QThread m_thread;
 };
 
-#endif // BITCOINS_QT_INITEXECUTOR_H
+#endif // X1COIN_QT_INITEXECUTOR_H

@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_NODE_TXRECONCILIATION_H
-#define BITCOINS_NODE_TXRECONCILIATION_H
+#ifndef X1COIN_NODE_TXRECONCILIATION_H
+#define X1COIN_NODE_TXRECONCILIATION_H
 
 #include <net.h>
 #include <sync.h>
@@ -88,4 +88,4 @@ public:
     bool IsPeerRegistered(NodeId peer_id) const;
 };
 
-#endif // BITCOINS_NODE_TXRECONCILIATION_H
+#endif // X1COIN_NODE_TXRECONCILIATION_H

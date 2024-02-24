@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_PSBT_H
-#define BITCOINS_PSBT_H
+#ifndef X1COIN_PSBT_H
+#define X1COIN_PSBT_H
 
 #include <node/transaction.h>
 #include <policy/feerate.h>
@@ -959,7 +959,7 @@ struct PartiallySignedTransaction
     uint32_t GetVersion() const;
 
     /** Merge psbt into this. The two psbts must have the same underlying CTransaction (i.e. the
-      * same actual Bitcoins transaction.) Returns true if the merge succeeded, false otherwise. */
+      * same actual X1coin transaction.) Returns true if the merge succeeded, false otherwise. */
     [[nodiscard]] bool Merge(const PartiallySignedTransaction& psbt);
     bool AddInput(const CTxIn& txin, PSBTInput& psbtin);
     bool AddOutput(const CTxOut& txout, const PSBTOutput& psbtout);
@@ -1271,4 +1271,4 @@ bool FinalizeAndExtractPSBT(PartiallySignedTransaction& psbtx, CMutableTransacti
 //! Decode a raw (binary blob) PSBT into a PartiallySignedTransaction
 [[nodiscard]] bool DecodeRawPSBT(PartiallySignedTransaction& decoded_psbt, Span<const std::byte> raw_psbt, std::string& error);
 
-#endif // BITCOINS_PSBT_H
+#endif // X1COIN_PSBT_H

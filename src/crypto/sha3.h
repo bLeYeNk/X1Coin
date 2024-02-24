@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_CRYPTO_SHA3_H
-#define BITCOINS_CRYPTO_SHA3_H
+#ifndef X1COIN_CRYPTO_SHA3_H
+#define X1COIN_CRYPTO_SHA3_H
 
 #include <span.h>
 
@@ -38,4 +38,4 @@ public:
     SHA3_256& Reset();
 };
 
-#endif // BITCOINS_CRYPTO_SHA3_H
+#endif // X1COIN_CRYPTO_SHA3_H

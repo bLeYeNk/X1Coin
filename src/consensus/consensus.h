@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_CONSENSUS_CONSENSUS_H
-#define BITCOINS_CONSENSUS_CONSENSUS_H
+#ifndef X1COIN_CONSENSUS_CONSENSUS_H
+#define X1COIN_CONSENSUS_CONSENSUS_H
 
 #include <cstdlib>
 #include <stdint.h>
@@ -27,4 +27,4 @@ static const size_t MIN_SERIALIZABLE_TRANSACTION_WEIGHT = WITNESS_SCALE_FACTOR *
 /** Interpret sequence numbers as relative lock-time constraints. */
 static constexpr unsigned int LOCKTIME_VERIFY_SEQUENCE = (1 << 0);
 
-#endif // BITCOINS_CONSENSUS_CONSENSUS_H
+#endif // X1COIN_CONSENSUS_CONSENSUS_H

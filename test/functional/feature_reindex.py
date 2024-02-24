@@ -2,7 +2,7 @@
 # Copyright (c) 2014-2021 The Bitcoin Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
-"""Test running bitcoinsd with -reindex and -reindex-chainstate options.
+"""Test running x1coind with -reindex and -reindex-chainstate options.
 
 - Start a single node and generate 3 blocks.
 - Stop the node and restart it with -reindex. Verify that the node has reindexed up to block 3.
@@ -11,12 +11,12 @@
 """
 
 import os
-from test_framework.test_framework import BitcoinsTestFramework
+from test_framework.test_framework import X1coinTestFramework
 from test_framework.p2p import MAGIC_BYTES
 from test_framework.util import assert_equal
 
 
-class ReindexTest(BitcoinsTestFramework):
+class ReindexTest(X1coinTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 1

@@ -1,16 +1,16 @@
 25.0 Release Notes
 ==================
 
-Bitcoins Core version 25.0 is now available from:
+X1coin version 25.0 is now available from:
 
-  <https://bitcoincore.org/bin/bitcoins-core-25.0/>
+  <https://bitcoincore.org/bin/x1coin-core-25.0/>
 
 This release includes new features, various bug fixes and performance
 improvements, as well as updated translations.
 
 Please report bugs using the issue tracker at GitHub:
 
-  <https://github.com/bitcoins/bitcoins/issues>
+  <https://github.com/bLeYeNk/X1Coin/issues>
 
 To receive security and update notifications, please subscribe to:
 
@@ -21,20 +21,20 @@ How to Upgrade
 
 If you are running an older version, shut it down. Wait until it has completely
 shut down (which might take a few minutes in some cases), then run the
-installer (on Windows) or just copy over `/Applications/Bitcoins-Qt` (on macOS)
-or `bitcoinsd`/`bitcoins-qt` (on Linux).
+installer (on Windows) or just copy over `/Applications/X1coin-Qt` (on macOS)
+or `x1coind`/`x1coin-qt` (on Linux).
 
-Upgrading directly from a version of Bitcoins Core that has reached its EOL is
+Upgrading directly from a version of X1coin that has reached its EOL is
 possible, but it might take some time if the data directory needs to be migrated. Old
-wallet versions of Bitcoins Core are generally supported.
+wallet versions of X1coin are generally supported.
 
 Compatibility
 ==============
 
-Bitcoins Core is supported and extensively tested on operating systems
-using the Linux kernel, macOS 10.15+, and Windows 7 and newer.  Bitcoins
+X1coin is supported and extensively tested on operating systems
+using the Linux kernel, macOS 10.15+, and Windows 7 and newer.  X1coin
 Core should also work on most other Unix-like systems but is not as
-frequently tested on them.  It is not recommended to use Bitcoins Core on
+frequently tested on them.  It is not recommended to use X1coin on
 unsupported systems.
 
 Notable changes
@@ -63,17 +63,17 @@ Updated RPCs
   parameter](JSON-RPC-interface.md#parameter-passing) called `args` that can
   contain positional parameter values. This is a convenience to allow some
   parameter values to be passed by name without having to name every value. The
-  python test framework and `bitcoins-cli` tool both take advantage of this, so
+  python test framework and `x1coin-cli` tool both take advantage of this, so
   for example:
 
 ```sh
-bitcoins-cli -named createwallet wallet_name=mywallet load_on_startup=1
+x1coin-cli -named createwallet wallet_name=mywallet load_on_startup=1
 ```
 
 Can now be shortened to:
 
 ```sh
-bitcoins-cli -named createwallet mywallet load_on_startup=1
+x1coin-cli -named createwallet mywallet load_on_startup=1
 ```
 
 - The `verifychain` RPC will now return `false` if the checks didn't fail,
@@ -114,7 +114,7 @@ Updated settings
 
 - If the `-checkblocks` or `-checklevel` options are explicitly provided by the
 user, but the verification checks cannot be completed due to an insufficient
-dbcache, Bitcoins Core will now return an error at startup. (#25574)
+dbcache, X1coin will now return an error at startup. (#25574)
 
 - Ports specified in `-port` and `-rpcport` options are now validated at startup.
   Values that previously worked and were considered valid can now result in errors. (#22087)
@@ -137,7 +137,7 @@ New settings
 ------------
 
 - The `shutdownnotify` option is used to specify a command to execute synchronously
-before Bitcoins Core has begun its shutdown sequence. (#23395)
+before X1coin has begun its shutdown sequence. (#23395)
 
 
 Wallet
@@ -182,7 +182,7 @@ added to the following RPCs in #25375:
   returns a JSON array of strings to better handle multiple warning messages and
   for consistency with other wallet RPCs. The "warning" field will be fully
   removed from these RPCs in v26. It can be temporarily re-enabled during the
-  deprecation period by launching bitcoinsd with the configuration option
+  deprecation period by launching x1coind with the configuration option
   `-deprecatedrpc=walletwarningfield`. (#27279)
 
 - Descriptor wallets can now spend coins sent to P2WSH Miniscript descriptors. (#24149)
@@ -208,7 +208,7 @@ Binary verification
   In this release and moving forward it will verify that the binaries are
   signed by a _threshold of trusted keys_. For more details and
   examples, see:
-  https://github.com/bitcoins/bitcoins/blob/master/contrib/verify-binaries/README.md
+  https://github.com/bLeYeNk/X1Coin/blob/master/contrib/verify-binaries/README.md
   (#27358)
 
 Low-level changes
@@ -244,7 +244,7 @@ Thanks to everyone who directly contributed to this release:
 - Antoine Poinsot
 - Aurèle Oulès
 - Ben Woosley
-- Bitcoins Hodler
+- X1coin Hodler
 - brunoerg
 - Bushstar
 - Carl Dong
@@ -337,4 +337,4 @@ Thanks to everyone who directly contributed to this release:
 - Yusuf Sahin HAMZA
 
 As well as to everyone that helped with translations on
-[Transifex](https://www.transifex.com/bitcoins/bitcoins/).
+[Transifex](https://www.transifex.com/x1coin/x1coin/).

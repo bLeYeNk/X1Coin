@@ -4,13 +4,13 @@
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Test external signer.
 
-Verify that a bitcoinsd node can use an external signer command
+Verify that a x1coind node can use an external signer command
 See also rpc_signer.py for tests without wallet context.
 """
 import os
 import platform
 
-from test_framework.test_framework import BitcoinsTestFramework
+from test_framework.test_framework import X1coinTestFramework
 from test_framework.util import (
     assert_equal,
     assert_greater_than,
@@ -18,7 +18,7 @@ from test_framework.util import (
 )
 
 
-class WalletSignerTest(BitcoinsTestFramework):
+class WalletSignerTest(X1coinTestFramework):
     def add_options(self, parser):
         self.add_wallet_options(parser, legacy=False)
 

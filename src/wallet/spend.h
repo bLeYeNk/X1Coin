@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_WALLET_SPEND_H
-#define BITCOINS_WALLET_SPEND_H
+#ifndef X1COIN_WALLET_SPEND_H
+#define X1COIN_WALLET_SPEND_H
 
 #include <consensus/amount.h>
 #include <policy/fees.h> // for FeeCalculation
@@ -225,4 +225,4 @@ util::Result<CreatedTransactionResult> CreateTransaction(CWallet& wallet, const 
 bool FundTransaction(CWallet& wallet, CMutableTransaction& tx, CAmount& nFeeRet, int& nChangePosInOut, bilingual_str& error, bool lockUnspents, const std::set<int>& setSubtractFeeFromOutputs, CCoinControl);
 } // namespace wallet
 
-#endif // BITCOINS_WALLET_SPEND_H
+#endif // X1COIN_WALLET_SPEND_H

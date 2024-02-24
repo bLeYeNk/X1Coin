@@ -5,7 +5,7 @@
 #include <util/check.h>
 
 #if defined(HAVE_CONFIG_H)
-#include <config/bitcoins-config.h>
+#include <config/x1coin-config.h>
 #endif
 
 #include <clientversion.h>

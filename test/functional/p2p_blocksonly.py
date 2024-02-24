@@ -8,12 +8,12 @@ import time
 
 from test_framework.messages import msg_tx, msg_inv, CInv, MSG_WTX
 from test_framework.p2p import P2PInterface, P2PTxInvStore
-from test_framework.test_framework import BitcoinsTestFramework
+from test_framework.test_framework import X1coinTestFramework
 from test_framework.util import assert_equal
 from test_framework.wallet import MiniWallet
 
 
-class P2PBlocksOnly(BitcoinsTestFramework):
+class P2PBlocksOnly(X1coinTestFramework):
     def set_test_params(self):
         self.num_nodes = 1
         self.extra_args = [["-blocksonly"]]
@@ -64,10 +64,10 @@ class P2PBlocksOnly(BitcoinsTestFramework):
         with self.nodes[0].assert_debug_log(["received getdata"]):
             # Note that normally, first_peer would never send us transactions since we're a blocksonly node.
             # By activating blocksonly, we explicitly tell our peers that they should not send us transactions,
-            # and Bitcoins Core respects that choice and will not send transactions.
+            # and X1coin respects that choice and will not send transactions.
             # But if, for some reason, first_peer decides to relay transactions to us anyway, we should relay them to
             # second_peer since we gave relay permission to first_peer.
-            # See https://github.com/bitcoins/bitcoins/issues/19943 for details.
+            # See https://github.com/bLeYeNk/X1Coin/issues/19943 for details.
             first_peer.send_message(msg_tx(tx))
             self.log.info('Check that the peer with relay-permission is still connected after sending the transaction')
             assert_equal(first_peer.is_connected, True)

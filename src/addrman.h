@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_ADDRMAN_H
-#define BITCOINS_ADDRMAN_H
+#ifndef X1COIN_ADDRMAN_H
+#define X1COIN_ADDRMAN_H
 
 #include <netaddress.h>
 #include <netgroup.h>
@@ -189,4 +189,4 @@ public:
     std::optional<AddressPosition> FindAddressEntry(const CAddress& addr);
 };
 
-#endif // BITCOINS_ADDRMAN_H
+#endif // X1COIN_ADDRMAN_H

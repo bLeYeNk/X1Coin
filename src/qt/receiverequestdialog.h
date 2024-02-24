@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_QT_RECEIVEREQUESTDIALOG_H
-#define BITCOINS_QT_RECEIVEREQUESTDIALOG_H
+#ifndef X1COIN_QT_RECEIVEREQUESTDIALOG_H
+#define X1COIN_QT_RECEIVEREQUESTDIALOG_H
 
 #include <qt/sendcoinsrecipient.h>
 
@@ -37,4 +37,4 @@ private:
     SendCoinsRecipient info;
 };
 
-#endif // BITCOINS_QT_RECEIVEREQUESTDIALOG_H
+#endif // X1COIN_QT_RECEIVEREQUESTDIALOG_H

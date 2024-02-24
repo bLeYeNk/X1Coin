@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_SUPPORT_ALLOCATORS_ZEROAFTERFREE_H
-#define BITCOINS_SUPPORT_ALLOCATORS_ZEROAFTERFREE_H
+#ifndef X1COIN_SUPPORT_ALLOCATORS_ZEROAFTERFREE_H
+#define X1COIN_SUPPORT_ALLOCATORS_ZEROAFTERFREE_H
 
 #include <support/cleanse.h>
 
@@ -43,4 +43,4 @@ struct zero_after_free_allocator : public std::allocator<T> {
 /** Byte-vector that clears its contents before deletion. */
 using SerializeData = std::vector<std::byte, zero_after_free_allocator<std::byte>>;
 
-#endif // BITCOINS_SUPPORT_ALLOCATORS_ZEROAFTERFREE_H
+#endif // X1COIN_SUPPORT_ALLOCATORS_ZEROAFTERFREE_H

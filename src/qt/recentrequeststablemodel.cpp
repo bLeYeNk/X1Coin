@@ -4,7 +4,7 @@
 
 #include <qt/recentrequeststablemodel.h>
 
-#include <qt/bitcoinsunits.h>
+#include <qt/x1coinunits.h>
 #include <qt/guiutil.h>
 #include <qt/optionsmodel.h>
 #include <qt/walletmodel.h>
@@ -86,9 +86,9 @@ QVariant RecentRequestsTableModel::data(const QModelIndex &index, int role) cons
             if (rec->recipient.amount == 0 && role == Qt::DisplayRole)
                 return tr("(no amount requested)");
             else if (role == Qt::EditRole)
-                return BitcoinsUnits::format(walletModel->getOptionsModel()->getDisplayUnit(), rec->recipient.amount, false, BitcoinsUnits::SeparatorStyle::NEVER);
+                return X1coinUnits::format(walletModel->getOptionsModel()->getDisplayUnit(), rec->recipient.amount, false, X1coinUnits::SeparatorStyle::NEVER);
             else
-                return BitcoinsUnits::format(walletModel->getOptionsModel()->getDisplayUnit(), rec->recipient.amount);
+                return X1coinUnits::format(walletModel->getOptionsModel()->getDisplayUnit(), rec->recipient.amount);
         }
     }
     else if (role == Qt::TextAlignmentRole)
@@ -129,7 +129,7 @@ QString RecentRequestsTableModel::getAmountTitle()
     if (!walletModel->getOptionsModel()) return {};
     return tr("Requested") +
            QLatin1String(" (") +
-           BitcoinsUnits::shortName(this->walletModel->getOptionsModel()->getDisplayUnit()) +
+           X1coinUnits::shortName(this->walletModel->getOptionsModel()->getDisplayUnit()) +
            QLatin1Char(')');
 }
 

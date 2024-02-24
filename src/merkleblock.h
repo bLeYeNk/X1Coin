@@ -1,11 +1,11 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2020 The Bitcoin Core developers
-// Copyright (c) 2023 The Bitcoins Core developers
+// Copyright (c) 2023 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_MERKLEBLOCK_H
-#define BITCOINS_MERKLEBLOCK_H
+#ifndef X1COIN_MERKLEBLOCK_H
+#define X1COIN_MERKLEBLOCK_H
 
 #include <common/bloom.h>
 #include <primitives/block.h>
@@ -156,4 +156,4 @@ private:
     CMerkleBlock(const CBlock& block, CBloomFilter* filter, const std::set<uint256>* txids);
 };
 
-#endif // BITCOINS_MERKLEBLOCK_H
+#endif // X1COIN_MERKLEBLOCK_H

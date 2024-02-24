@@ -1,11 +1,11 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2020 The Bitcoin Core developers
-// Copyright (c) 2023 The Bitcoins Core developers
+// Copyright (c) 2023 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_SHUTDOWN_H
-#define BITCOINS_SHUTDOWN_H
+#ifndef X1COIN_SHUTDOWN_H
+#define X1COIN_SHUTDOWN_H
 
 #include <util/translation.h> // For bilingual_str
 
@@ -33,4 +33,4 @@ bool ShutdownRequested();
  */
 void WaitForShutdown();
 
-#endif // BITCOINS_SHUTDOWN_H
+#endif // X1COIN_SHUTDOWN_H

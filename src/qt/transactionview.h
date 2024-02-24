@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_QT_TRANSACTIONVIEW_H
-#define BITCOINS_QT_TRANSACTIONVIEW_H
+#ifndef X1COIN_QT_TRANSACTIONVIEW_H
+#define X1COIN_QT_TRANSACTIONVIEW_H
 
 #include <qt/guiutil.h>
 
@@ -129,4 +129,4 @@ public Q_SLOTS:
     void focusTransaction(const uint256& txid);
 };
 
-#endif // BITCOINS_QT_TRANSACTIONVIEW_H
+#endif // X1COIN_QT_TRANSACTIONVIEW_H

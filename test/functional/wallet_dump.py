@@ -7,7 +7,7 @@ import datetime
 import os
 import time
 
-from test_framework.test_framework import BitcoinsTestFramework
+from test_framework.test_framework import X1coinTestFramework
 from test_framework.util import (
     assert_equal,
     assert_raises_rpc_error,
@@ -92,7 +92,7 @@ def read_dump(file_name, addrs, script_addrs, hd_master_addr_old):
         return found_comments, found_legacy_addr, found_p2sh_segwit_addr, found_bech32_addr, found_script_addr, found_addr_chg, found_addr_rsv, hd_master_addr_ret
 
 
-class WalletDumpTest(BitcoinsTestFramework):
+class WalletDumpTest(X1coinTestFramework):
     def add_options(self, parser):
         self.add_wallet_options(parser, descriptors=False)
 
@@ -213,7 +213,7 @@ class WalletDumpTest(BitcoinsTestFramework):
             self.nodes[0].getnewaddress()
 
         # Make sure that dumpwallet doesn't have a lock order issue when there is an unconfirmed tx and it is reloaded
-        # See https://github.com/bitcoins/bitcoins/issues/22489
+        # See https://github.com/bLeYeNk/X1Coin/issues/22489
         self.nodes[0].createwallet("w3")
         w3 = self.nodes[0].get_wallet_rpc("w3")
         w3.importprivkey(privkey=self.nodes[0].get_deterministic_priv_key().key, label="coinbase_import")

@@ -5,7 +5,7 @@
 """Test add_outbound_p2p_connection test framework functionality"""
 
 from test_framework.p2p import P2PInterface
-from test_framework.test_framework import BitcoinsTestFramework
+from test_framework.test_framework import X1coinTestFramework
 from test_framework.util import (
     assert_equal,
     check_node_connections,
@@ -13,13 +13,13 @@ from test_framework.util import (
 
 class P2PFeelerReceiver(P2PInterface):
     def on_version(self, message):
-        # The bitcoinsd node closes feeler connections as soon as a version
+        # The x1coind node closes feeler connections as soon as a version
         # message is received from the test framework. Don't send any responses
         # to the node's version message since the connection will already be
         # closed.
         pass
 
-class P2PAddConnections(BitcoinsTestFramework):
+class P2PAddConnections(X1coinTestFramework):
     def set_test_params(self):
         self.num_nodes = 2
 

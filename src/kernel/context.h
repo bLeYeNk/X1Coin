@@ -2,14 +2,14 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_KERNEL_CONTEXT_H
-#define BITCOINS_KERNEL_CONTEXT_H
+#ifndef X1COIN_KERNEL_CONTEXT_H
+#define X1COIN_KERNEL_CONTEXT_H
 
 #include <memory>
 
 namespace kernel {
 //! Context struct holding the kernel library's logically global state, and
-//! passed to external libbitcoins_kernel functions which need access to this
+//! passed to external libx1coin_kernel functions which need access to this
 //! state. The kernel library API is a work in progress, so state organization
 //! and member list will evolve over time.
 //!
@@ -24,4 +24,4 @@ struct Context {
 };
 } // namespace kernel
 
-#endif // BITCOINS_KERNEL_CONTEXT_H
+#endif // X1COIN_KERNEL_CONTEXT_H

@@ -6,8 +6,8 @@
 """
     ZMQ example using python3's asyncio
 
-    Bitcoins should be started with the command line arguments:
-        bitcoinsd -testnet -daemon \
+    X1coin should be started with the command line arguments:
+        x1coind -testnet -daemon \
                 -zmqpubrawtx=tcp://127.0.0.1:215257 \
                 -zmqpubrawblock=tcp://127.0.0.1:215257 \
                 -zmqpubhashtx=tcp://127.0.0.1:215257 \
@@ -20,7 +20,7 @@
     alternative is to wrap the contents of `handle` inside `while True`.
 
     A blocking example using python 2.7 can be obtained from the git history:
-    https://github.com/bitcoins/bitcoins/blob/37a7fe9e440b83e2364d5498931253937abe9294/contrib/zmq/zmq_sub.py
+    https://github.com/bLeYeNk/X1Coin/blob/37a7fe9e440b83e2364d5498931253937abe9294/contrib/zmq/zmq_sub.py
 """
 
 import asyncio

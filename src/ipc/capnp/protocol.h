@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_IPC_CAPNP_PROTOCOL_H
-#define BITCOINS_IPC_CAPNP_PROTOCOL_H
+#ifndef X1COIN_IPC_CAPNP_PROTOCOL_H
+#define X1COIN_IPC_CAPNP_PROTOCOL_H
 
 #include <memory>
 
@@ -14,4 +14,4 @@ std::unique_ptr<Protocol> MakeCapnpProtocol();
 } // namespace capnp
 } // namespace ipc
 
-#endif // BITCOINS_IPC_CAPNP_PROTOCOL_H
+#endif // X1COIN_IPC_CAPNP_PROTOCOL_H

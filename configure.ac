@@ -1,15 +1,15 @@
 AC_PREREQ([2.69])
-define(_CLIENT_VERSION_MAJOR, 1)
-define(_CLIENT_VERSION_MINOR, 1)
+define(_CLIENT_VERSION_MAJOR, 2)
+define(_CLIENT_VERSION_MINOR, 0)
 define(_CLIENT_VERSION_BUILD, 0)
 define(_CLIENT_VERSION_RC, 0)
 define(_CLIENT_VERSION_IS_RELEASE, true)
 define(_COPYRIGHT_YEAR, 2024)
 define(_COPYRIGHT_HOLDERS,[The %s developers])
-define(_COPYRIGHT_HOLDERS_SUBSTITUTION,[[Bitcoins Core]])
-AC_INIT([Bitcoins Core],m4_join([.], _CLIENT_VERSION_MAJOR, _CLIENT_VERSION_MINOR, _CLIENT_VERSION_BUILD)m4_if(_CLIENT_VERSION_RC, [0], [], [rc]_CLIENT_VERSION_RC),[https://github.com/bLeYeNk/Bitcoins/issues],[bitcoins],[https://bitcoins.earth/])
+define(_COPYRIGHT_HOLDERS_SUBSTITUTION,[[X1coin]])
+AC_INIT([X1coin],m4_join([.], _CLIENT_VERSION_MAJOR, _CLIENT_VERSION_MINOR, _CLIENT_VERSION_BUILD)m4_if(_CLIENT_VERSION_RC, [0], [], [rc]_CLIENT_VERSION_RC),[https://github.com/bLeYeNk/X1coin/issues],[x1coin],[https://x1coin.org/])
 AC_CONFIG_SRCDIR([src/validation.cpp])
-AC_CONFIG_HEADERS([src/config/bitcoins-config.h])
+AC_CONFIG_HEADERS([src/config/x1coin-config.h])
 AC_CONFIG_AUX_DIR([build-aux])
 AC_CONFIG_MACRO_DIR([build-aux/m4])
 
@@ -29,17 +29,17 @@ if test -n "$PKG_CONFIG_LIBDIR"; then
   PKG_CONFIG="env PKG_CONFIG_LIBDIR=$PKG_CONFIG_LIBDIR $PKG_CONFIG"
 fi
 
-BITCOINS_DAEMON_NAME=bitcoinsd
-BITCOINS_GUI_NAME=bitcoins-qt
-BITCOINS_TEST_NAME=test_bitcoins
-BITCOINS_CLI_NAME=bitcoins-cli
-BITCOINS_TX_NAME=bitcoins-tx
-BITCOINS_UTIL_NAME=bitcoins-util
-BITCOINS_CHAINSTATE_NAME=bitcoins-chainstate
-BITCOINS_WALLET_TOOL_NAME=bitcoins-wallet
+X1COIN_DAEMON_NAME=x1coind
+X1COIN_GUI_NAME=x1coin-qt
+X1COIN_TEST_NAME=test_x1coin
+X1COIN_CLI_NAME=x1coin-cli
+X1COIN_TX_NAME=x1coin-tx
+X1COIN_UTIL_NAME=x1coin-util
+X1COIN_CHAINSTATE_NAME=x1coin-chainstate
+X1COIN_WALLET_TOOL_NAME=x1coin-wallet
 dnl Multi Process
-BITCOINS_MP_NODE_NAME=bitcoins-node
-BITCOINS_MP_GUI_NAME=bitcoins-gui
+X1COIN_MP_NODE_NAME=x1coin-node
+X1COIN_MP_GUI_NAME=x1coin-gui
 
 dnl Unless the user specified ARFLAGS, force it to be cr
 dnl This is also the default as-of libtool 2.4.7
@@ -50,9 +50,9 @@ fi
 
 AC_CANONICAL_HOST
 
-AH_TOP([#ifndef BITCOINS_CONFIG_H])
-AH_TOP([#define BITCOINS_CONFIG_H])
-AH_BOTTOM([#endif //BITCOINS_CONFIG_H])
+AH_TOP([#ifndef X1COIN_CONFIG_H])
+AH_TOP([#define X1COIN_CONFIG_H])
+AH_BOTTOM([#endif //X1COIN_CONFIG_H])
 
 dnl Automake init set-up and checks
 AM_INIT_AUTOMAKE([1.13 no-define subdir-objects foreign])
@@ -233,7 +233,7 @@ AC_ARG_ENABLE([ccache],
 
 dnl Suppress warnings from external headers (e.g. Boost, Qt).
 dnl May be useful if warnings from external headers clutter the build output
-dnl too much, so that it becomes difficult to spot Bitcoins Core warnings
+dnl too much, so that it becomes difficult to spot X1coin warnings
 dnl or if they cause a build failure with --enable-werror.
 AC_ARG_ENABLE([suppress-external-warnings],
   [AS_HELP_STRING([--enable-suppress-external-warnings],
@@ -289,7 +289,7 @@ AC_ARG_WITH([mpgen],
 
 AC_ARG_ENABLE([multiprocess],
   [AS_HELP_STRING([--enable-multiprocess],
-  [build multiprocess bitcoins-node, bitcoins-wallet, and bitcoins-gui executables in addition to monolithic bitcoinsd and bitcoins-qt executables. Requires libmultiprocess library. Experimental (default is no)])],
+  [build multiprocess x1coin-node, x1coin-wallet, and x1coin-gui executables in addition to monolithic x1coind and x1coin-qt executables. Requires libmultiprocess library. Experimental (default is no)])],
   [enable_multiprocess=$enableval],
   [enable_multiprocess=no])
 
@@ -628,57 +628,57 @@ CORE_CPPFLAGS="$CORE_CPPFLAGS -DHAVE_BUILD_INFO"
 
 AC_ARG_WITH([utils],
   [AS_HELP_STRING([--with-utils],
-  [build bitcoins-cli bitcoins-tx bitcoins-util bitcoins-wallet (default=yes)])],
-  [build_bitcoins_utils=$withval],
-  [build_bitcoins_utils=yes])
+  [build x1coin-cli x1coin-tx x1coin-util x1coin-wallet (default=yes)])],
+  [build_x1coin_utils=$withval],
+  [build_x1coin_utils=yes])
 
 AC_ARG_ENABLE([util-cli],
   [AS_HELP_STRING([--enable-util-cli],
-  [build bitcoins-cli])],
-  [build_bitcoins_cli=$enableval],
-  [build_bitcoins_cli=$build_bitcoins_utils])
+  [build x1coin-cli])],
+  [build_x1coin_cli=$enableval],
+  [build_x1coin_cli=$build_x1coin_utils])
 
 AC_ARG_ENABLE([util-tx],
   [AS_HELP_STRING([--enable-util-tx],
-  [build bitcoins-tx])],
-  [build_bitcoins_tx=$enableval],
-  [build_bitcoins_tx=$build_bitcoins_utils])
+  [build x1coin-tx])],
+  [build_x1coin_tx=$enableval],
+  [build_x1coin_tx=$build_x1coin_utils])
 
 AC_ARG_ENABLE([util-wallet],
   [AS_HELP_STRING([--enable-util-wallet],
-  [build bitcoins-wallet])],
-  [build_bitcoins_wallet=$enableval],
-  [build_bitcoins_wallet=$build_bitcoins_utils])
+  [build x1coin-wallet])],
+  [build_x1coin_wallet=$enableval],
+  [build_x1coin_wallet=$build_x1coin_utils])
 
 AC_ARG_ENABLE([util-util],
   [AS_HELP_STRING([--enable-util-util],
-  [build bitcoins-util])],
-  [build_bitcoins_util=$enableval],
-  [build_bitcoins_util=$build_bitcoins_utils])
+  [build x1coin-util])],
+  [build_x1coin_util=$enableval],
+  [build_x1coin_util=$build_x1coin_utils])
 
 AC_ARG_ENABLE([experimental-util-chainstate],
   [AS_HELP_STRING([--enable-experimental-util-chainstate],
-  [build experimental bitcoins-chainstate executable (default=no)])],
-  [build_bitcoins_chainstate=$enableval],
-  [build_bitcoins_chainstate=no])
+  [build experimental x1coin-chainstate executable (default=no)])],
+  [build_x1coin_chainstate=$enableval],
+  [build_x1coin_chainstate=no])
 
 AC_ARG_WITH([libs],
   [AS_HELP_STRING([--with-libs],
   [build libraries (default=yes)])],
-  [build_bitcoins_libs=$withval],
-  [build_bitcoins_libs=yes])
+  [build_x1coin_libs=$withval],
+  [build_x1coin_libs=yes])
 
 AC_ARG_WITH([experimental-kernel-lib],
   [AS_HELP_STRING([--with-experimental-kernel-lib],
-  [build experimental bitcoinskernel library (default is to build if we're building libraries and the experimental build-chainstate executable)])],
+  [build experimental x1coinkernel library (default is to build if we're building libraries and the experimental build-chainstate executable)])],
   [build_experimental_kernel_lib=$withval],
   [build_experimental_kernel_lib=auto])
 
 AC_ARG_WITH([daemon],
   [AS_HELP_STRING([--with-daemon],
-  [build bitcoinsd daemon (default=yes)])],
-  [build_bitcoinsd=$withval],
-  [build_bitcoinsd=yes])
+  [build x1coind daemon (default=yes)])],
+  [build_x1coind=$withval],
+  [build_x1coind=yes])
 
 case $host in
   *mingw*)
@@ -752,7 +752,7 @@ case $host in
 
          if test "$use_bdb" != "no" && $BREW list --versions berkeley-db@4 >/dev/null && test "$BDB_CFLAGS" = "" && test "$BDB_LIBS" = ""; then
            bdb_prefix=$($BREW --prefix berkeley-db@4 2>/dev/null)
-           dnl This must precede the call to BITCOINS_FIND_BDB48 below.
+           dnl This must precede the call to X1COIN_FIND_BDB48 below.
            BDB_CFLAGS="-I$bdb_prefix/include"
            BDB_LIBS="-L$bdb_prefix/lib -ldb_cxx-4.8"
          fi
@@ -898,7 +898,7 @@ AX_PTHREAD
 dnl Check if -latomic is required for <std::atomic>
 CHECK_ATOMIC
 
-dnl The following macro will add the necessary defines to bitcoins-config.h, but
+dnl The following macro will add the necessary defines to x1coin-config.h, but
 dnl they also need to be passed down to any subprojects. Pull the results out of
 dnl the cache and add them to CPPFLAGS.
 AC_SYS_LARGEFILE
@@ -1009,7 +1009,7 @@ AC_CHECK_DECLS([getifaddrs, freeifaddrs],[CHECK_SOCKET],,
     #include <ifaddrs.h>]
 )
 
-dnl These are used for daemonization in bitcoinsd
+dnl These are used for daemonization in x1coind
 AC_CHECK_DECLS([fork])
 AC_CHECK_DECLS([setsid])
 
@@ -1304,17 +1304,17 @@ AC_DEFUN([SUPPRESS_WARNINGS],
 dnl enable-fuzz should disable all other targets
 if test "$enable_fuzz" = "yes"; then
   AC_MSG_WARN([enable-fuzz will disable all other targets and force --enable-fuzz-binary=yes])
-  build_bitcoins_utils=no
-  build_bitcoins_cli=no
-  build_bitcoins_tx=no
-  build_bitcoins_util=no
-  build_bitcoins_chainstate=no
-  build_bitcoins_wallet=no
-  build_bitcoinsd=no
-  build_bitcoins_libs=no
-  bitcoins_enable_qt=no
-  bitcoins_enable_qt_test=no
-  bitcoins_enable_qt_dbus=no
+  build_x1coin_utils=no
+  build_x1coin_cli=no
+  build_x1coin_tx=no
+  build_x1coin_util=no
+  build_x1coin_chainstate=no
+  build_x1coin_wallet=no
+  build_x1coind=no
+  build_x1coin_libs=no
+  x1coin_enable_qt=no
+  x1coin_enable_qt_test=no
+  x1coin_enable_qt_dbus=no
   use_bench=no
   use_tests=no
   use_external_signer=no
@@ -1325,10 +1325,10 @@ if test "$enable_fuzz" = "yes"; then
 
   AX_CHECK_PREPROC_FLAG([-DABORT_ON_FAILED_ASSUME], [DEBUG_CPPFLAGS="$DEBUG_CPPFLAGS -DABORT_ON_FAILED_ASSUME"], [], [$CXXFLAG_WERROR])
 else
-  BITCOINS_QT_INIT
+  X1COIN_QT_INIT
 
-  dnl sets $bitcoins_enable_qt, $bitcoins_enable_qt_test, $bitcoins_enable_qt_dbus
-  BITCOINS_QT_CONFIGURE([5.11.3])
+  dnl sets $x1coin_enable_qt, $x1coin_enable_qt_test, $x1coin_enable_qt_dbus
+  X1COIN_QT_CONFIGURE([5.11.3])
 
   dnl Keep a copy of the original $QT_INCLUDES and use it when invoking qt's moc
   QT_INCLUDES_UNSUPPRESSED=$QT_INCLUDES
@@ -1361,7 +1361,7 @@ fi
 if test "$enable_wallet" != "no"; then
     dnl Check for libdb_cxx only if wallet enabled
     if test "$use_bdb" != "no"; then
-      BITCOINS_FIND_BDB48
+      X1COIN_FIND_BDB48
       if test "$suppress_external_warnings" != "no" ; then
         BDB_CPPFLAGS=SUPPRESS_WARNINGS($BDB_CPPFLAGS)
       fi
@@ -1409,7 +1409,7 @@ if test "$use_usdt" != "no"; then
 fi
 AM_CONDITIONAL([ENABLE_USDT_TRACEPOINTS], [test "$use_usdt" = "yes"])
 
-if test "$build_bitcoinsd$bitcoins_enable_qt$use_bench$use_tests" = "nononono"; then
+if test "$build_x1coind$x1coin_enable_qt$use_bench$use_tests" = "nononono"; then
   use_upnp=no
   use_natpmp=no
   use_zmq=no
@@ -1458,7 +1458,7 @@ if test "$use_natpmp" != "no"; then
   CPPFLAGS="$TEMP_CPPFLAGS"
 fi
 
-if test "$build_bitcoins_wallet$build_bitcoins_cli$build_bitcoins_tx$build_bitcoins_util$build_bitcoinsd$bitcoins_enable_qt$use_tests$use_bench$enable_fuzz_binary" = "nonononononononono"; then
+if test "$build_x1coin_wallet$build_x1coin_cli$build_x1coin_tx$build_x1coin_util$build_x1coind$x1coin_enable_qt$use_tests$use_bench$enable_fuzz_binary" = "nonononononononono"; then
   use_boost=no
 else
   use_boost=yes
@@ -1469,7 +1469,7 @@ if test "$use_boost" = "yes"; then
   dnl Check for Boost headers
   AX_BOOST_BASE([1.64.0],[],[AC_MSG_ERROR([Boost is not available!])])
   if test "$want_boost" = "no"; then
-    AC_MSG_ERROR([only libbitcoinsconsensus can be built without Boost])
+    AC_MSG_ERROR([only libx1coinconsensus can be built without Boost])
   fi
 
   dnl we don't use multi_index serialization
@@ -1535,10 +1535,10 @@ fi
 AM_CONDITIONAL([ENABLE_EXTERNAL_SIGNER], [test "$use_external_signer" = "yes"])
 
 dnl Do not compile with syscall sandbox support when compiling under the sanitizers.
-dnl The sanitizers introduce use of syscalls that are not typically used in bitcoinsd
+dnl The sanitizers introduce use of syscalls that are not typically used in x1coind
 dnl (such as execve when the sanitizers execute llvm-symbolizer).
 if test "$use_sanitizers" != ""; then
-  AC_MSG_WARN([Specifying --with-sanitizers forces --without-seccomp since the sanitizers introduce use of syscalls not allowed by the bitcoinsd syscall sandbox (-sandbox=<mode>).])
+  AC_MSG_WARN([Specifying --with-sanitizers forces --without-seccomp since the sanitizers introduce use of syscalls not allowed by the x1coind syscall sandbox (-sandbox=<mode>).])
   seccomp_found=no
 fi
 if test "$seccomp_found" != "no"; then
@@ -1581,7 +1581,7 @@ fi
 dnl libevent check
 
 use_libevent=no
-if test "$build_bitcoins_cli$build_bitcoinsd$bitcoins_enable_qt$enable_fuzz_binary$use_tests$use_bench" != "nononononono"; then
+if test "$build_x1coin_cli$build_x1coind$x1coin_enable_qt$enable_fuzz_binary$use_tests$use_bench" != "nononononono"; then
   PKG_CHECK_MODULES([EVENT], [libevent >= 2.1.8], [use_libevent=yes], [AC_MSG_ERROR([libevent version 2.1.8 or greater not found.])])
   if test "$TARGET_OS" != "windows"; then
     PKG_CHECK_MODULES([EVENT_PTHREADS], [libevent_pthreads >= 2.1.8], [], [AC_MSG_ERROR([libevent_pthreads version 2.1.8 or greater not found.])])
@@ -1615,7 +1615,7 @@ fi
 dnl QR Code encoding library check
 
 if test "$use_qr" != "no"; then
-  BITCOINS_QT_CHECK([PKG_CHECK_MODULES([QR], [libqrencode], [have_qrencode=yes], [have_qrencode=no])])
+  X1COIN_QT_CHECK([PKG_CHECK_MODULES([QR], [libqrencode], [have_qrencode=yes], [have_qrencode=no])])
 fi
 
 dnl ZMQ check
@@ -1665,8 +1665,8 @@ else
 fi
 
 AM_CONDITIONAL([BUILD_MULTIPROCESS], [test "$build_multiprocess" = "yes"])
-AM_CONDITIONAL([BUILD_BITCOINS_NODE], [test "$build_multiprocess" = "yes"])
-AM_CONDITIONAL([BUILD_BITCOINS_GUI], [test "$build_multiprocess" = "yes"])
+AM_CONDITIONAL([BUILD_X1COIN_NODE], [test "$build_multiprocess" = "yes"])
+AM_CONDITIONAL([BUILD_X1COIN_GUI], [test "$build_multiprocess" = "yes"])
 
 dnl codegen tools check
 
@@ -1679,46 +1679,46 @@ if test "$build_multiprocess" != "no"; then
   AC_SUBST(MPGEN_PREFIX)
 fi
 
-AC_MSG_CHECKING([whether to build bitcoinsd])
-AM_CONDITIONAL([BUILD_BITCOINSD], [test $build_bitcoinsd = "yes"])
-AC_MSG_RESULT($build_bitcoinsd)
+AC_MSG_CHECKING([whether to build x1coind])
+AM_CONDITIONAL([BUILD_X1COIND], [test $build_x1coind = "yes"])
+AC_MSG_RESULT($build_x1coind)
 
-AC_MSG_CHECKING([whether to build bitcoins-cli])
-AM_CONDITIONAL([BUILD_BITCOINS_CLI], [test $build_bitcoins_cli = "yes"])
-AC_MSG_RESULT($build_bitcoins_cli)
+AC_MSG_CHECKING([whether to build x1coin-cli])
+AM_CONDITIONAL([BUILD_X1COIN_CLI], [test $build_x1coin_cli = "yes"])
+AC_MSG_RESULT($build_x1coin_cli)
 
-AC_MSG_CHECKING([whether to build bitcoins-tx])
-AM_CONDITIONAL([BUILD_BITCOINS_TX], [test $build_bitcoins_tx = "yes"])
-AC_MSG_RESULT($build_bitcoins_tx)
+AC_MSG_CHECKING([whether to build x1coin-tx])
+AM_CONDITIONAL([BUILD_X1COIN_TX], [test $build_x1coin_tx = "yes"])
+AC_MSG_RESULT($build_x1coin_tx)
 
-AC_MSG_CHECKING([whether to build bitcoins-wallet])
-AM_CONDITIONAL([BUILD_BITCOINS_WALLET], [test $build_bitcoins_wallet = "yes"])
-AC_MSG_RESULT($build_bitcoins_wallet)
+AC_MSG_CHECKING([whether to build x1coin-wallet])
+AM_CONDITIONAL([BUILD_X1COIN_WALLET], [test $build_x1coin_wallet = "yes"])
+AC_MSG_RESULT($build_x1coin_wallet)
 
-AC_MSG_CHECKING([whether to build bitcoins-util])
-AM_CONDITIONAL([BUILD_BITCOINS_UTIL], [test $build_bitcoins_util = "yes"])
-AC_MSG_RESULT($build_bitcoins_util)
+AC_MSG_CHECKING([whether to build x1coin-util])
+AM_CONDITIONAL([BUILD_X1COIN_UTIL], [test $build_x1coin_util = "yes"])
+AC_MSG_RESULT($build_x1coin_util)
 
-AC_MSG_CHECKING([whether to build experimental bitcoins-chainstate])
-if test "$build_bitcoins_chainstate" = "yes"; then
+AC_MSG_CHECKING([whether to build experimental x1coin-chainstate])
+if test "$build_x1coin_chainstate" = "yes"; then
   if test "$build_experimental_kernel_lib" = "no"; then
-    AC_MSG_ERROR([experimental bitcoins-chainstate cannot be built without the experimental bitcoinskernel library. Use --with-experimental-kernel-lib]);
+    AC_MSG_ERROR([experimental x1coin-chainstate cannot be built without the experimental x1coinkernel library. Use --with-experimental-kernel-lib]);
   fi
 fi
-AM_CONDITIONAL([BUILD_BITCOINS_CHAINSTATE], [test $build_bitcoins_chainstate = "yes"])
-AC_MSG_RESULT($build_bitcoins_chainstate)
+AM_CONDITIONAL([BUILD_X1COIN_CHAINSTATE], [test $build_x1coin_chainstate = "yes"])
+AC_MSG_RESULT($build_x1coin_chainstate)
 
 AC_MSG_CHECKING([whether to build libraries])
-AM_CONDITIONAL([BUILD_BITCOINS_LIBS], [test $build_bitcoins_libs = "yes"])
+AM_CONDITIONAL([BUILD_X1COIN_LIBS], [test $build_x1coin_libs = "yes"])
 
-if test "$build_bitcoins_libs" = "yes"; then
+if test "$build_x1coin_libs" = "yes"; then
   AC_DEFINE([HAVE_CONSENSUS_LIB], [1], [Define this symbol if the consensus lib has been built])
-  AC_CONFIG_FILES([libbitcoinsconsensus.pc:libbitcoinsconsensus.pc.in])
+  AC_CONFIG_FILES([libx1coinconsensus.pc:libx1coinconsensus.pc.in])
 fi
 
-AM_CONDITIONAL([BUILD_BITCOINS_KERNEL_LIB], [test "$build_experimental_kernel_lib" != "no" && ( test "$build_experimental_kernel_lib" = "yes" || test "$build_bitcoins_chainstate" = "yes" )])
+AM_CONDITIONAL([BUILD_X1COIN_KERNEL_LIB], [test "$build_experimental_kernel_lib" != "no" && ( test "$build_experimental_kernel_lib" = "yes" || test "$build_x1coin_chainstate" = "yes" )])
 
-AC_MSG_RESULT($build_bitcoins_libs)
+AC_MSG_RESULT($build_x1coin_libs)
 
 AC_LANG_POP
 
@@ -1797,13 +1797,13 @@ fi
 
 dnl these are only used when qt is enabled
 BUILD_TEST_QT=""
-if test "$bitcoins_enable_qt" != "no"; then
+if test "$x1coin_enable_qt" != "no"; then
   dnl enable dbus support
   AC_MSG_CHECKING([whether to build GUI with support for D-Bus])
-  if test "$bitcoins_enable_qt_dbus" != "no"; then
+  if test "$x1coin_enable_qt_dbus" != "no"; then
     AC_DEFINE([USE_DBUS], [1], [Define if dbus support should be compiled in])
   fi
-  AC_MSG_RESULT([$bitcoins_enable_qt_dbus])
+  AC_MSG_RESULT([$x1coin_enable_qt_dbus])
 
   dnl enable qr support
   AC_MSG_CHECKING([whether to build GUI with support for QR codes])
@@ -1824,8 +1824,8 @@ if test "$bitcoins_enable_qt" != "no"; then
     AC_MSG_WARN([xgettext is required to update qt translations])
   fi
 
-  AC_MSG_CHECKING([whether to build test_bitcoins-qt])
-  if test "$use_gui_tests$bitcoins_enable_qt_test" = "yesyes"; then
+  AC_MSG_CHECKING([whether to build test_x1coin-qt])
+  if test "$use_gui_tests$x1coin_enable_qt_test" = "yesyes"; then
     AC_MSG_RESULT([yes])
     BUILD_TEST_QT="yes"
   else
@@ -1835,7 +1835,7 @@ fi
 
 AM_CONDITIONAL([ENABLE_ZMQ], [test "$use_zmq" = "yes"])
 
-AC_MSG_CHECKING([whether to build test_bitcoins])
+AC_MSG_CHECKING([whether to build test_x1coin])
 if test "$use_tests" = "yes"; then
   if test "$enable_fuzz" = "yes"; then
     AC_MSG_RESULT([no, because fuzzing is enabled])
@@ -1855,7 +1855,7 @@ else
   AC_MSG_RESULT([no])
 fi
 
-if test "$build_bitcoins_wallet$build_bitcoins_cli$build_bitcoins_tx$build_bitcoins_util$build_bitcoins_libs$build_bitcoinsd$bitcoins_enable_qt$enable_fuzz_binary$use_bench$use_tests" = "nononononononononono"; then
+if test "$build_x1coin_wallet$build_x1coin_cli$build_x1coin_tx$build_x1coin_util$build_x1coin_libs$build_x1coind$x1coin_enable_qt$enable_fuzz_binary$use_bench$use_tests" = "nononononononononono"; then
   AC_MSG_ERROR([No targets! Please specify at least one of: --with-utils --with-libs --with-daemon --with-gui --enable-fuzz(-binary) --enable-bench or --enable-tests])
 fi
 
@@ -1869,7 +1869,7 @@ AM_CONDITIONAL([USE_BDB], [test "$use_bdb" = "yes"])
 AM_CONDITIONAL([ENABLE_TESTS], [test "$BUILD_TEST" = "yes"])
 AM_CONDITIONAL([ENABLE_FUZZ], [test "$enable_fuzz" = "yes"])
 AM_CONDITIONAL([ENABLE_FUZZ_BINARY], [test "$enable_fuzz_binary" = "yes"])
-AM_CONDITIONAL([ENABLE_QT], [test "$bitcoins_enable_qt" = "yes"])
+AM_CONDITIONAL([ENABLE_QT], [test "$x1coin_enable_qt" = "yes"])
 AM_CONDITIONAL([ENABLE_QT_TESTS], [test "$BUILD_TEST_QT" = "yes"])
 AM_CONDITIONAL([ENABLE_BENCH], [test "$use_bench" = "yes"])
 AM_CONDITIONAL([USE_QRCODE], [test "$use_qr" = "yes"])
@@ -1908,16 +1908,16 @@ AC_SUBST(COPYRIGHT_YEAR, _COPYRIGHT_YEAR)
 AC_SUBST(COPYRIGHT_HOLDERS, "_COPYRIGHT_HOLDERS")
 AC_SUBST(COPYRIGHT_HOLDERS_SUBSTITUTION, "_COPYRIGHT_HOLDERS_SUBSTITUTION")
 AC_SUBST(COPYRIGHT_HOLDERS_FINAL, "_COPYRIGHT_HOLDERS_FINAL")
-AC_SUBST(BITCOINS_DAEMON_NAME)
-AC_SUBST(BITCOINS_GUI_NAME)
-AC_SUBST(BITCOINS_TEST_NAME)
-AC_SUBST(BITCOINS_CLI_NAME)
-AC_SUBST(BITCOINS_TX_NAME)
-AC_SUBST(BITCOINS_UTIL_NAME)
-AC_SUBST(BITCOINS_CHAINSTATE_NAME)
-AC_SUBST(BITCOINS_WALLET_TOOL_NAME)
-AC_SUBST(BITCOINS_MP_NODE_NAME)
-AC_SUBST(BITCOINS_MP_GUI_NAME)
+AC_SUBST(X1COIN_DAEMON_NAME)
+AC_SUBST(X1COIN_GUI_NAME)
+AC_SUBST(X1COIN_TEST_NAME)
+AC_SUBST(X1COIN_CLI_NAME)
+AC_SUBST(X1COIN_TX_NAME)
+AC_SUBST(X1COIN_UTIL_NAME)
+AC_SUBST(X1COIN_CHAINSTATE_NAME)
+AC_SUBST(X1COIN_WALLET_TOOL_NAME)
+AC_SUBST(X1COIN_MP_NODE_NAME)
+AC_SUBST(X1COIN_MP_GUI_NAME)
 
 AC_SUBST(RELDFLAGS)
 AC_SUBST(CORE_LDFLAGS)
@@ -1969,7 +1969,7 @@ AC_SUBST(HAVE_EVHTTP_CONNECTION_GET_PEER_CONST_CHAR)
 AC_CONFIG_FILES([Makefile src/Makefile doc/man/Makefile share/setup.nsi share/qt/Info.plist test/config.ini])
 AC_CONFIG_FILES([contrib/devtools/split-debug.sh],[chmod +x contrib/devtools/split-debug.sh])
 AM_COND_IF([HAVE_DOXYGEN], [AC_CONFIG_FILES([doc/Doxyfile])])
-AC_CONFIG_LINKS([contrib/devtools/iwyu/bitcoins.core.imp:contrib/devtools/iwyu/bitcoins.core.imp])
+AC_CONFIG_LINKS([contrib/devtools/iwyu/x1coin.core.imp:contrib/devtools/iwyu/x1coin.core.imp])
 AC_CONFIG_LINKS([contrib/filter-lcov.py:contrib/filter-lcov.py])
 AC_CONFIG_LINKS([contrib/macdeploy/background.tiff:contrib/macdeploy/background.tiff])
 AC_CONFIG_LINKS([src/.bear-tidy-config:src/.bear-tidy-config])
@@ -2007,21 +2007,21 @@ echo "Options used to compile and link:"
 echo "  external signer = $use_external_signer"
 echo "  multiprocess    = $build_multiprocess"
 echo "  with experimental syscall sandbox support = $use_syscall_sandbox"
-echo "  with libs       = $build_bitcoins_libs"
+echo "  with libs       = $build_x1coin_libs"
 echo "  with wallet     = $enable_wallet"
 if test "$enable_wallet" != "no"; then
     echo "    with sqlite   = $use_sqlite"
     echo "    with bdb      = $use_bdb"
 fi
-echo "  with gui / qt   = $bitcoins_enable_qt"
-if test $bitcoins_enable_qt != "no"; then
+echo "  with gui / qt   = $x1coin_enable_qt"
+if test $x1coin_enable_qt != "no"; then
     echo "    with qr       = $use_qr"
 fi
 echo "  with zmq        = $use_zmq"
 if test $enable_fuzz = "no"; then
     echo "  with test       = $use_tests"
 else
-    echo "  with test       = not building test_bitcoins because fuzzing is enabled"
+    echo "  with test       = not building test_x1coin because fuzzing is enabled"
 fi
 echo "  with fuzz binary = $enable_fuzz_binary"
 echo "  with bench      = $use_bench"

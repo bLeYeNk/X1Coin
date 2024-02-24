@@ -8,7 +8,7 @@ import struct
 
 from test_framework.address import ADDRESS_BCRT1_UNSPENDABLE as ADDRESS_WATCHONLY
 from test_framework.blocktools import COINBASE_MATURITY
-from test_framework.test_framework import BitcoinsTestFramework
+from test_framework.test_framework import X1coinTestFramework
 from test_framework.util import (
     assert_equal,
     assert_raises_rpc_error,
@@ -45,7 +45,7 @@ def create_transactions(node, address, amt, fees):
 
     return txs
 
-class WalletTest(BitcoinsTestFramework):
+class WalletTest(X1coinTestFramework):
     def add_options(self, parser):
         self.add_wallet_options(parser)
 
@@ -116,7 +116,7 @@ class WalletTest(BitcoinsTestFramework):
             assert_equal(self.nodes[0].getbalance("*", 1, True), 50)
         assert_equal(self.nodes[1].getbalance(minconf=0, include_watchonly=True), 50)
 
-        # Send 40 BC from 0 to 1 and 60 BC from 1 to 0.
+        # Send 40 X1 from 0 to 1 and 60 X1 from 1 to 0.
         txs = create_transactions(self.nodes[0], self.nodes[1].getnewaddress(), 40, [Decimal('0.01')])
         self.nodes[0].sendrawtransaction(txs[0]['hex'])
         self.nodes[1].sendrawtransaction(txs[0]['hex'])  # sending on both nodes is faster than waiting for propagation
@@ -166,7 +166,7 @@ class WalletTest(BitcoinsTestFramework):
         # 2) Sent 10 from node B to node A with fee 0.01
         #
         # Then our node would report a confirmed balance of 40 + 50 - 10 = 80
-        # BC, which is more than would be available if transaction 1 were
+        # X1, which is more than would be available if transaction 1 were
         # replaced.
 
 

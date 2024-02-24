@@ -3,12 +3,12 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include <config/bitcoins-config.h>
+#include <config/x1coin-config.h>
 #endif
 
 #include <qt/paymentserver.h>
 
-#include <qt/bitcoinsunits.h>
+#include <qt/x1coinunits.h>
 #include <qt/guiutil.h>
 #include <qt/optionsmodel.h>
 
@@ -36,8 +36,8 @@
 #include <QStringList>
 #include <QUrlQuery>
 
-const int BITCOINS_IPC_CONNECT_TIMEOUT = 1000; // milliseconds
-const QString BITCOINS_IPC_PREFIX("bitcoins:");
+const int X1COIN_IPC_CONNECT_TIMEOUT = 1000; // milliseconds
+const QString X1COIN_IPC_PREFIX("x1coin:");
 
 //
 // Create a name that is unique for:
@@ -46,7 +46,7 @@ const QString BITCOINS_IPC_PREFIX("bitcoins:");
 //
 static QString ipcServerName()
 {
-    QString name("BitcoinsQt");
+    QString name("X1coinQt");
 
     // Append a simple hash of the datadir
     // Note that gArgs.GetDataDirNet() returns a different path
@@ -80,7 +80,7 @@ void PaymentServer::ipcParseCommandLine(int argc, char* argv[])
         QString arg(argv[i]);
         if (arg.startsWith("-")) continue;
 
-        if (arg.startsWith(BITCOINS_IPC_PREFIX, Qt::CaseInsensitive)) // bitcoins: URI
+        if (arg.startsWith(X1COIN_IPC_PREFIX, Qt::CaseInsensitive)) // x1coin: URI
         {
             savedPaymentRequests.insert(arg);
         }
@@ -100,7 +100,7 @@ bool PaymentServer::ipcSendCommandLine()
     {
         QLocalSocket* socket = new QLocalSocket();
         socket->connectToServer(ipcServerName(), QIODevice::WriteOnly);
-        if (!socket->waitForConnected(BITCOINS_IPC_CONNECT_TIMEOUT))
+        if (!socket->waitForConnected(X1COIN_IPC_CONNECT_TIMEOUT))
         {
             delete socket;
             socket = nullptr;
@@ -115,7 +115,7 @@ bool PaymentServer::ipcSendCommandLine()
 
         socket->write(block);
         socket->flush();
-        socket->waitForBytesWritten(BITCOINS_IPC_CONNECT_TIMEOUT);
+        socket->waitForBytesWritten(X1COIN_IPC_CONNECT_TIMEOUT);
         socket->disconnectFromServer();
 
         delete socket;
@@ -130,7 +130,7 @@ PaymentServer::PaymentServer(QObject* parent, bool startLocalServer)
     : QObject(parent)
 {
     // Install global event filter to catch QFileOpenEvents
-    // on Mac: sent when you click bitcoins: links
+    // on Mac: sent when you click x1coin: links
     // other OSes: helpful when dealing with payment request files
     if (parent)
         parent->installEventFilter(this);
@@ -147,7 +147,7 @@ PaymentServer::PaymentServer(QObject* parent, bool startLocalServer)
         if (!uriServer->listen(name)) {
             // constructor is called early in init, so don't use "Q_EMIT message()" here
             QMessageBox::critical(nullptr, tr("Payment request error"),
-                tr("Cannot start bitcoins: click-to-pay handler"));
+                tr("Cannot start x1coin: click-to-pay handler"));
         }
         else {
             connect(uriServer, &QLocalServer::newConnection, this, &PaymentServer::handleURIConnection);
@@ -158,7 +158,7 @@ PaymentServer::PaymentServer(QObject* parent, bool startLocalServer)
 PaymentServer::~PaymentServer() = default;
 
 //
-// OSX-specific way of handling bitcoins: URIs
+// OSX-specific way of handling x1coin: URIs
 //
 bool PaymentServer::eventFilter(QObject *object, QEvent *event)
 {
@@ -193,18 +193,18 @@ void PaymentServer::handleURIOrFile(const QString& s)
         return;
     }
 
-    if (s.startsWith("bitcoins://", Qt::CaseInsensitive))
+    if (s.startsWith("x1coin://", Qt::CaseInsensitive))
     {
-        Q_EMIT message(tr("URI handling"), tr("'bitcoins://' is not a valid URI. Use 'bitcoins:' instead."),
+        Q_EMIT message(tr("URI handling"), tr("'x1coin://' is not a valid URI. Use 'x1coin:' instead."),
             CClientUIInterface::MSG_ERROR);
     }
-    else if (s.startsWith(BITCOINS_IPC_PREFIX, Qt::CaseInsensitive)) // bitcoins: URI
+    else if (s.startsWith(X1COIN_IPC_PREFIX, Qt::CaseInsensitive)) // x1coin: URI
     {
         QUrlQuery uri((QUrl(s)));
         // normal URI
         {
             SendCoinsRecipient recipient;
-            if (GUIUtil::parseBitcoinsURI(s, &recipient))
+            if (GUIUtil::parseX1coinURI(s, &recipient))
             {
                 std::string error_msg;
                 const CTxDestination dest = DecodeDestination(recipient.address.toStdString(), error_msg);
@@ -225,7 +225,7 @@ void PaymentServer::handleURIOrFile(const QString& s)
             }
             else
                 Q_EMIT message(tr("URI handling"),
-                    tr("URI cannot be parsed! This can be caused by an invalid Bitcoins address or malformed URI parameters."),
+                    tr("URI cannot be parsed! This can be caused by an invalid X1coin address or malformed URI parameters."),
                     CClientUIInterface::ICON_WARNING);
 
             return;

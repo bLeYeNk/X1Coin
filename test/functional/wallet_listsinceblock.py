@@ -8,7 +8,7 @@ from test_framework.address import key_to_p2wpkh
 from test_framework.blocktools import COINBASE_MATURITY
 from test_framework.descriptors import descsum_create
 from test_framework.key import ECKey
-from test_framework.test_framework import BitcoinsTestFramework
+from test_framework.test_framework import X1coinTestFramework
 from test_framework.messages import MAX_BIP125_RBF_SEQUENCE
 from test_framework.util import (
     assert_array_result,
@@ -19,7 +19,7 @@ from test_framework.wallet_util import bytes_to_wif
 
 from decimal import Decimal
 
-class ListSinceBlockTest(BitcoinsTestFramework):
+class ListSinceBlockTest(X1coinTestFramework):
     def add_options(self, parser):
         self.add_wallet_options(parser)
 
@@ -185,8 +185,8 @@ class ListSinceBlockTest(BitcoinsTestFramework):
 
         Problematic case:
 
-        1. User 1 receives BC in tx1 from utxo1 in block aa1.
-        2. User 2 receives BC in tx2 from utxo1 (same) in block bb1
+        1. User 1 receives X1 in tx1 from utxo1 in block aa1.
+        2. User 2 receives X1 in tx2 from utxo1 (same) in block bb1
         3. User 1 sees 2 confirmations at block aa3.
         4. Reorg into bb chain.
         5. User 1 asks `listsinceblock aa3` and does not see that tx1 is now

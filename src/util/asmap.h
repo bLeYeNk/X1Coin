@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_UTIL_ASMAP_H
-#define BITCOINS_UTIL_ASMAP_H
+#ifndef X1COIN_UTIL_ASMAP_H
+#define X1COIN_UTIL_ASMAP_H
 
 #include <util/fs.h>
 
@@ -17,4 +17,4 @@ bool SanityCheckASMap(const std::vector<bool>& asmap, int bits);
 /** Read asmap from provided binary file */
 std::vector<bool> DecodeAsmap(fs::path path);
 
-#endif // BITCOINS_UTIL_ASMAP_H
+#endif // X1COIN_UTIL_ASMAP_H

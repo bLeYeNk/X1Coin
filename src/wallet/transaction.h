@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_WALLET_TRANSACTION_H
-#define BITCOINS_WALLET_TRANSACTION_H
+#ifndef X1COIN_WALLET_TRANSACTION_H
+#define X1COIN_WALLET_TRANSACTION_H
 
 #include <bitset>
 #include <cstdint>
@@ -201,7 +201,7 @@ public:
     unsigned int nTimeSmart;
     /**
      * From me flag is set to 1 for transactions that were created by the wallet
-     * on this bitcoins node, and set to 0 for transactions that were created
+     * on this x1coin node, and set to 0 for transactions that were created
      * externally and came in through the network or sendrawtransaction RPC.
      */
     bool fFromMe;
@@ -338,4 +338,4 @@ struct WalletTxOrderComparator {
 };
 } // namespace wallet
 
-#endif // BITCOINS_WALLET_TRANSACTION_H
+#endif // X1COIN_WALLET_TRANSACTION_H

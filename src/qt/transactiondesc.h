@@ -2,10 +2,10 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_QT_TRANSACTIONDESC_H
-#define BITCOINS_QT_TRANSACTIONDESC_H
+#ifndef X1COIN_QT_TRANSACTIONDESC_H
+#define X1COIN_QT_TRANSACTIONDESC_H
 
-#include <qt/bitcoinsunits.h>
+#include <qt/x1coinunits.h>
 
 #include <QObject>
 #include <QString>
@@ -26,7 +26,7 @@ class TransactionDesc: public QObject
     Q_OBJECT
 
 public:
-    static QString toHTML(interfaces::Node& node, interfaces::Wallet& wallet, TransactionRecord* rec, BitcoinsUnit unit);
+    static QString toHTML(interfaces::Node& node, interfaces::Wallet& wallet, TransactionRecord* rec, X1coinUnit unit);
 
 private:
     TransactionDesc() {}
@@ -34,4 +34,4 @@ private:
     static QString FormatTxStatus(const interfaces::WalletTxStatus& status, bool inMempool);
 };
 
-#endif // BITCOINS_QT_TRANSACTIONDESC_H
+#endif // X1COIN_QT_TRANSACTIONDESC_H

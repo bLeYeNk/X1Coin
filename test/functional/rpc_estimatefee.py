@@ -9,10 +9,10 @@ Test the following RPCs:
    - estimaterawfee
 """
 
-from test_framework.test_framework import BitcoinsTestFramework
+from test_framework.test_framework import X1coinTestFramework
 from test_framework.util import assert_raises_rpc_error
 
-class EstimateFeeTest(BitcoinsTestFramework):
+class EstimateFeeTest(X1coinTestFramework):
     def set_test_params(self):
         self.num_nodes = 1
 

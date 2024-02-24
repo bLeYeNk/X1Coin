@@ -2,11 +2,11 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_NETADDRESS_H
-#define BITCOINS_NETADDRESS_H
+#ifndef X1COIN_NETADDRESS_H
+#define X1COIN_NETADDRESS_H
 
 #if defined(HAVE_CONFIG_H)
-#include <config/bitcoins-config.h>
+#include <config/x1coin-config.h>
 #endif
 
 #include <compat/compat.h>
@@ -82,11 +82,11 @@ static const std::array<uint8_t, 6> TORV2_IN_IPV6_PREFIX{
 
 /// Prefix of an IPv6 address when it contains an embedded "internal" address.
 /// Used when (un)serializing addresses in ADDRv1 format (pre-BIP155).
-/// The prefix comes from 0xFD + SHA256("bitcoins")[0:5].
+/// The prefix comes from 0xFD + SHA256("x1coin")[0:5].
 /// Such dummy IPv6 addresses are guaranteed to not be publicly routable as they
 /// fall under RFC4193's fc00::/7 subnet allocated to unique-local addresses.
 static const std::array<uint8_t, 6> INTERNAL_IN_IPV6_PREFIX{
-    0xFD, 0x6B, 0x88, 0xC0, 0x87, 0x24 // 0xFD + sha256("bitcoins")[0:5].
+    0xFD, 0x6B, 0x88, 0xC0, 0x87, 0x24 // 0xFD + sha256("x1coin")[0:5].
 };
 
 /// Size of IPv4 address (in bytes).
@@ -573,4 +573,4 @@ private:
     const uint64_t m_salt_k1;
 };
 
-#endif // BITCOINS_NETADDRESS_H
+#endif // X1COIN_NETADDRESS_H

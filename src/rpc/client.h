@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_RPC_CLIENT_H
-#define BITCOINS_RPC_CLIENT_H
+#ifndef X1COIN_RPC_CLIENT_H
+#define X1COIN_RPC_CLIENT_H
 
 #include <string>
 #include <string_view>
@@ -22,4 +22,4 @@ UniValue RPCConvertNamedValues(const std::string& strMethod, const std::vector<s
  */
 UniValue ParseNonRFCJSONValue(std::string_view raw);
 
-#endif // BITCOINS_RPC_CLIENT_H
+#endif // X1COIN_RPC_CLIENT_H

@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_TXREQUEST_H
-#define BITCOINS_TXREQUEST_H
+#ifndef X1COIN_TXREQUEST_H
+#define X1COIN_TXREQUEST_H
 
 #include <primitives/transaction.h>
 #include <net.h> // For NodeId
@@ -208,4 +208,4 @@ public:
     void PostGetRequestableSanityCheck(std::chrono::microseconds now) const;
 };
 
-#endif // BITCOINS_TXREQUEST_H
+#endif // X1COIN_TXREQUEST_H

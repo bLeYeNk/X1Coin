@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_PRIMITIVES_BLOCK_H
-#define BITCOINS_PRIMITIVES_BLOCK_H
+#ifndef X1COIN_PRIMITIVES_BLOCK_H
+#define X1COIN_PRIMITIVES_BLOCK_H
 
 #include <primitives/transaction.h>
 #include <serialize.h>
@@ -144,4 +144,4 @@ struct CBlockLocator
     }
 };
 
-#endif // BITCOINS_PRIMITIVES_BLOCK_H
+#endif // X1COIN_PRIMITIVES_BLOCK_H

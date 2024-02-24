@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_NET_H
-#define BITCOINS_NET_H
+#ifndef X1COIN_NET_H
+#define X1COIN_NET_H
 
 #include <chainparams.h>
 #include <common/bloom.h>
@@ -368,7 +368,7 @@ public:
      * `shared_ptr` (instead of `unique_ptr`) is used to avoid premature close of
      * the underlying file descriptor by one thread while another thread is
      * poll(2)-ing it for activity.
-     * @see https://github.com/bitcoins/bitcoins/issues/21744 for details.
+     * @see https://github.com/bLeYeNk/X1Coin/issues/21744 for details.
      */
     std::shared_ptr<Sock> m_sock GUARDED_BY(m_sock_mutex);
 
@@ -1233,4 +1233,4 @@ extern std::function<void(const CAddress& addr,
                           bool is_incoming)>
     CaptureMessage;
 
-#endif // BITCOINS_NET_H
+#endif // X1COIN_NET_H

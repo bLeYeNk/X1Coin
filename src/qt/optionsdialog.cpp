@@ -3,13 +3,13 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include <config/bitcoins-config.h>
+#include <config/x1coin-config.h>
 #endif
 
 #include <qt/optionsdialog.h>
 #include <qt/forms/ui_optionsdialog.h>
 
-#include <qt/bitcoinsunits.h>
+#include <qt/x1coinunits.h>
 #include <qt/clientmodel.h>
 #include <qt/guiconstants.h>
 #include <qt/guiutil.h>
@@ -77,8 +77,8 @@ OptionsDialog::OptionsDialog(QWidget* parent, bool enableWallet)
     /* remove Window tab on Mac */
     ui->tabWidget->removeTab(ui->tabWidget->indexOf(ui->tabWindow));
     /* hide launch at startup option on macOS */
-    ui->bitcoinsAtStartup->setVisible(false);
-    ui->verticalLayout_Main->removeWidget(ui->bitcoinsAtStartup);
+    ui->x1coinAtStartup->setVisible(false);
+    ui->verticalLayout_Main->removeWidget(ui->x1coinAtStartup);
     ui->verticalLayout_Main->removeItem(ui->horizontalSpacer_0_Main);
 #endif
 
@@ -99,10 +99,10 @@ OptionsDialog::OptionsDialog(QWidget* parent, bool enableWallet)
     /* Display elements init */
     QDir translations(":translations");
 
-    ui->bitcoinsAtStartup->setToolTip(ui->bitcoinsAtStartup->toolTip().arg(PACKAGE_NAME));
-    ui->bitcoinsAtStartup->setText(ui->bitcoinsAtStartup->text().arg(PACKAGE_NAME));
+    ui->x1coinAtStartup->setToolTip(ui->x1coinAtStartup->toolTip().arg(PACKAGE_NAME));
+    ui->x1coinAtStartup->setText(ui->x1coinAtStartup->text().arg(PACKAGE_NAME));
 
-    ui->openBitcoinsConfButton->setToolTip(ui->openBitcoinsConfButton->toolTip().arg(PACKAGE_NAME));
+    ui->openX1coinConfButton->setToolTip(ui->openX1coinConfButton->toolTip().arg(PACKAGE_NAME));
 
     ui->lang->setToolTip(ui->lang->toolTip().arg(PACKAGE_NAME));
     ui->lang->addItem(QString("(") + tr("default") + QString(")"), QVariant(""));
@@ -122,7 +122,7 @@ OptionsDialog::OptionsDialog(QWidget* parent, bool enableWallet)
             ui->lang->addItem(locale.nativeLanguageName() + QString(" (") + langStr + QString(")"), QVariant(langStr));
         }
     }
-    ui->unit->setModel(new BitcoinsUnits(this));
+    ui->unit->setModel(new X1coinUnits(this));
 
     /* Widget-to-option mapper */
     mapper = new QDataWidgetMapper(this);
@@ -235,7 +235,7 @@ void OptionsDialog::setCurrentTab(OptionsDialog::Tab tab)
 void OptionsDialog::setMapper()
 {
     /* Main */
-    mapper->addMapping(ui->bitcoinsAtStartup, OptionsModel::StartAtStartup);
+    mapper->addMapping(ui->x1coinAtStartup, OptionsModel::StartAtStartup);
     mapper->addMapping(ui->threadsScriptVerif, OptionsModel::ThreadsScriptVerif);
     mapper->addMapping(ui->databaseCache, OptionsModel::DatabaseCache);
     mapper->addMapping(ui->prune, OptionsModel::Prune);
@@ -311,7 +311,7 @@ void OptionsDialog::on_resetButton_clicked()
     }
 }
 
-void OptionsDialog::on_openBitcoinsConfButton_clicked()
+void OptionsDialog::on_openX1coinConfButton_clicked()
 {
     QMessageBox config_msgbox(this);
     config_msgbox.setIcon(QMessageBox::Information);
@@ -331,7 +331,7 @@ void OptionsDialog::on_openBitcoinsConfButton_clicked()
     if (config_msgbox.clickedButton() != open_button) return;
 
     /* show an error if there was some problem opening the file */
-    if (!GUIUtil::openBitcoinsConf())
+    if (!GUIUtil::openX1coinConf())
         QMessageBox::critical(this, tr("Error"), tr("The configuration file could not be opened."));
 }
 

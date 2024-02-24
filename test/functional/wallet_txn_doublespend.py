@@ -5,7 +5,7 @@
 """Test the wallet accounts properly when there is a double-spend conflict."""
 from decimal import Decimal
 
-from test_framework.test_framework import BitcoinsTestFramework
+from test_framework.test_framework import X1coinTestFramework
 from test_framework.util import (
     assert_equal,
     find_output,
@@ -13,7 +13,7 @@ from test_framework.util import (
 )
 
 
-class TxnMallTest(BitcoinsTestFramework):
+class TxnMallTest(X1coinTestFramework):
     def set_test_params(self):
         self.num_nodes = 3
         self.supports_cli = False
@@ -39,7 +39,7 @@ class TxnMallTest(BitcoinsTestFramework):
         return self.nodes[0].sendrawtransaction(tx['hex'])
 
     def run_test(self):
-        # All nodes should start with 1,250 BC:
+        # All nodes should start with 1,250 X1:
         starting_balance = 1250
 
         # All nodes should be out of IBD.
@@ -68,7 +68,7 @@ class TxnMallTest(BitcoinsTestFramework):
         # Coins are sent to node1_address
         node1_address = self.nodes[1].getnewaddress()
 
-        # First: use raw transaction API to send 1240 BC to node1_address,
+        # First: use raw transaction API to send 1240 X1 to node1_address,
         # but don't broadcast:
         doublespend_fee = Decimal('-.02')
         rawtx_input_0 = {}
@@ -86,7 +86,7 @@ class TxnMallTest(BitcoinsTestFramework):
         doublespend = self.nodes[0].signrawtransactionwithwallet(rawtx)
         assert_equal(doublespend["complete"], True)
 
-        # Create two spends using 1 50 BC coin each
+        # Create two spends using 1 50 X1 coin each
         txid1 = self.spend_txid(fund_foo_txid, find_vout_for_address(self.nodes[0], fund_foo_txid, node0_address_foo), {node1_address: 40})
         txid2 = self.spend_txid(fund_bar_txid, find_vout_for_address(self.nodes[0], fund_bar_txid, node0_address_bar), {node1_address: 20})
 

@@ -3,7 +3,7 @@
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-from test_framework.test_framework import BitcoinsTestFramework
+from test_framework.test_framework import X1coinTestFramework
 from test_framework.util import (
     assert_equal,
     assert_raises_rpc_error,
@@ -13,7 +13,7 @@ from test_framework.blocktools import (
 )
 
 
-class CreateTxWalletTest(BitcoinsTestFramework):
+class CreateTxWalletTest(X1coinTestFramework):
     def add_options(self, parser):
         self.add_wallet_options(parser)
 

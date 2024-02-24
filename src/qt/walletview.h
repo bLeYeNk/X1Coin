@@ -2,11 +2,11 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_QT_WALLETVIEW_H
-#define BITCOINS_QT_WALLETVIEW_H
+#ifndef X1COIN_QT_WALLETVIEW_H
+#define X1COIN_QT_WALLETVIEW_H
 
 #include <consensus/amount.h>
-#include <qt/bitcoinsunits.h>
+#include <qt/x1coinunits.h>
 
 #include <QStackedWidget>
 
@@ -53,7 +53,7 @@ private:
     ClientModel* clientModel{nullptr};
 
     //!
-    //! The wallet model represents a bitcoins wallet, and offers access to
+    //! The wallet model represents a x1coin wallet, and offers access to
     //! the list of transactions, address book and sending functionality.
     //!
     WalletModel* const walletModel;
@@ -119,9 +119,9 @@ Q_SIGNALS:
     /** Encryption status of wallet changed */
     void encryptionStatusChanged();
     /** Notify that a new transaction appeared */
-    void incomingTransaction(const QString& date, BitcoinsUnit unit, const CAmount& amount, const QString& type, const QString& address, const QString& label, const QString& walletName);
+    void incomingTransaction(const QString& date, X1coinUnit unit, const CAmount& amount, const QString& type, const QString& address, const QString& label, const QString& walletName);
     /** Notify that the out of sync warning icon has been pressed */
     void outOfSyncWarningClicked();
 };
 
-#endif // BITCOINS_QT_WALLETVIEW_H
+#endif // X1COIN_QT_WALLETVIEW_H

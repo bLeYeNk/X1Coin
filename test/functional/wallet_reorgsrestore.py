@@ -17,12 +17,12 @@ from decimal import Decimal
 import os
 import shutil
 
-from test_framework.test_framework import BitcoinsTestFramework
+from test_framework.test_framework import X1coinTestFramework
 from test_framework.util import (
         assert_equal,
 )
 
-class ReorgsRestoreTest(BitcoinsTestFramework):
+class ReorgsRestoreTest(X1coinTestFramework):
     def add_options(self, parser):
         self.add_wallet_options(parser)
 

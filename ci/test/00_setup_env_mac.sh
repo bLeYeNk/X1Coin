@@ -15,4 +15,4 @@ export XCODE_BUILD_ID=12B45b
 export RUN_UNIT_TESTS=false
 export RUN_FUNCTIONAL_TESTS=false
 export GOAL="deploy"
-export BITCOINS_CONFIG="--with-gui --enable-reduce-exports"
+export X1COIN_CONFIG="--with-gui --enable-reduce-exports"

@@ -1,6 +1,6 @@
 all:
-	$(MAKE) -C .. bitcoins_test
+	$(MAKE) -C .. x1coin_test
 clean:
-	$(MAKE) -C .. bitcoins_test_clean
+	$(MAKE) -C .. x1coin_test_clean
 check:
-	$(MAKE) -C .. bitcoins_test_check
+	$(MAKE) -C .. x1coin_test_check

@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_WALLET_RPC_UTIL_H
-#define BITCOINS_WALLET_RPC_UTIL_H
+#ifndef X1COIN_WALLET_RPC_UTIL_H
+#define X1COIN_WALLET_RPC_UTIL_H
 
 #include <script/script.h>
 
@@ -49,4 +49,4 @@ void HandleWalletError(const std::shared_ptr<CWallet> wallet, DatabaseStatus& st
 int64_t ParseISO8601DateTime(const std::string& str);
 } //  namespace wallet
 
-#endif // BITCOINS_WALLET_RPC_UTIL_H
+#endif // X1COIN_WALLET_RPC_UTIL_H

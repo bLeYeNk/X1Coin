@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_QT_CLIENTMODEL_H
-#define BITCOINS_QT_CLIENTMODEL_H
+#ifndef X1COIN_QT_CLIENTMODEL_H
+#define X1COIN_QT_CLIENTMODEL_H
 
 #include <QObject>
 #include <QDateTime>
@@ -49,7 +49,7 @@ enum NumConnections {
     CONNECTIONS_ALL  = (CONNECTIONS_IN | CONNECTIONS_OUT),
 };
 
-/** Model for Bitcoins network client. */
+/** Model for X1coin network client. */
 class ClientModel : public QObject
 {
     Q_OBJECT
@@ -129,4 +129,4 @@ Q_SIGNALS:
     void showProgress(const QString &title, int nProgress);
 };
 
-#endif // BITCOINS_QT_CLIENTMODEL_H
+#endif // X1COIN_QT_CLIENTMODEL_H

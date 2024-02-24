@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_WALLET_RPC_WALLET_H
-#define BITCOINS_WALLET_RPC_WALLET_H
+#ifndef X1COIN_WALLET_RPC_WALLET_H
+#define X1COIN_WALLET_RPC_WALLET_H
 
 #include <span.h>
 
@@ -13,4 +13,4 @@ namespace wallet {
 Span<const CRPCCommand> GetWalletRPCCommands();
 } // namespace wallet
 
-#endif // BITCOINS_WALLET_RPC_WALLET_H
+#endif // X1COIN_WALLET_RPC_WALLET_H

@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_QT_TEST_UTIL_H
-#define BITCOINS_QT_TEST_UTIL_H
+#ifndef X1COIN_QT_TEST_UTIL_H
+#define X1COIN_QT_TEST_UTIL_H
 
 #include <chrono>
 
@@ -19,4 +19,4 @@ QT_END_NAMESPACE
  */
 void ConfirmMessage(QString* text, std::chrono::milliseconds msec);
 
-#endif // BITCOINS_QT_TEST_UTIL_H
+#endif // X1COIN_QT_TEST_UTIL_H

@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_SCRIPT_SIGNINGPROVIDER_H
-#define BITCOINS_SCRIPT_SIGNINGPROVIDER_H
+#ifndef X1COIN_SCRIPT_SIGNINGPROVIDER_H
+#define X1COIN_SCRIPT_SIGNINGPROVIDER_H
 
 #include <attributes.h>
 #include <key.h>
@@ -166,4 +166,4 @@ public:
 /** Return the CKeyID of the key involved in a script (if there is a unique one). */
 CKeyID GetKeyForDestination(const SigningProvider& store, const CTxDestination& dest);
 
-#endif // BITCOINS_SCRIPT_SIGNINGPROVIDER_H
+#endif // X1COIN_SCRIPT_SIGNINGPROVIDER_H

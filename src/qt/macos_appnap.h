@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_QT_MACOS_APPNAP_H
-#define BITCOINS_QT_MACOS_APPNAP_H
+#ifndef X1COIN_QT_MACOS_APPNAP_H
+#define X1COIN_QT_MACOS_APPNAP_H
 
 #include <memory>
 
@@ -21,4 +21,4 @@ private:
     std::unique_ptr<CAppNapImpl> impl;
 };
 
-#endif // BITCOINS_QT_MACOS_APPNAP_H
+#endif // X1COIN_QT_MACOS_APPNAP_H

@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_INDEX_BASE_H
-#define BITCOINS_INDEX_BASE_H
+#ifndef X1COIN_INDEX_BASE_H
+#define X1COIN_INDEX_BASE_H
 
 #include <dbwrapper.h>
 #include <interfaces/chain.h>
@@ -150,4 +150,4 @@ public:
     IndexSummary GetSummary() const;
 };
 
-#endif // BITCOINS_INDEX_BASE_H
+#endif // X1COIN_INDEX_BASE_H

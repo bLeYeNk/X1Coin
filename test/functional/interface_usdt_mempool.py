@@ -4,7 +4,7 @@
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 """  Tests the mempool:* tracepoint API interface.
-     See https://github.com/bitcoins/bitcoins/blob/master/doc/tracing.md#context-mempool
+     See https://github.com/bLeYeNk/X1Coin/blob/master/doc/tracing.md#context-mempool
 """
 
 from decimal import Decimal
@@ -18,7 +18,7 @@ except ImportError:
 from test_framework.blocktools import COINBASE_MATURITY
 from test_framework.messages import COIN, DEFAULT_MEMPOOL_EXPIRY_HOURS
 from test_framework.p2p import P2PDataStore
-from test_framework.test_framework import BitcoinsTestFramework
+from test_framework.test_framework import X1coinTestFramework
 from test_framework.util import assert_equal
 from test_framework.wallet import MiniWallet
 
@@ -122,14 +122,14 @@ int trace_replaced(struct pt_regs *ctx) {
 """
 
 
-class MempoolTracepointTest(BitcoinsTestFramework):
+class MempoolTracepointTest(X1coinTestFramework):
     def set_test_params(self):
         self.num_nodes = 1
         self.setup_clean_chain = True
 
     def skip_test_if_missing_module(self):
         self.skip_if_platform_not_linux()
-        self.skip_if_no_bitcoinsd_tracepoints()
+        self.skip_if_no_x1coind_tracepoints()
         self.skip_if_no_python_bcc()
         self.skip_if_no_bpf_permissions()
 

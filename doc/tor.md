@@ -1,21 +1,21 @@
-# TOR SUPPORT IN BITCOINS
+# TOR SUPPORT IN X1COIN
 
-It is possible to run Bitcoins Core as a Tor onion service, and connect to such services.
+It is possible to run X1coin as a Tor onion service, and connect to such services.
 
 The following directions assume you have a Tor proxy running on port 9050. Many distributions default to having a SOCKS proxy listening on port 9050, but others may not. In particular, the Tor Browser Bundle defaults to listening on port 9150. See [Tor Project FAQ:TBBSocksPort](https://www.torproject.org/docs/faq.html.en#TBBSocksPort) for how to properly
 configure Tor.
 
 ## Compatibility
 
-- Starting with version 22.0, Bitcoins Core only supports Tor version 3 hidden
-  services (Tor v3). Tor v2 addresses are ignored by Bitcoins Core and neither
+- Starting with version 22.0, X1coin only supports Tor version 3 hidden
+  services (Tor v3). Tor v2 addresses are ignored by X1coin and neither
   relayed nor stored.
 
 - Tor removed v2 support beginning with version 0.4.6.
 
-## How to see information about your Tor configuration via Bitcoins Core
+## How to see information about your Tor configuration via X1coin
 
-There are several ways to see your local onion address in Bitcoins Core:
+There are several ways to see your local onion address in X1coin:
 - in the "Local addresses" output of CLI `-netinfo`
 - in the "localaddresses" output of RPC `getnetworkinfo`
 - in the debug log (grep for "AddLocal"; the Tor address ends in `.onion`)
@@ -30,9 +30,9 @@ e.g. for `-onlynet=onion`.
 To fetch a number of onion addresses that your node knows, for example seven
 addresses, use the `getnodeaddresses 7 onion` RPC.
 
-## 1. Run Bitcoins Core behind a Tor proxy
+## 1. Run X1coin behind a Tor proxy
 
-The first step is running Bitcoins Core behind a Tor proxy. This will already anonymize all
+The first step is running X1coin behind a Tor proxy. This will already anonymize all
 outgoing connections, but more is possible.
 
     -proxy=ip:port  Set the proxy server. If SOCKS5 is selected (default), this proxy
@@ -65,22 +65,22 @@ outgoing connections, but more is possible.
 
 In a typical situation, this suffices to run behind a Tor proxy:
 
-    ./bitcoinsd -proxy=127.0.0.1:9050
+    ./x1coind -proxy=127.0.0.1:9050
 
-## 2. Automatically create a Bitcoins Core onion service
+## 2. Automatically create a X1coin onion service
 
-Bitcoins Core makes use of Tor's control socket API to create and destroy
+X1coin makes use of Tor's control socket API to create and destroy
 ephemeral onion services programmatically. This means that if Tor is running and
-proper authentication has been configured, Bitcoins Core automatically creates an
+proper authentication has been configured, X1coin automatically creates an
 onion service to listen on. The goal is to increase the number of available
 onion nodes.
 
-This feature is enabled by default if Bitcoins Core is listening (`-listen`) and
+This feature is enabled by default if X1coin is listening (`-listen`) and
 it requires a Tor connection to work. It can be explicitly disabled with
 `-listenonion=0`. If it is not disabled, it can be configured using the
 `-torcontrol` and `-torpassword` settings.
 
-To see verbose Tor information in the bitcoinsd debug log, pass `-debug=tor`.
+To see verbose Tor information in the x1coind debug log, pass `-debug=tor`.
 
 ### Control Port
 
@@ -102,20 +102,20 @@ Debian and Ubuntu, or just restart the computer).
 ### Authentication
 
 Connecting to Tor's control socket API requires one of two authentication
-methods to be configured: cookie authentication or bitcoinsd's `-torpassword`
+methods to be configured: cookie authentication or x1coind's `-torpassword`
 configuration option.
 
 #### Cookie authentication
 
-For cookie authentication, the user running bitcoinsd must have read access to
+For cookie authentication, the user running x1coind must have read access to
 the `CookieAuthFile` specified in the Tor configuration. In some cases this is
 preconfigured and the creation of an onion service is automatic. Don't forget to
-use the `-debug=tor` bitcoinsd configuration option to enable Tor debug logging.
+use the `-debug=tor` x1coind configuration option to enable Tor debug logging.
 
 If a permissions problem is seen in the debug log, e.g. `tor: Authentication
 cookie /run/tor/control.authcookie could not be opened (check permissions)`, it
 can be resolved by adding both the user running Tor and the user running
-bitcoinsd to the same Tor group and setting permissions appropriately.
+x1coind to the same Tor group and setting permissions appropriately.
 
 On Debian-derived systems, the Tor group will likely be `debian-tor` and one way
 to verify could be to list the groups and grep for a "tor" group name:
@@ -132,14 +132,14 @@ TORGROUP=$(stat -c '%G' /run/tor/control.authcookie)
 ```
 
 Once you have determined the `${TORGROUP}` and selected the `${USER}` that will
-run bitcoinsd, run this as root:
+run x1coind, run this as root:
 
 ```
 usermod -a -G ${TORGROUP} ${USER}
 ```
 
 Then restart the computer (or log out) and log in as the `${USER}` that will run
-bitcoinsd.
+x1coind.
 
 #### `torpassword` authentication
 
@@ -153,22 +153,22 @@ Manual](https://2019.www.torproject.org/docs/tor-manual.html.en) for more
 details).
 
 
-## 3. Manually create a Bitcoins Core onion service
+## 3. Manually create a X1coin onion service
 
 You can also manually configure your node to be reachable from the Tor network.
 Add these lines to your `/etc/tor/torrc` (or equivalent config file):
 
-    HiddenServiceDir /var/lib/tor/bitcoins-service/
+    HiddenServiceDir /var/lib/tor/x1coin-service/
     HiddenServicePort 15258 127.0.0.1:8334
 
 The directory can be different of course, but virtual port numbers should be equal to
-your bitcoinsd's P2P listen port (15258 by default), and target addresses and ports
+your x1coind's P2P listen port (15258 by default), and target addresses and ports
 should be equal to binding address and port for inbound Tor connections (127.0.0.1:8334 by default).
 
-    -externalip=X   You can tell bitcoins about its publicly reachable addresses using
+    -externalip=X   You can tell x1coin about its publicly reachable addresses using
                     this option, and this can be an onion address. Given the above
                     configuration, you can find your onion address in
-                    /var/lib/tor/bitcoins-service/hostname. For connections
+                    /var/lib/tor/x1coin-service/hostname. For connections
                     coming from unroutable addresses (such as 127.0.0.1, where the
                     Tor proxy typically runs), onion addresses are given
                     preference for your node to advertise itself with.
@@ -190,29 +190,29 @@ should be equal to binding address and port for inbound Tor connections (127.0.0
 
 In a typical situation, where you're only reachable via Tor, this should suffice:
 
-    ./bitcoinsd -proxy=127.0.0.1:9050 -externalip=7zvj7a2imdgkdbg4f2dryd5rgtrn7upivr5eeij4cicjh65pooxeshid.onion -listen
+    ./x1coind -proxy=127.0.0.1:9050 -externalip=7zvj7a2imdgkdbg4f2dryd5rgtrn7upivr5eeij4cicjh65pooxeshid.onion -listen
 
 (obviously, replace the .onion address with your own). It should be noted that you still
 listen on all devices and another node could establish a clearnet connection, when knowing
 your address. To mitigate this, additionally bind the address of your Tor proxy:
 
-    ./bitcoinsd ... -bind=127.0.0.1
+    ./x1coind ... -bind=127.0.0.1
 
 If you don't care too much about hiding your node, and want to be reachable on IPv4
 as well, use `discover` instead:
 
-    ./bitcoinsd ... -discover
+    ./x1coind ... -discover
 
 and open port 15258 on your firewall (or use port mapping, i.e., `-upnp` or `-natpmp`).
 
 If you only want to use Tor to reach .onion addresses, but not use it as a proxy
 for normal IPv4/IPv6 communication, use:
 
-    ./bitcoinsd -onion=127.0.0.1:9050 -externalip=7zvj7a2imdgkdbg4f2dryd5rgtrn7upivr5eeij4cicjh65pooxeshid.onion -discover
+    ./x1coind -onion=127.0.0.1:9050 -externalip=7zvj7a2imdgkdbg4f2dryd5rgtrn7upivr5eeij4cicjh65pooxeshid.onion -discover
 
 ## 4. Privacy recommendations
 
-- Do not add anything but Bitcoins Core ports to the onion service created in section 3.
+- Do not add anything but X1coin ports to the onion service created in section 3.
   If you run a web service too, create a new onion service for that.
   Otherwise it is trivial to link them, which may reduce privacy. Onion
   services created automatically (as in section 2) always have only one port

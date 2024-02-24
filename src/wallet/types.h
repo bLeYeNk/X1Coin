@@ -1,6 +1,6 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2020 The Bitcoin Core developers
-// Copyright (c) 2023 The Bitcoins Core developers
+// Copyright (c) 2023 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -11,8 +11,8 @@
 //! separate header files. More complicated wallet public types like
 //! CCoinControl that are used externally can have separate headers.
 
-#ifndef BITCOINS_WALLET_TYPES_H
-#define BITCOINS_WALLET_TYPES_H
+#ifndef X1COIN_WALLET_TYPES_H
+#define X1COIN_WALLET_TYPES_H
 
 #include <type_traits>
 
@@ -20,7 +20,7 @@ namespace wallet {
 /**
  * IsMine() return codes, which depend on ScriptPubKeyMan implementation.
  * Not every ScriptPubKeyMan covers all types, please refer to
- * https://github.com/bitcoins/bitcoins/blob/master/doc/release-notes/release-notes-0.21.0.md#ismine-semantics
+ * https://github.com/bLeYeNk/X1Coin/blob/master/doc/release-notes/release-notes-0.21.0.md#ismine-semantics
  * for better understanding.
  *
  * For LegacyScriptPubKeyMan,
@@ -53,7 +53,7 @@ using isminefilter = std::underlying_type<isminetype>::type;
 /**
  * Address purpose field that has been been stored with wallet sending and
  * receiving addresses since BIP70 payment protocol support was added in
- * https://github.com/bitcoins/bitcoins/pull/2539. This field is not currently
+ * https://github.com/bLeYeNk/X1Coin/pull/2539. This field is not currently
  * used for any logic inside the wallet, but it is still shown in RPC and GUI
  * interfaces and saved for new addresses. It is basically redundant with an
  * address's IsMine() result.
@@ -65,4 +65,4 @@ enum class AddressPurpose {
 };
 } // namespace wallet
 
-#endif // BITCOINS_WALLET_TYPES_H
+#endif // X1COIN_WALLET_TYPES_H

@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_UTIL_SERFLOAT_H
-#define BITCOINS_UTIL_SERFLOAT_H
+#ifndef X1COIN_UTIL_SERFLOAT_H
+#define X1COIN_UTIL_SERFLOAT_H
 
 #include <cstdint>
 
@@ -13,4 +13,4 @@ uint64_t EncodeDouble(double f) noexcept;
 /* Reverse operation of DecodeDouble. DecodeDouble(EncodeDouble(f))==f unless isnan(f). */
 double DecodeDouble(uint64_t v) noexcept;
 
-#endif // BITCOINS_UTIL_SERFLOAT_H
+#endif // X1COIN_UTIL_SERFLOAT_H

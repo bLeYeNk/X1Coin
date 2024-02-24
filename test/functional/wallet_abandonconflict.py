@@ -13,14 +13,14 @@
 from decimal import Decimal
 
 from test_framework.blocktools import COINBASE_MATURITY
-from test_framework.test_framework import BitcoinsTestFramework
+from test_framework.test_framework import X1coinTestFramework
 from test_framework.util import (
     assert_equal,
     assert_raises_rpc_error,
 )
 
 
-class AbandonConflictTest(BitcoinsTestFramework):
+class AbandonConflictTest(X1coinTestFramework):
     def add_options(self, parser):
         self.add_wallet_options(parser)
 
@@ -225,13 +225,13 @@ class AbandonConflictTest(BitcoinsTestFramework):
         assert_equal(double_spend_txid, double_spend['txid'])
         assert_equal(double_spend["walletconflicts"], [txAB1])
 
-        # Verify that B and C's 10 BC outputs are available for spending again because AB1 is now conflicted
+        # Verify that B and C's 10 X1 outputs are available for spending again because AB1 is now conflicted
         newbalance = alice.getbalance()
         assert_equal(newbalance, balance + Decimal("20"))
         balance = newbalance
 
         # There is currently a minor bug around this and so this test doesn't work.  See Issue #7315
-        # Invalidate the block with the double spend and B's 10 BC output should no longer be available
+        # Invalidate the block with the double spend and B's 10 X1 output should no longer be available
         # Don't think C's should either
         self.nodes[0].invalidateblock(self.nodes[0].getbestblockhash())
         newbalance = alice.getbalance()

@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_TXDB_H
-#define BITCOINS_TXDB_H
+#ifndef X1COIN_TXDB_H
+#define X1COIN_TXDB_H
 
 #include <coins.h>
 #include <dbwrapper.h>
@@ -38,7 +38,7 @@ static const int64_t nMinDbCache = 4;
 static const int64_t nMaxBlockDBCache = 2;
 //! Max memory allocated to block tree DB specific cache, if -txindex (MiB)
 // Unlike for the UTXO database, for the txindex scenario the leveldb cache make
-// a meaningful difference: https://github.com/bitcoins/bitcoins/pull/8273#issuecomment-229601991
+// a meaningful difference: https://github.com/bLeYeNk/X1Coin/pull/8273#issuecomment-229601991
 static const int64_t nMaxTxIndexCache = 1024;
 //! Max memory allocated to all block filter index caches combined in MiB.
 static const int64_t max_filter_index_cache = 1024;
@@ -100,4 +100,4 @@ public:
 
 std::optional<bilingual_str> CheckLegacyTxindex(CBlockTreeDB& block_tree_db);
 
-#endif // BITCOINS_TXDB_H
+#endif // X1COIN_TXDB_H

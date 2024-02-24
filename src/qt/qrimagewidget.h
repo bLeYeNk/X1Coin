@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_QT_QRIMAGEWIDGET_H
-#define BITCOINS_QT_QRIMAGEWIDGET_H
+#ifndef X1COIN_QT_QRIMAGEWIDGET_H
+#define X1COIN_QT_QRIMAGEWIDGET_H
 
 #include <QImage>
 #include <QLabel>
@@ -44,4 +44,4 @@ private:
     QMenu* contextMenu{nullptr};
 };
 
-#endif // BITCOINS_QT_QRIMAGEWIDGET_H
+#endif // X1COIN_QT_QRIMAGEWIDGET_H

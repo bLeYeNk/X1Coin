@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_RPC_RAWTRANSACTION_UTIL_H
-#define BITCOINS_RPC_RAWTRANSACTION_UTIL_H
+#ifndef X1COIN_RPC_RAWTRANSACTION_UTIL_H
+#define X1COIN_RPC_RAWTRANSACTION_UTIL_H
 
 #include <map>
 #include <string>
@@ -48,4 +48,4 @@ void AddOutputs(CMutableTransaction& rawTx, const UniValue& outputs_in);
 /** Create a transaction from univalue parameters */
 CMutableTransaction ConstructTransaction(const UniValue& inputs_in, const UniValue& outputs_in, const UniValue& locktime, std::optional<bool> rbf);
 
-#endif // BITCOINS_RPC_RAWTRANSACTION_UTIL_H
+#endif // X1COIN_RPC_RAWTRANSACTION_UTIL_H

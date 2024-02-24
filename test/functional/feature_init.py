@@ -6,12 +6,12 @@
 import os
 from pathlib import Path
 
-from test_framework.test_framework import BitcoinsTestFramework, SkipTest
+from test_framework.test_framework import X1coinTestFramework, SkipTest
 from test_framework.test_node import ErrorMatch
 from test_framework.util import assert_equal
 
 
-class InitStressTest(BitcoinsTestFramework):
+class InitStressTest(X1coinTestFramework):
     """
     Ensure that initialization can be interrupted at a number of points and not impair
     subsequent starts.
@@ -109,7 +109,7 @@ class InitStressTest(BitcoinsTestFramework):
             # tweaked_contents[50:250] = b'1' * 200
             # target_file.write_bytes(bytes(tweaked_contents))
             #
-            # At the moment I can't get this to work (bitcoinsd loads successfully?) so
+            # At the moment I can't get this to work (x1coind loads successfully?) so
             # investigate doing this later.
 
             node.assert_start_raises_init_error(

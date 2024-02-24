@@ -1,6 +1,6 @@
-# User-space, Statically Defined Tracing (USDT) for Bitcoins Core
+# User-space, Statically Defined Tracing (USDT) for X1coin
 
-Bitcoins Core includes statically defined tracepoints to allow for more
+X1coin includes statically defined tracepoints to allow for more
 observability during development, debugging, code review, and production usage.
 These tracepoints make it possible to keep track of custom statistics and
 enable detailed monitoring of otherwise hidden internals. They have
@@ -11,7 +11,7 @@ eBPF and USDT Overview
 ======================
 
                 ┌──────────────────┐            ┌──────────────┐
-                │ tracing script   │            │ bitcoinsd     │
+                │ tracing script   │            │ x1coind     │
                 │==================│      2.    │==============│
                 │  eBPF  │ tracing │      hooks │              │
                 │  code  │ logic   │      into┌─┤►tracepoint 1─┼───┐ 3.
@@ -112,7 +112,7 @@ Arguments passed:
 
 The following tracepoints cover the in-memory UTXO cache. UTXOs are, for example,
 added to and removed (spent) from the cache when we connect a new block.
-**Note**: Bitcoins Core uses temporary clones of the _main_ UTXO cache
+**Note**: X1coin uses temporary clones of the _main_ UTXO cache
 (`chainstate.CoinsTip()`). For example, the RPCs `generateblock` and
 `getblocktemplate` call `TestBlockValidity()`, which applies the UTXO set
 changes to a temporary cache. Similarly, mempool consistency checks, which are
@@ -263,7 +263,7 @@ Arguments passed:
 1. Transaction ID (hash) as `pointer to unsigned chars` (i.e. 32 bytes in little-endian)
 2. Reject reason as `pointer to C-style String` (max. length 118 characters)
 
-## Adding tracepoints to Bitcoins Core
+## Adding tracepoints to X1coin
 
 To add a new tracepoint, `#include <util/trace.h>` in the compilation unit where
 the tracepoint is inserted. Use one of the `TRACEx` macros listed below
@@ -358,31 +358,31 @@ maximum expected string size if known.
 
 ## Listing available tracepoints
 
-Multiple tools can list the available tracepoints in a `bitcoinsd` binary with
+Multiple tools can list the available tracepoints in a `x1coind` binary with
 USDT support.
 
 ### GDB - GNU Project Debugger
 
-To list probes in Bitcoins Core, use `info probes` in `gdb`:
+To list probes in X1coin, use `info probes` in `gdb`:
 
 ```
-$ gdb ./src/bitcoinsd
+$ gdb ./src/x1coind
 …
 (gdb) info probes
 Type Provider   Name             Where              Semaphore Object
-stap net        inbound_message  0x000000000014419e /src/bitcoinsd
-stap net        outbound_message 0x0000000000107c05 /src/bitcoinsd
-stap validation block_connected  0x00000000002fb10c /src/bitcoinsd
+stap net        inbound_message  0x000000000014419e /src/x1coind
+stap net        outbound_message 0x0000000000107c05 /src/x1coind
+stap validation block_connected  0x00000000002fb10c /src/x1coind
 …
 ```
 
 ### With `readelf`
 
-The `readelf` tool can be used to display the USDT tracepoints in Bitcoins Core.
+The `readelf` tool can be used to display the USDT tracepoints in X1coin.
 Look for the notes with the description `NT_STAPSDT`.
 
 ```
-$ readelf -n ./src/bitcoinsd | grep NT_STAPSDT -A 4 -B 2
+$ readelf -n ./src/x1coind | grep NT_STAPSDT -A 4 -B 2
 Displaying notes found in: .note.stapsdt
   Owner                 Data size	Description
   stapsdt              0x0000005d	NT_STAPSDT (SystemTap probe descriptors)
@@ -406,7 +406,7 @@ between distributions. For example, on
 [ubuntu binary]: https://github.com/iovisor/bcc/blob/master/INSTALL.md#ubuntu---binary
 
 ```
-$ tplist -l ./src/bitcoinsd -v
+$ tplist -l ./src/x1coind -v
 b'net':b'outbound_message' [sema 0x0]
   1 location(s)
   6 argument(s)

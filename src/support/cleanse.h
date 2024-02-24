@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_SUPPORT_CLEANSE_H
-#define BITCOINS_SUPPORT_CLEANSE_H
+#ifndef X1COIN_SUPPORT_CLEANSE_H
+#define X1COIN_SUPPORT_CLEANSE_H
 
 #include <cstdlib>
 
@@ -12,4 +12,4 @@
  * operation will not be optimized out by the compiler. */
 void memory_cleanse(void *ptr, size_t len);
 
-#endif // BITCOINS_SUPPORT_CLEANSE_H
+#endif // X1COIN_SUPPORT_CLEANSE_H

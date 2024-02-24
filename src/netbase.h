@@ -2,11 +2,11 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_NETBASE_H
-#define BITCOINS_NETBASE_H
+#ifndef X1COIN_NETBASE_H
+#define X1COIN_NETBASE_H
 
 #if defined(HAVE_CONFIG_H)
-#include <config/bitcoins-config.h>
+#include <config/x1coin-config.h>
 #endif
 
 #include <compat/compat.h>
@@ -252,4 +252,4 @@ bool Socks5(const std::string& strDest, uint16_t port, const ProxyCredentials* a
  */
 bool IsBadPort(uint16_t port);
 
-#endif // BITCOINS_NETBASE_H
+#endif // X1COIN_NETBASE_H

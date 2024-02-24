@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_QT_TEST_OPTIONTESTS_H
-#define BITCOINS_QT_TEST_OPTIONTESTS_H
+#ifndef X1COIN_QT_TEST_OPTIONTESTS_H
+#define X1COIN_QT_TEST_OPTIONTESTS_H
 
 #include <qt/optionsmodel.h>
 #include <univalue.h>
@@ -29,4 +29,4 @@ private:
     util::Settings m_previous_settings;
 };
 
-#endif // BITCOINS_QT_TEST_OPTIONTESTS_H
+#endif // X1COIN_QT_TEST_OPTIONTESTS_H

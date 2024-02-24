@@ -4,20 +4,20 @@
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Test external signer.
 
-Verify that a bitcoinsd node can use an external signer command.
+Verify that a x1coind node can use an external signer command.
 See also wallet_signer.py for tests that require wallet context.
 """
 import os
 import platform
 
-from test_framework.test_framework import BitcoinsTestFramework
+from test_framework.test_framework import X1coinTestFramework
 from test_framework.util import (
     assert_equal,
     assert_raises_rpc_error,
 )
 
 
-class RPCSignerTest(BitcoinsTestFramework):
+class RPCSignerTest(X1coinTestFramework):
     def mock_signer_path(self):
         path = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'mocks', 'signer.py')
         if platform.system() == "Windows":
@@ -51,7 +51,7 @@ class RPCSignerTest(BitcoinsTestFramework):
     def run_test(self):
         self.log.debug(f"-signer={self.mock_signer_path()}")
 
-        assert_raises_rpc_error(-1, 'Error: restart bitcoinsd with -signer=<cmd>',
+        assert_raises_rpc_error(-1, 'Error: restart x1coind with -signer=<cmd>',
             self.nodes[0].enumeratesigners
         )
 

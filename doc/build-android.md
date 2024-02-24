@@ -1,7 +1,7 @@
 ANDROID BUILD NOTES
 ======================
 
-This guide describes how to build and package the `bitcoins-qt` GUI for Android on Linux and macOS.
+This guide describes how to build and package the `x1coin-qt` GUI for Android on Linux and macOS.
 
 
 ## Dependencies

@@ -4,8 +4,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_KEY_H
-#define BITCOINS_KEY_H
+#ifndef X1COIN_KEY_H
+#define X1COIN_KEY_H
 
 #include <pubkey.h>
 #include <serialize.h>
@@ -190,4 +190,4 @@ void ECC_Stop();
 /** Check that required EC support is available at runtime. */
 bool ECC_InitSanityCheck();
 
-#endif // BITCOINS_KEY_H
+#endif // X1COIN_KEY_H

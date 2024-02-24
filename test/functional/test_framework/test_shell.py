@@ -3,19 +3,19 @@
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-from test_framework.test_framework import BitcoinsTestFramework
+from test_framework.test_framework import X1coinTestFramework
 
 class TestShell:
-    """Wrapper Class for BitcoinsTestFramework.
+    """Wrapper Class for X1coinTestFramework.
 
-    The TestShell class extends the BitcoinsTestFramework
+    The TestShell class extends the X1coinTestFramework
     rpc & daemon process management functionality to external
     python environments.
 
     It is a singleton class, which ensures that users only
     start a single TestShell at a time."""
 
-    class __TestShell(BitcoinsTestFramework):
+    class __TestShell(X1coinTestFramework):
         def add_options(self, parser):
             self.add_wallet_options(parser)
 
@@ -31,7 +31,7 @@ class TestShell:
                 return
 
             # Num_nodes parameter must be set
-            # by BitcoinsTestFramework child class.
+            # by X1coinTestFramework child class.
             self.num_nodes = 1
 
             # User parameters override default values.

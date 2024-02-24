@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_CHECKQUEUE_H
-#define BITCOINS_CHECKQUEUE_H
+#ifndef X1COIN_CHECKQUEUE_H
+#define X1COIN_CHECKQUEUE_H
 
 #include <sync.h>
 #include <tinyformat.h>
@@ -250,4 +250,4 @@ public:
     }
 };
 
-#endif // BITCOINS_CHECKQUEUE_H
+#endif // X1COIN_CHECKQUEUE_H

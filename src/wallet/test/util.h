@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_WALLET_TEST_UTIL_H
-#define BITCOINS_WALLET_TEST_UTIL_H
+#ifndef X1COIN_WALLET_TEST_UTIL_H
+#define X1COIN_WALLET_TEST_UTIL_H
 
 #include <script/standard.h>
 #include <memory>
@@ -33,4 +33,4 @@ CTxDestination getNewDestination(CWallet& w, OutputType output_type);
 
 } // namespace wallet
 
-#endif // BITCOINS_WALLET_TEST_UTIL_H
+#endif // X1COIN_WALLET_TEST_UTIL_H

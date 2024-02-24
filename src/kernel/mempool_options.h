@@ -1,8 +1,8 @@
 // Copyright (c) 2022 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
-#ifndef BITCOINS_KERNEL_MEMPOOL_OPTIONS_H
-#define BITCOINS_KERNEL_MEMPOOL_OPTIONS_H
+#ifndef X1COIN_KERNEL_MEMPOOL_OPTIONS_H
+#define X1COIN_KERNEL_MEMPOOL_OPTIONS_H
 
 #include <kernel/mempool_limits.h>
 
@@ -59,4 +59,4 @@ struct MemPoolOptions {
 };
 } // namespace kernel
 
-#endif // BITCOINS_KERNEL_MEMPOOL_OPTIONS_H
+#endif // X1COIN_KERNEL_MEMPOOL_OPTIONS_H

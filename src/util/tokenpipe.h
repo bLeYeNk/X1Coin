@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_UTIL_TOKENPIPE_H
-#define BITCOINS_UTIL_TOKENPIPE_H
+#ifndef X1COIN_UTIL_TOKENPIPE_H
+#define X1COIN_UTIL_TOKENPIPE_H
 
 #ifndef WIN32
 
@@ -124,4 +124,4 @@ public:
 
 #endif // WIN32
 
-#endif // BITCOINS_UTIL_TOKENPIPE_H
+#endif // X1COIN_UTIL_TOKENPIPE_H

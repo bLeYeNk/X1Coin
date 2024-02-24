@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_UINT256_H
-#define BITCOINS_UINT256_H
+#ifndef X1COIN_UINT256_H
+#define X1COIN_UINT256_H
 
 #include <crypto/common.h>
 #include <span.h>
@@ -132,4 +132,4 @@ inline uint256 uint256S(const std::string& str)
     return rv;
 }
 
-#endif // BITCOINS_UINT256_H
+#endif // X1COIN_UINT256_H

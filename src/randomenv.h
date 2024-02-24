@@ -1,11 +1,11 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2020 The Bitcoin Core developers
-// Copyright (c) 2023 The Bitcoins Core developers
+// Copyright (c) 2023 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINS_RANDOMENV_H
-#define BITCOINS_RANDOMENV_H
+#ifndef X1COIN_RANDOMENV_H
+#define X1COIN_RANDOMENV_H
 
 #include <crypto/sha512.h>
 
@@ -15,4 +15,4 @@ void RandAddDynamicEnv(CSHA512& hasher);
 /** Gather non-cryptographic environment data that does not change over time. */
 void RandAddStaticEnv(CSHA512& hasher);
 
-#endif // BITCOINS_RANDOMENV_H
+#endif // X1COIN_RANDOMENV_H

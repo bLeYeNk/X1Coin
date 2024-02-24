@@ -21,7 +21,7 @@ from test_framework.blocktools import (
 from test_framework.messages import (
     MAX_BIP125_RBF_SEQUENCE,
 )
-from test_framework.test_framework import BitcoinsTestFramework
+from test_framework.test_framework import X1coinTestFramework
 from test_framework.util import (
     assert_equal,
     assert_greater_than,
@@ -42,7 +42,7 @@ HIGH         =    500
 TOO_HIGH     = 100000
 
 
-class BumpFeeTest(BitcoinsTestFramework):
+class BumpFeeTest(X1coinTestFramework):
     def add_options(self, parser):
         self.add_wallet_options(parser)
 
@@ -71,7 +71,7 @@ class BumpFeeTest(BitcoinsTestFramework):
         peer_node, rbf_node = self.nodes
         rbf_node_address = rbf_node.getnewaddress()
 
-        # fund rbf node with 10 coins of 0.001 bc (100,000 satoshis)
+        # fund rbf node with 10 coins of 0.001 x1 (100,000 satoshis)
         self.log.info("Mining blocks...")
         self.generate(peer_node, 110)
         for _ in range(25):
@@ -157,7 +157,7 @@ class BumpFeeTest(BitcoinsTestFramework):
         for k, v in {"number": 42, "object": {"foo": "bar"}}.items():
             assert_raises_rpc_error(-3, f"JSON value of type {k} for field estimate_mode is not of expected type string",
                 rbf_node.bumpfee, rbfid, {"estimate_mode": v})
-        for mode in ["foo", Decimal("3.1415"), "sat/B", "BC/kB"]:
+        for mode in ["foo", Decimal("3.1415"), "sat/B", "X1/kB"]:
             assert_raises_rpc_error(-8, 'Invalid estimate_mode parameter, must be one of: "unset", "economical", "conservative"',
                 rbf_node.bumpfee, rbfid, {"estimate_mode": mode})
 
@@ -382,16 +382,16 @@ def test_dust_to_fee(self, rbf_node, dest_address):
     self.log.info('Test that bumped output that is dust is dropped to fee')
     rbfid = spend_one_input(rbf_node, dest_address)
     fulltx = rbf_node.getrawtransaction(rbfid, 1)
-    # The DER formatting used by Bitcoins to serialize ECDSA signatures means that signatures can have a
+    # The DER formatting used by X1coin to serialize ECDSA signatures means that signatures can have a
     # variable size of 70-72 bytes (or possibly even less), with most being 71 or 72 bytes. The signature
     # in the witness is divided by 4 for the vsize, so this variance can take the weight across a 4-byte
     # boundary. Thus expected transaction size (p2wpkh, 1 input, 2 outputs) is 140-141 vbytes, usually 141.
     if not 140 <= fulltx["vsize"] <= 141:
         raise AssertionError("Invalid tx vsize of {} (140-141 expected), full tx: {}".format(fulltx["vsize"], fulltx))
     # Bump with fee_rate of 350.25 sat/vB vbytes to create dust.
-    # Expected fee is 141 vbytes * fee_rate 0.00350250 BC / 1000 vbytes = 0.00049385 BC.
-    # or occasionally 140 vbytes * fee_rate 0.00350250 BC / 1000 vbytes = 0.00049035 BC.
-    # Dust should be dropped to the fee, so actual bump fee is 0.00050000 BC.
+    # Expected fee is 141 vbytes * fee_rate 0.00350250 X1 / 1000 vbytes = 0.00049385 X1.
+    # or occasionally 140 vbytes * fee_rate 0.00350250 X1 / 1000 vbytes = 0.00049035 X1.
+    # Dust should be dropped to the fee, so actual bump fee is 0.00050000 X1.
     bumped_tx = rbf_node.bumpfee(rbfid, {"fee_rate": 350.25})
     full_bumped_tx = rbf_node.getrawtransaction(bumped_tx["txid"], 1)
     assert_equal(bumped_tx["fee"], Decimal("0.00050000"))
@@ -428,7 +428,7 @@ def test_settxfee(self, rbf_node, dest_address):
 def test_maxtxfee_fails(self, rbf_node, dest_address):
     self.log.info('Test that bumpfee fails when it hits -maxtxfee')
     # size of bumped transaction (p2wpkh, 1 input, 2 outputs): 141 vbytes
-    # expected bump fee of 141 vbytes * 0.00200000 BC / 1000 vbytes = 0.00002820 BC
+    # expected bump fee of 141 vbytes * 0.00200000 X1 / 1000 vbytes = 0.00002820 X1
     # which exceeds maxtxfee and is expected to raise
     self.restart_node(1, ['-maxtxfee=0.000025'] + self.extra_args[1])
     rbf_node.walletpassphrase(WALLET_PASSPHRASE, WALLET_PASSPHRASE_TIMEOUT)
