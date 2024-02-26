@@ -11,17 +11,25 @@
 #include <uint256.h>
 #include <logging.h>
 
+
+
 unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHeader *pblock, const Consensus::Params& params)
 {
     assert(pindexLast != nullptr);
     unsigned int nProofOfWorkLimit = UintToArith256(params.powLimit).GetCompact();
 
     // Reset the difficulty for the new re-adjustment process.
-    if ((pindexLast->nHeight >= 314) && (pindexLast->nHeight <= 370))
+    if ((pindexLast->nHeight >= 314) && (pindexLast->nHeight <= params.lwmaBlock)) {
         return nProofOfWorkLimit;
+    }
 
-    if (pindexLast->nHeight > 370)
+    if (pindexLast->nHeight > params.lwmaBlock) {
         return LwmaCalculateNextWorkRequired(pindexLast, params);
+    }
+
+    if (pindexLast->nHeight >= params.nPowTargetSpacingV2Block) {
+        return LwmaCalculateNextWorkRequiredV2(pindexLast, params);
+    }
 
     // Only change once per difficulty adjustment interval
     if ((pindexLast->nHeight+1) % params.DifficultyAdjustmentInterval() != 0)
@@ -68,9 +76,45 @@ unsigned int LwmaCalculateNextWorkRequired(const CBlockIndex* pindexLast, const 
     int64_t thisTimestamp, previousTimestamp;
     int64_t t = 0, j = 0;
 
-    // Uncomment next 2 lines to use LWMA-3 jump rule.
-    //arith_uint256 previousTarget = 0;
-    //int64_t sumLast3Solvetimes = 0; 
+    const CBlockIndex* blockPreviousTimestamp = pindexLast->GetAncestor(height - N);
+    previousTimestamp = blockPreviousTimestamp->GetBlockTime();
+
+    // Loop through N most recent blocks. 
+    for (int64_t i = height - N + 1; i <= height; i++) {
+        const CBlockIndex* block = pindexLast->GetAncestor(i);
+        thisTimestamp = (block->GetBlockTime() > previousTimestamp) ? 
+                            block->GetBlockTime() : previousTimestamp + 1;
+
+        int64_t solvetime = std::min(6 * T, thisTimestamp - previousTimestamp);
+        previousTimestamp = thisTimestamp;
+
+        j++;
+        t += solvetime * j; // Weighted solvetime sum.
+        arith_uint256 target;
+        target.SetCompact(block->nBits);
+        sumTarget += target / (k * N);
+
+    }
+    nextTarget = t * sumTarget;
+
+    if (nextTarget > powLimit) { nextTarget = powLimit; }
+
+    return nextTarget.GetCompact();
+}
+
+unsigned int LwmaCalculateNextWorkRequiredV2(const CBlockIndex* pindexLast, const Consensus::Params& params)
+{
+    const int64_t T = params.nPowTargetSpacingV2;
+    const int64_t N = params.lwmaAveragingWindowV2;
+    const int64_t k = N * (N + 1) * T / 2; // For T=120, 240, 600 use approx N=100, 75, 50
+    const int64_t height = pindexLast->nHeight;
+    const arith_uint256 powLimit = UintToArith256(params.powLimit);
+
+    if (height < N) { return powLimit.GetCompact(); }
+
+    arith_uint256 sumTarget, nextTarget;
+    int64_t thisTimestamp, previousTimestamp;
+    int64_t t = 0, j = 0;
 
     const CBlockIndex* blockPreviousTimestamp = pindexLast->GetAncestor(height - N);
     previousTimestamp = blockPreviousTimestamp->GetBlockTime();
@@ -90,15 +134,8 @@ unsigned int LwmaCalculateNextWorkRequired(const CBlockIndex* pindexLast, const 
         target.SetCompact(block->nBits);
         sumTarget += target / (k * N);
 
-      // Uncomment next 2 lines to use LWMA-3.
-      //  if (i > height - 3) { sumLast3Solvetimes  += solvetime; }  
-      //  if (i == height) { previousTarget = target.SetCompact(block->nBits); }
     }
     nextTarget = t * sumTarget;
-
-   // Uncomment the following to use LWMA-3.
-   // This is a "memory-less" jump in difficulty approximately 2x normal
-   // if (sumLast3Solvetimes < (8 * T) / 10) { nextTarget = (previousTarget*100)/(100+(N*26)/200); } 
 
     if (nextTarget > powLimit) { nextTarget = powLimit; }
 

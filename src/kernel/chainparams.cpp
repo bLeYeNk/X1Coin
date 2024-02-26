@@ -82,11 +82,15 @@ public:
         consensus.BIP66Height = 0; 
         consensus.CSVHeight = 0; 
         consensus.SegwitHeight = 0; 
+        consensus.lwmaBlock = 370;
 	consensus.lwmaAveragingWindow = 65;
+	consensus.lwmaAveragingWindowV2 = 200;
         consensus.MinBIP9WarningHeight = 0; // segwit activation height + miner confirmation window
         consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.nPowTargetTimespan =  16 * 60;
         consensus.nPowTargetSpacing = 8 * 60;
+        consensus.nPowTargetSpacingV2 = 1 * 60;
+        consensus.nPowTargetSpacingV2Block = 5402;
         consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.fPowNoRetargeting = false;
         consensus.nRuleChangeActivationThreshold = 180;
